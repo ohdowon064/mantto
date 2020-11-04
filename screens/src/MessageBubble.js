@@ -1,11 +1,12 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 
 import {StyleSheet, View, Text} from 'react-native';
 
-import Svg, {Path,Marker} from 'react-native-svg';
+import Svg, {Path} from 'react-native-svg';
 
 import {moderateScale} from 'react-native-size-matters';
+
+// TODO : 아래 뾰족 만들기?  SVG 로 받아서 처리해볼것..!
 
 const MessageBubble = ({text}) => {
   return (
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
   },
   text: {
     paddingTop: 3,
-    fontSize: 17,
+    fontSize: 14,
     lineHeight: 22,
   },
   arrow_container: {
@@ -73,18 +74,18 @@ const styles = StyleSheet.create({
     zIndex: -1,
     flex: 1,
   },
-  arrow_left_container: {
-    justifyContent: 'flex-end',
-    alignItems: 'flex-start',
-  },
-  arrow_right_container: {
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',
-  },
-  arrow_left: {
-    left: moderateScale(-6, 0.5),
-  },
-  arrow_right: {
-    right: moderateScale(-6, 0.5),
-  },
+  // arrow_left_container: {
+  //   justifyContent: 'flex-end',
+  //   alignItems: 'flex-start',
+  // },
+  // arrow_right_container: {
+  //   justifyContent: 'flex-end',
+  //   alignItems: 'flex-end',
+  // },
+  // arrow_left: {
+  //   left: moderateScale(-6, 0.5),
+  // },
+  // arrow_right: {
+  //   right: moderateScale(-6, 0.5),
+  // },
 });
