@@ -35,11 +35,13 @@ const PassionPage = () => {
         <LeftArrowButton/>
         <TalentQuestionText innerTextStyle={styles.innerText}/>
         <MessageBubble text="재능을 가르치고 싶은 항목을 고르세요" />
+        <View style={styles.categoriesContainer}>
         {categories.map(({id,name}) => (
           <TouchableHighlight {...touchProps}>
             <Text key={id}>{name}</Text>
           </TouchableHighlight>
         ))}
+        </View>
       </>
     );
 };
@@ -48,30 +50,9 @@ const styles = StyleSheet.create({
   innerText: {
     color: '#edb08c',
   },
-  sharpButtonsContainer : {
-    flexDirection : 'column',
-    alignItems : 'center',
-  },
-  sharpButtons : {
-    width : '80%',
+  categoriesContainer : {
     flexDirection : 'row',
-    justifyContent : 'center',
-  },
-  sharpButton : {
-    borderRadius : 10,
-  },
-  buttonTitleStyle : {
-    color : '#000000',
-  },
-  buttonNormal : {
-    borderColor : 'blue',
-    borderWidth: 1,
-    borderRadius: 10,
-  },
-  buttonPress : {
-    borderColor: 'blue',
-    borderWidth: 1,
-    height: 30,
+    width : '80%',
   }
 });
 
