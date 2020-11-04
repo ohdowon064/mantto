@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* manttoProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* manttoProjectTests.m */; };
+		00E356F31AD99517003FC87E /* ManttoProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ManttoProjectTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* manttoProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* manttoProjectTests.m */; };
+		2DCD954D1E0B4F2C00145EB5 /* ManttoProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ManttoProjectTests.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		60F435A51AA2468391842AB3 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56F82298CC6B49FF9391C47B /* AntDesign.ttf */; };
-		EFDCB464717C493B9D9BB7F1 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3826BBAE05A24888ABC5CDCF /* Entypo.ttf */; };
-		A52A98E97BE442B0A54E9B3B /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8DBF3D1B73846C9B4B4E9FA /* EvilIcons.ttf */; };
-		F7168738FE4148229523B9AD /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3731A9D9AF0145FBBEC83FF0 /* Feather.ttf */; };
-		C65A40A8DA884C56AA3D7615 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E23241FEFDF4404BE808478 /* FontAwesome.ttf */; };
-		8ADCDEE4F2A346A1B53E5E1D /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A3F8C14B3194B8D80678AF4 /* FontAwesome5_Brands.ttf */; };
-		2D1F22AB6128416FB7BED37B /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 669F8691861F40A4AD2A0BA3 /* FontAwesome5_Regular.ttf */; };
-		94DB2F740AE64CD1A537647B /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B828601101E3466A9334FD22 /* FontAwesome5_Solid.ttf */; };
-		93CEDB8B24CD4B10A7E1EA16 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92BDBD12604846ABA234F86E /* Fontisto.ttf */; };
-		DE3DC8948CE14BD6A2F3A860 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B57D25714CD64AB58B8C9C2B /* Foundation.ttf */; };
-		6AA33295368E4BB5B03FE7BD /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 145E625BE164483B86EDB27D /* Ionicons.ttf */; };
-		B246A6082E064F6B8BFEFFC6 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 992781EA7FC14AFBBCED0F4A /* MaterialCommunityIcons.ttf */; };
-		85BD7E009F0A4C33BBBCF01A /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EE8F339FB99427CA0B2A329 /* MaterialIcons.ttf */; };
-		FD5458B10FA34FAD8BC48E1A /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EE7A5E4A8D846B1875E4037 /* Octicons.ttf */; };
-		F09925BBF4E147659E1B5CB6 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7535AD44A8C44F44ABC4F487 /* SimpleLineIcons.ttf */; };
-		874995076EEA4CDDB2EFA555 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AE938F983D14C3DB2F1A5BA /* Zocial.ttf */; };
+		512D54EF210140EB9E7DA869 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EC42DAC0BCD46DF9A9E1B5E /* AntDesign.ttf */; };
+		AE3C93B6A7EA42E6A7B97622 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D68FB8231E894936A74AF5A7 /* Entypo.ttf */; };
+		1BF10B9662754B17AD381CFF /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9084F767CBB3440096F2833B /* EvilIcons.ttf */; };
+		76BF8FC0626A4965AEB46DF5 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41ABDC95F0874B9EA7A8AEEF /* Feather.ttf */; };
+		A23BD00F2CF14DA1889F06EA /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E3FAB65814049BAE0CF65 /* FontAwesome.ttf */; };
+		09E73A9A391243A7B55C8897 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF63652CC5045539D3785C9 /* FontAwesome5_Brands.ttf */; };
+		E8E847FFE4364B509301839E /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F13E96433744566BC1E680B /* FontAwesome5_Regular.ttf */; };
+		CFE951AF9E2F4D09900111DC /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87FE8CAAE31241479D4776DA /* FontAwesome5_Solid.ttf */; };
+		15DBA2CDE5DE448E95454EDE /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70377AD2C22842DAA27F8744 /* Fontisto.ttf */; };
+		787E6860A021491584703772 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BAA210A9D2A74F8198C588D9 /* Foundation.ttf */; };
+		01C9F8DC3E8B41659DE1E356 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C9F4D273D344C9889830C5A /* Ionicons.ttf */; };
+		A9EE5CCB45BA44C1ABB8095D /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 613F248579D643BAA2E66AC5 /* MaterialCommunityIcons.ttf */; };
+		11C924ECF2014BA7AC62A3ED /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BBEA26597D14B32B85127DA /* MaterialIcons.ttf */; };
+		91C0B54A5D004318A9AFC19D /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CBB2FDB34904ED2ADA88FAE /* Octicons.ttf */; };
+		E4268EFD72C14F3D87454B72 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA195C5C1B934E96AFD5B218 /* SimpleLineIcons.ttf */; };
+		81216F1549AB444DACF148B4 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D71FBA8FED9E4E6EA0B3E06E /* Zocial.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,49 +40,49 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = manttoProject;
+			remoteInfo = ManttoProject;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "manttoProject-tvOS";
+			remoteInfo = "ManttoProject-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* manttoProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = manttoProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* ManttoProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ManttoProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* manttoProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = manttoProjectTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* manttoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = manttoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = manttoProject/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = manttoProject/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = manttoProject/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = manttoProject/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = manttoProject/main.m; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* manttoProject-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "manttoProject-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* manttoProject-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "manttoProject-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = manttoProject/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* ManttoProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManttoProjectTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* ManttoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManttoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ManttoProject/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ManttoProject/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ManttoProject/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ManttoProject/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ManttoProject/main.m; sourceTree = "<group>"; };
+		2D02E47B1E0B4A5D006451C7 /* ManttoProject-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ManttoProject-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* ManttoProject-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ManttoProject-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ManttoProject/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		56F82298CC6B49FF9391C47B /* AntDesign.ttf */ = {isa = PBXFileReference; name = "AntDesign.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3826BBAE05A24888ABC5CDCF /* Entypo.ttf */ = {isa = PBXFileReference; name = "Entypo.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D8DBF3D1B73846C9B4B4E9FA /* EvilIcons.ttf */ = {isa = PBXFileReference; name = "EvilIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3731A9D9AF0145FBBEC83FF0 /* Feather.ttf */ = {isa = PBXFileReference; name = "Feather.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2E23241FEFDF4404BE808478 /* FontAwesome.ttf */ = {isa = PBXFileReference; name = "FontAwesome.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9A3F8C14B3194B8D80678AF4 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Brands.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		669F8691861F40A4AD2A0BA3 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Regular.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B828601101E3466A9334FD22 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Solid.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		92BDBD12604846ABA234F86E /* Fontisto.ttf */ = {isa = PBXFileReference; name = "Fontisto.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B57D25714CD64AB58B8C9C2B /* Foundation.ttf */ = {isa = PBXFileReference; name = "Foundation.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		145E625BE164483B86EDB27D /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		992781EA7FC14AFBBCED0F4A /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; name = "MaterialCommunityIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8EE8F339FB99427CA0B2A329 /* MaterialIcons.ttf */ = {isa = PBXFileReference; name = "MaterialIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8EE7A5E4A8D846B1875E4037 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7535AD44A8C44F44ABC4F487 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2AE938F983D14C3DB2F1A5BA /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7EC42DAC0BCD46DF9A9E1B5E /* AntDesign.ttf */ = {isa = PBXFileReference; name = "AntDesign.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D68FB8231E894936A74AF5A7 /* Entypo.ttf */ = {isa = PBXFileReference; name = "Entypo.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9084F767CBB3440096F2833B /* EvilIcons.ttf */ = {isa = PBXFileReference; name = "EvilIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		41ABDC95F0874B9EA7A8AEEF /* Feather.ttf */ = {isa = PBXFileReference; name = "Feather.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9C8E3FAB65814049BAE0CF65 /* FontAwesome.ttf */ = {isa = PBXFileReference; name = "FontAwesome.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EDF63652CC5045539D3785C9 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Brands.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0F13E96433744566BC1E680B /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Regular.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		87FE8CAAE31241479D4776DA /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Solid.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		70377AD2C22842DAA27F8744 /* Fontisto.ttf */ = {isa = PBXFileReference; name = "Fontisto.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BAA210A9D2A74F8198C588D9 /* Foundation.ttf */ = {isa = PBXFileReference; name = "Foundation.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6C9F4D273D344C9889830C5A /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		613F248579D643BAA2E66AC5 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; name = "MaterialCommunityIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5BBEA26597D14B32B85127DA /* MaterialIcons.ttf */ = {isa = PBXFileReference; name = "MaterialIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8CBB2FDB34904ED2ADA88FAE /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BA195C5C1B934E96AFD5B218 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D71FBA8FED9E4E6EA0B3E06E /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,13 +117,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* manttoProjectTests */ = {
+		00E356EF1AD99517003FC87E /* ManttoProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* manttoProjectTests.m */,
+				00E356F21AD99517003FC87E /* ManttoProjectTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = manttoProjectTests;
+			path = ManttoProjectTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -134,7 +134,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* manttoProject */ = {
+		13B07FAE1A68108700A75B9A /* ManttoProject */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -145,7 +145,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = manttoProject;
+			name = ManttoProject;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -167,12 +167,12 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* manttoProject */,
+				13B07FAE1A68108700A75B9A /* ManttoProject */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* manttoProjectTests */,
+				00E356EF1AD99517003FC87E /* ManttoProjectTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				A85D584C55FC41D5B55F580F /* Resources */,
+				2604206FEBCF4D47B2E8845F /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -182,33 +182,33 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* manttoProject.app */,
-				00E356EE1AD99517003FC87E /* manttoProjectTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* manttoProject-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* manttoProject-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* ManttoProject.app */,
+				00E356EE1AD99517003FC87E /* ManttoProjectTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* ManttoProject-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* ManttoProject-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A85D584C55FC41D5B55F580F /* Resources */ = {
+		2604206FEBCF4D47B2E8845F /* Resources */ = {
 			isa = "PBXGroup";
 			children = (
-				56F82298CC6B49FF9391C47B /* AntDesign.ttf */,
-				3826BBAE05A24888ABC5CDCF /* Entypo.ttf */,
-				D8DBF3D1B73846C9B4B4E9FA /* EvilIcons.ttf */,
-				3731A9D9AF0145FBBEC83FF0 /* Feather.ttf */,
-				2E23241FEFDF4404BE808478 /* FontAwesome.ttf */,
-				9A3F8C14B3194B8D80678AF4 /* FontAwesome5_Brands.ttf */,
-				669F8691861F40A4AD2A0BA3 /* FontAwesome5_Regular.ttf */,
-				B828601101E3466A9334FD22 /* FontAwesome5_Solid.ttf */,
-				92BDBD12604846ABA234F86E /* Fontisto.ttf */,
-				B57D25714CD64AB58B8C9C2B /* Foundation.ttf */,
-				145E625BE164483B86EDB27D /* Ionicons.ttf */,
-				992781EA7FC14AFBBCED0F4A /* MaterialCommunityIcons.ttf */,
-				8EE8F339FB99427CA0B2A329 /* MaterialIcons.ttf */,
-				8EE7A5E4A8D846B1875E4037 /* Octicons.ttf */,
-				7535AD44A8C44F44ABC4F487 /* SimpleLineIcons.ttf */,
-				2AE938F983D14C3DB2F1A5BA /* Zocial.ttf */,
+				7EC42DAC0BCD46DF9A9E1B5E /* AntDesign.ttf */,
+				D68FB8231E894936A74AF5A7 /* Entypo.ttf */,
+				9084F767CBB3440096F2833B /* EvilIcons.ttf */,
+				41ABDC95F0874B9EA7A8AEEF /* Feather.ttf */,
+				9C8E3FAB65814049BAE0CF65 /* FontAwesome.ttf */,
+				EDF63652CC5045539D3785C9 /* FontAwesome5_Brands.ttf */,
+				0F13E96433744566BC1E680B /* FontAwesome5_Regular.ttf */,
+				87FE8CAAE31241479D4776DA /* FontAwesome5_Solid.ttf */,
+				70377AD2C22842DAA27F8744 /* Fontisto.ttf */,
+				BAA210A9D2A74F8198C588D9 /* Foundation.ttf */,
+				6C9F4D273D344C9889830C5A /* Ionicons.ttf */,
+				613F248579D643BAA2E66AC5 /* MaterialCommunityIcons.ttf */,
+				5BBEA26597D14B32B85127DA /* MaterialIcons.ttf */,
+				8CBB2FDB34904ED2ADA88FAE /* Octicons.ttf */,
+				BA195C5C1B934E96AFD5B218 /* SimpleLineIcons.ttf */,
+				D71FBA8FED9E4E6EA0B3E06E /* Zocial.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -217,9 +217,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* manttoProjectTests */ = {
+		00E356ED1AD99517003FC87E /* ManttoProjectTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "manttoProjectTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ManttoProjectTests" */;
 			buildPhases = (
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
@@ -230,14 +230,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = manttoProjectTests;
-			productName = manttoProjectTests;
-			productReference = 00E356EE1AD99517003FC87E /* manttoProjectTests.xctest */;
+			name = ManttoProjectTests;
+			productName = ManttoProjectTests;
+			productReference = 00E356EE1AD99517003FC87E /* ManttoProjectTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* manttoProject */ = {
+		13B07F861A680F5B00A75B9A /* ManttoProject */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "manttoProject" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ManttoProject" */;
 			buildPhases = (
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
@@ -249,14 +249,14 @@
 			);
 			dependencies = (
 			);
-			name = manttoProject;
-			productName = manttoProject;
-			productReference = 13B07F961A680F5B00A75B9A /* manttoProject.app */;
+			name = ManttoProject;
+			productName = ManttoProject;
+			productReference = 13B07F961A680F5B00A75B9A /* ManttoProject.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* manttoProject-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* ManttoProject-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "manttoProject-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ManttoProject-tvOS" */;
 			buildPhases = (
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
@@ -268,14 +268,14 @@
 			);
 			dependencies = (
 			);
-			name = "manttoProject-tvOS";
-			productName = "manttoProject-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* manttoProject-tvOS.app */;
+			name = "ManttoProject-tvOS";
+			productName = "ManttoProject-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* ManttoProject-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* manttoProject-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* ManttoProject-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "manttoProject-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ManttoProject-tvOSTests" */;
 			buildPhases = (
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
@@ -286,9 +286,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "manttoProject-tvOSTests";
-			productName = "manttoProject-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* manttoProject-tvOSTests.xctest */;
+			name = "ManttoProject-tvOSTests";
+			productName = "ManttoProject-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* ManttoProject-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -317,7 +317,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "manttoProject" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ManttoProject" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -330,10 +330,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* manttoProject */,
-				00E356ED1AD99517003FC87E /* manttoProjectTests */,
-				2D02E47A1E0B4A5D006451C7 /* manttoProject-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* manttoProject-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* ManttoProject */,
+				00E356ED1AD99517003FC87E /* ManttoProjectTests */,
+				2D02E47A1E0B4A5D006451C7 /* ManttoProject-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* ManttoProject-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -352,22 +352,22 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				60F435A51AA2468391842AB3 /* AntDesign.ttf in Resources */,
-				EFDCB464717C493B9D9BB7F1 /* Entypo.ttf in Resources */,
-				A52A98E97BE442B0A54E9B3B /* EvilIcons.ttf in Resources */,
-				F7168738FE4148229523B9AD /* Feather.ttf in Resources */,
-				C65A40A8DA884C56AA3D7615 /* FontAwesome.ttf in Resources */,
-				8ADCDEE4F2A346A1B53E5E1D /* FontAwesome5_Brands.ttf in Resources */,
-				2D1F22AB6128416FB7BED37B /* FontAwesome5_Regular.ttf in Resources */,
-				94DB2F740AE64CD1A537647B /* FontAwesome5_Solid.ttf in Resources */,
-				93CEDB8B24CD4B10A7E1EA16 /* Fontisto.ttf in Resources */,
-				DE3DC8948CE14BD6A2F3A860 /* Foundation.ttf in Resources */,
-				6AA33295368E4BB5B03FE7BD /* Ionicons.ttf in Resources */,
-				B246A6082E064F6B8BFEFFC6 /* MaterialCommunityIcons.ttf in Resources */,
-				85BD7E009F0A4C33BBBCF01A /* MaterialIcons.ttf in Resources */,
-				FD5458B10FA34FAD8BC48E1A /* Octicons.ttf in Resources */,
-				F09925BBF4E147659E1B5CB6 /* SimpleLineIcons.ttf in Resources */,
-				874995076EEA4CDDB2EFA555 /* Zocial.ttf in Resources */,
+				512D54EF210140EB9E7DA869 /* AntDesign.ttf in Resources */,
+				AE3C93B6A7EA42E6A7B97622 /* Entypo.ttf in Resources */,
+				1BF10B9662754B17AD381CFF /* EvilIcons.ttf in Resources */,
+				76BF8FC0626A4965AEB46DF5 /* Feather.ttf in Resources */,
+				A23BD00F2CF14DA1889F06EA /* FontAwesome.ttf in Resources */,
+				09E73A9A391243A7B55C8897 /* FontAwesome5_Brands.ttf in Resources */,
+				E8E847FFE4364B509301839E /* FontAwesome5_Regular.ttf in Resources */,
+				CFE951AF9E2F4D09900111DC /* FontAwesome5_Solid.ttf in Resources */,
+				15DBA2CDE5DE448E95454EDE /* Fontisto.ttf in Resources */,
+				787E6860A021491584703772 /* Foundation.ttf in Resources */,
+				01C9F8DC3E8B41659DE1E356 /* Ionicons.ttf in Resources */,
+				A9EE5CCB45BA44C1ABB8095D /* MaterialCommunityIcons.ttf in Resources */,
+				11C924ECF2014BA7AC62A3ED /* MaterialIcons.ttf in Resources */,
+				91C0B54A5D004318A9AFC19D /* Octicons.ttf in Resources */,
+				E4268EFD72C14F3D87454B72 /* SimpleLineIcons.ttf in Resources */,
+				81216F1549AB444DACF148B4 /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* manttoProjectTests.m in Sources */,
+				00E356F31AD99517003FC87E /* ManttoProjectTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,7 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* manttoProjectTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* ManttoProjectTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,12 +497,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* manttoProject */;
+			target = 13B07F861A680F5B00A75B9A /* ManttoProject */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* manttoProject-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* ManttoProject-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -516,7 +516,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = manttoProjectTests/Info.plist;
+				INFOPLIST_FILE = ManttoProjectTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -526,7 +526,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/manttoProject.app/manttoProject";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ManttoProject.app/ManttoProject";
 			};
 			name = Debug;
 		};
@@ -535,7 +535,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = manttoProjectTests/Info.plist;
+				INFOPLIST_FILE = ManttoProjectTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -545,7 +545,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/manttoProject.app/manttoProject";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ManttoProject.app/ManttoProject";
 			};
 			name = Release;
 		};
@@ -556,7 +556,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = manttoProject/Info.plist;
+				INFOPLIST_FILE = ManttoProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -564,7 +564,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = manttoProject;
+				PRODUCT_NAME = ManttoProject;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -577,7 +577,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = manttoProject/Info.plist;
+				INFOPLIST_FILE = ManttoProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -585,7 +585,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = manttoProject;
+				PRODUCT_NAME = ManttoProject;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -603,14 +603,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "manttoProject-tvOS/Info.plist";
+				INFOPLIST_FILE = "ManttoProject-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.manttoProject-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.ManttoProject-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -630,14 +630,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "manttoProject-tvOS/Info.plist";
+				INFOPLIST_FILE = "ManttoProject-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.manttoProject-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.ManttoProject-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -656,17 +656,17 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "manttoProject-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "ManttoProject-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.manttoProject-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.ManttoProject-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/manttoProject-tvOS.app/manttoProject-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ManttoProject-tvOS.app/ManttoProject-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
@@ -682,17 +682,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "manttoProject-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "ManttoProject-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.manttoProject-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.ManttoProject-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/manttoProject-tvOS.app/manttoProject-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ManttoProject-tvOS.app/ManttoProject-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -813,7 +813,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "manttoProjectTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ManttoProjectTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -822,7 +822,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "manttoProject" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ManttoProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -831,7 +831,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "manttoProject-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ManttoProject-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -840,7 +840,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "manttoProject-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ManttoProject-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -849,7 +849,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "manttoProject" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ManttoProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

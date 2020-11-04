@@ -1,5 +1,5 @@
 {
-  "name": "manttoProject",
+  "name": "ManttoProject",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -13,12 +13,16 @@
     "css-tree": "^1.0.0",
     "handlebars": "^4.7.6",
     "react": "16.13.1",
+    "react-hook-form": "^6.10.1",
     "react-native": "0.63.3",
     "react-native-elements": "^3.0.0-alpha.1",
+    "react-native-paper": "^4.3.0",
     "react-native-size-matters": "^0.3.1",
     "react-native-svg": "^12.1.0",
     "react-native-vector-icons": "^7.1.0",
     "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "source-map": "^0.7.3",
     "styled-components": "^5.2.1"
   },
@@ -28,6 +32,7 @@
     "@react-native-community/eslint-config": "^1.1.0",
     "babel-jest": "^25.1.0",
     "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-react": "^7.21.5",
     "jest": "^25.1.0",
     "metro": "^0.63.0",
