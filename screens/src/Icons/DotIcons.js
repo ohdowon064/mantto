@@ -7,34 +7,29 @@ import {
 
 import IconOcticons from 'react-native-vector-icons/Octicons';
 
-const DotIcons = () => {
-
+const DotIcons = ({ dotNumber }) => {
   return (
     <>
     <View style={styles.dotContainer}>
         <IconOcticons
             name="primitive-dot"
             size={30}
-            color="#edb08c"
-            style={styles.dot}
+            style={dotNumber >= 1 ? styles.activeDot : styles.dot}
         />
         <IconOcticons
             name="primitive-dot"
             size={30}
-            color="#edb08c"
-            style={styles.dot}
+            style={dotNumber >= 2 ? styles.activeDot : styles.dot}
         />
         <IconOcticons
             name="primitive-dot"
             size={30}
-            color="#edb08c"
-            style={styles.dot}
+            style={dotNumber >= 3 ? styles.activeDot : styles.dot}
         />
         <IconOcticons
             name="primitive-dot"
             size={30}
-            color="#edb08c"
-            style={styles.dot}
+            style={dotNumber >= 4 ? styles.activeDot : styles.dot}
         />
     </View>
     </>
@@ -46,10 +41,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 50,
+    marginBottom: 10,
+  },
+  activeDot : {
+    marginRight: 10,
+    color : '#EAA786'
   },
   dot: {
     marginRight: 10,
+    color : "#ffffff"
   },
 });
 

@@ -8,13 +8,17 @@ const initialState = {
         {id : 6,name : '#스포츠/레저'},
         {id : 7,name : '#번역/통역'},
         {id : 8,name : '#운세/상담'},
-        {id : 9,name : '#디자인'},
-        {id : 10,name : '#디자인'}
-    ]
+    ],
+    category : ''
 }
 
-export default function talentCategoriesReducer(state = initialState,action) {
-    return {
-        ...state,
+export default function talentCategoriesReducer(state = initialState, action) {
+    if( action.type === "selectCategories") {
+        const  { category } = action.payload;
+        return {
+            ...state,
+            category,
+        }
     }
+    return state;
 }

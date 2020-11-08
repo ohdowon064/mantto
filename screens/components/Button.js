@@ -9,13 +9,14 @@ import { Button } from 'react-native-elements';
 
 import IconAntDesign from 'react-native-vector-icons/AntDesign'; 
 
-const LeftArrowButton = () => {
+const LeftArrowButton = ({ navigation, navPage }) => {
   return (
     <View style={styles.buttonLeft}>
       <Button
         type="clear"
         icon={<IconAntDesign name="arrowleft" size={30} color="#000000" />}
         title=""
+        onPress={() => navigation.navigate(`${navPage}`)}
       />
     </View>
   );
@@ -41,15 +42,43 @@ const WriteHelpPointDownButton = () => {
   )
 }
 
+const RightArrowButton = ({navigation, navPage}) => {
+  return (
+    <View style={styles.buttonBottomRight}>
+      <Button
+      type="clear"
+      icon={<IconAntDesign name="right" size={20} color="#000000" />}
+      buttonStyle={styles.rightButtonStyle}
+      onPress={() => navigation.navigate(`${navPage}`)}
+      />
+    </View>
+  )
+}
+
 const styles = StyleSheet.create({
-    buttonLeft: {
-        flexDirection: 'row',
-        marginLeft: 10,
-      },
+  rightButtonStyle : {
+    borderRadius : 17.5,
+    width : 35,
+    height : 35,
+    backgroundColor : '#ffffff',
+  },
+
+  buttonLeft: {
+    flexDirection: 'row',
+    marginLeft: 10,
+  },
+
+  buttonBottomRight : {
+    flexDirection : 'row',
+    justifyContent : 'flex-end',
+    marginRight : 17,
+    paddingBottom : 50,
+  }
 });
 
 export { 
   LeftArrowButton, 
   SubmitButton, 
-  WriteHelpPointDownButton
+  WriteHelpPointDownButton,
+  RightArrowButton
 };

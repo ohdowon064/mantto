@@ -2,12 +2,9 @@ import React from 'react';
 
 import {
   StyleSheet,
-  TouchableHighlight,
-  View,
-  Text
 } from 'react-native';
 
-import { useDispatch, useSelector } from 'react-redux';
+import InsertTalentLayout from "./layouts/InsertTalentLayout";
 
 import { LeftArrowButton } from "./components/Button";
 
@@ -15,45 +12,31 @@ import TalentQuestionText from './components/TalentTexts';
 
 import MessageBubble from './src/MessageBubble';
 
-const PassionPage = () => {
-    const { categories } = useSelector(state => ({
-      categories : state.talentCategoriesReducer.categories,
-    }))
+import TalentSharpButtons from './components/TalentSharpButtons';
 
-    const dispatch = useDispatch();
+const InsertTalentPage = ({navigation}) => {
+  // TODO : 항목 하나는 선택된 상태 유지
+    const dotNumber = 3;
+    const comment = "재능";
 
-    const touchProps = {
-      style : {
-        flexDirection : 'row',
-      },
-      onPress: (e) => {
-        console.log(e.identifier)
-      },
-    }
+    const nextPage = 'PassionPage';
+    const prevPage = 'InsertMajorPage';
     return (
       <>
-        <LeftArrowButton/>
-        <TalentQuestionText innerTextStyle={styles.innerText}/>
-        <MessageBubble text="재능을 가르치고 싶은 항목을 고르세요" />
-        <View style={styles.categoriesContainer}>
-        {categories.map(({id,name}) => (
-          <TouchableHighlight {...touchProps}>
-            <Text key={id}>{name}</Text>
-          </TouchableHighlight>
-        ))}
-        </View>
+        <InsertTalentLayout navigation={navigation} navPage={nextPage} dotNumber={dotNumber}>
+          <LeftArrowButton navigation={navigation} navPage={prevPage}/>
+          <TalentQuestionText innerTextStyle={styles.innerText} comment={comment}/>
+          <MessageBubble text="재능을 가르치고 싶은 항목을 고르세요" />
+          <TalentSharpButtons/>
+        </InsertTalentLayout>
       </>
     );
 };
 
 const styles = StyleSheet.create({
   innerText: {
-    color: '#edb08c',
-  },
-  categoriesContainer : {
-    flexDirection : 'row',
-    width : '80%',
+    color: '#80BFD7',
   }
 });
 
-export default PassionPage;
+export default InsertTalentPage;

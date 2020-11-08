@@ -7,8 +7,6 @@ import {
 
 import { useForm } from 'react-hook-form';
 
-import { WriteHelpPointDownButton } from "./Button";
-
 import Input from './Input';
 
 const TalentInputContainer = ({placeholder}) => {
@@ -38,7 +36,6 @@ const TalentInputContainer = ({placeholder}) => {
                         placeholder={placeholder}
                     />
                 {/* TODO : input 값 "submit" 가능한 버튼 ( > ) 만들기 */}
-                <WriteHelpPointDownButton/>
                 </View>
             </View>
         </>
@@ -49,9 +46,9 @@ const styles = StyleSheet.create({
     textInputContainer: {
         flexDirection: 'row',
         width: '80%',
-        marginTop: 20,
+        marginTop: 98,
         borderBottomWidth: 1,
-        justifyContent: 'space-around',
+        justifyContent: 'flex-start',
         alignItems: 'center',
     },
     textInputCenter: {
@@ -59,8 +56,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     textInput: {
+        width : '100%',
         height: 40,
-        fontSize: 12,
+        fontSize: 17,
     },
 });
 
