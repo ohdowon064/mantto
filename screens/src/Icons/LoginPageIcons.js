@@ -15,9 +15,9 @@ const PersonIcon = () => {
   return (
     <>
       <IconIonicons
-          size={15}
-          name="person-outline"
-          style={styles.iconStyle}
+        size={15}
+        name="person-outline"
+        style={styles.iconStyle}
       />
     </>
     );

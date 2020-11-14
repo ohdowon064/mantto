@@ -45,8 +45,6 @@ const styles = StyleSheet.create({
       color:"#80BFD7",
       fontSize:40,
       margin:10,
-      
-
   },
   manttoText2:{
      marginTop:10,
@@ -56,8 +54,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems:'center',
     justifyContent:"center",
-    paddingTop : 100
-    
+    paddingTop : 100,
   },
   loginButton: {
     width: 277,

@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   titleView:{
     margin:20,
     marginLeft:26,
-    marginTop:99,
+    marginTop:50,
     marginRight:102,
     marginBottom:35
   },

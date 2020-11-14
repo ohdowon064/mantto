@@ -9,9 +9,6 @@ import InsertTalentLayout from "./layouts/InsertTalentLayout";
 import { LeftArrowButton } from "./components/Button";
 
 import TalentQuestionText from './components/TalentTexts';
-
-import TalentInputContainer from './components/TalentInputContainer';
-
 import MessageBubble from './src/MessageBubble';
 import TalentSharpButtons from './components/TalentSharpButtons';
 
@@ -19,7 +16,7 @@ const PassionPage = ({navigation}) => {
     const dotNumber = 4;
     const comment = '열정'
 
-    const nextPage = 'LoadingPage';
+    const nextPage = 'MainPage';
     const prevPage = 'InsertTalentPage';
     return (
       <>

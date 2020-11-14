@@ -5,6 +5,7 @@ import {
   StyleSheet,
   ScrollView,
   StatusBar,
+  View,
 } from 'react-native';
 
 import { RightArrowButton } from "../components/Button";
@@ -17,7 +18,11 @@ const InsertTalentLayout = ({children, dotNumber, navigation, navPage}) => {
         <StatusBar barStyle="dark-content" />
         <SafeAreaView style={styles.body}>
             <ScrollView>
+              <View style={styles.container}>
+              </View>
               {children}
+              <View style={styles.bottomContainer}>
+              </View>
             </ScrollView>
             <DotIcons dotNumber={dotNumber}/>
             <RightArrowButton navigation={navigation} navPage={navPage}/>
@@ -29,9 +34,14 @@ const InsertTalentLayout = ({children, dotNumber, navigation, navPage}) => {
 const styles = StyleSheet.create({
   body: {
     flex: 1,
-    paddingTop : 90,
-    backgroundColor: '#F1EAE2',
+    backgroundColor: '#F4EEE8',
   },
+  container : {
+    height : 80,
+  },
+  bottomContainer: {
+    height : 40,
+  }
 });
 
 export default InsertTalentLayout;

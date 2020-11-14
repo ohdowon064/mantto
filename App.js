@@ -21,6 +21,7 @@ import LoginSignUpStartPage from "./screens/LoginSignUpStartPage";
 import SignUpFirstPage from "./screens/SignUpFirstPage";
 
 import LoginPage from './screens/LoginPage';
+import MainPage from './screens/MainPage';
 
 const Stack = createStackNavigator();
 
@@ -29,7 +30,9 @@ const App = () => {
       <>
       <Provider store={store}>
           <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator screenOptions={{
+              headerShown : false
+            }}>
                 <Stack.Screen 
                   name="LoginSignUpStartPage"
                   component={LoginSignUpStartPage}  
@@ -53,6 +56,10 @@ const App = () => {
                 <Stack.Screen
                   name="InsertTalentPage"
                   component={InsertTalentPage}
+                />
+                <Stack.Screen
+                  name="MainPage"
+                  component={MainPage}
                 />
             </Stack.Navigator>
           </NavigationContainer>

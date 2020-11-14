@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   buttonBottomRight : {
     flexDirection : 'row',
     justifyContent : 'flex-end',
-    marginRight : 17,
+    marginRight : 25,
     paddingBottom : 50,
   }
 });
