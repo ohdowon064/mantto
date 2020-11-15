@@ -2,13 +2,15 @@ import React from "react";
 
 import styled from "styled-components/native";
 
-import { TouchableHighlight, View, Text, StyleSheet, TextInput ,Image} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 import { Button } from 'react-native-elements';
 
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 
 import MainPageLayout from "./layouts/MainPageLayout";
+
+import CategoryItem from './components/CategoryItem';
 
 const SearchContainer = styled.View`
     flex : 1;
@@ -27,24 +29,10 @@ const CategoryTitle = styled.Text`
 // 62 + 48 62 + 48
 
 const CategoryContainer = styled.View`
-    flex-direction : row;
     justify-content : space-between;
     flex-wrap : wrap;
-    background : yellow;
     margin-left : 32px;
     margin-right : 33px;
-    height : 220px;
-`;
-
-const CategoryItemContainer = styled.View`
-    background-color : red;
-    width : 62px;
-`;
-
-const CategoryButton = styled.TouchableOpacity`
-    background-color : #FFF;
-    width : 62px;
-    height : 62px;
 `;
 
 const ScrollContainer = styled.View`
@@ -85,62 +73,18 @@ const MainPage = () => {
                 </SearchContainer>
                 <CategoryTitle>카테고리</CategoryTitle>
                 <CategoryContainer>
-                    <CategoryItemContainer>
-                        <CategoryButton>
-                            <Image source={require("./src/images/design.svg")}></Image>
-                        </CategoryButton>
-                        <Text>디자인</Text>
-                        <Text>1126명</Text>
-                    </CategoryItemContainer>
-                    <CategoryItemContainer>
-                        <CategoryButton>
-                            <Image></Image>
-                        </CategoryButton>
-                        <Text>디자인</Text>
-                        <Text>1126명</Text>
-                    </CategoryItemContainer>
-                    <CategoryItemContainer>
-                        <CategoryButton>
-                            <Image></Image>
-                        </CategoryButton>
-                        <Text>디자인</Text>
-                        <Text>1126명</Text>
-                    </CategoryItemContainer>
-                    <CategoryItemContainer>
-                        <CategoryButton>
-                            <Image></Image>
-                        </CategoryButton>
-                        <Text>디자인</Text>
-                        <Text>1126명</Text>
-                    </CategoryItemContainer>
-                    <CategoryItemContainer>
-                        <CategoryButton>
-                            <Image></Image>
-                        </CategoryButton>
-                        <Text>디자인</Text>
-                        <Text>1126명</Text>
-                    </CategoryItemContainer>
-                    <CategoryItemContainer>
-                        <CategoryButton>
-                            <Image></Image>
-                        </CategoryButton>
-                        <Text>디자인</Text>
-                        <Text>1126명</Text>
-                    </CategoryItemContainer>
-                    <CategoryItemContainer>
-                        <CategoryButton>
-                            <Image></Image>
-                        </CategoryButton>
-                        <Text>디자인</Text>
-                        <Text>1126명</Text>
-                    </CategoryItemContainer>
-                    <CategoryItemContainer>
-                        <CategoryButton>
-                            <Image></Image>
-                        </CategoryButton>
-                        <Text>디자인</Text>
-                        <Text>1126명</Text>
-                    </CategoryItemContainer>
+                    <View style={styles.categoryLine}>
+                        <CategoryItem imageName={require('./src/images/design.png')} itemTitle={'디자인'}/>
+                        <CategoryItem imageName={require('./src/images/programming.png')} itemTitle={'IT/프로그래밍'}/>
+                        <CategoryItem imageName={require('./src/images/picture.png')} itemTitle={'영상/사진/음향'}/>
+                        <CategoryItem imageName={require('./src/images/photo.png')} itemTitle={'번역/통역'}/>
+                    </View>
+                    <View style={styles.categoryLine}>
+                        <CategoryItem imageName={require('./src/images/market.png')} itemTitle={'마케팅'}/>
+                        <CategoryItem imageName={require('./src/images/sports.png')} itemTitle={'스포츠/레저'}/>
+                        <CategoryItem imageName={require('./src/images/job.png')} itemTitle={'취업'}/>
+                        <CategoryItem imageName={require('./src/images/talk.png')} itemTitle={'운세/상담'}/>
+                    </View>
                 </CategoryContainer>
                     <ScrollContainer>
                         <Text>스크롤 영역</Text>
@@ -158,6 +102,11 @@ const styles = StyleSheet.create({
         height : 40,
         backgroundColor : '#EAA786',
         borderRadius : 5,
+    },
+    categoryLine: {
+        flexDirection : 'row',
+        width : '100%',
+        justifyContent : 'space-between',
     }
   });
 
