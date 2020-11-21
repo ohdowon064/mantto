@@ -2,7 +2,13 @@ import React from "react";
 
 import styled from "styled-components/native";
 
-import { View, Text, StyleSheet } from 'react-native';
+import { 
+    TouchableOpacity, 
+    View, 
+    Text, 
+    StyleSheet,
+    Image
+} from 'react-native';
 
 import { Button } from 'react-native-elements';
 
@@ -26,8 +32,6 @@ const CategoryTitle = styled.Text`
     font-size : 21px;
 `;
 
-// 62 + 48 62 + 48
-
 const CategoryContainer = styled.View`
     justify-content : space-between;
     flex-wrap : wrap;
@@ -39,9 +43,14 @@ const ScrollContainer = styled.View`
     background : blue;
 `;
 
+// border-top 적용안됨 해결!
 const BottomMenuContainer = styled.View`
-    background : pink;
     flex : 0.1;
+    border-top-width : 1px;
+    background-color : #fff;
+    border-top-color : #000;
+    flex-direction : row;
+    justify-content : space-between;
 `;
 
 const SearchInputContainer = styled.View`
@@ -88,12 +97,34 @@ const MainPage = () => {
                 </CategoryContainer>    
             </MainPageLayout>
             <BottomMenuContainer>
+               <View>
+                 <TouchableOpacity style={styles.bottomTabDesign} onPress={()=>{ } }>
+                  <Image source={require("./src/images/home.png")}/>
+                 </TouchableOpacity>
+               </View>
+               <View>
+                 <TouchableOpacity style={styles.bottomTabDesign} onPress={()=>{ } }>
+                  <Image source={require("./src/images/chat.png")}/>
+                 </TouchableOpacity>
+               </View>
+               <View>
+                 <TouchableOpacity style={styles.bottomTabDesign} onPress={()=>{ } }>
+                  <Image source={require("./src/images/profile.png")}/>
+                 </TouchableOpacity>
+               </View>
             </BottomMenuContainer>
         </>
     )
 }
 
 const styles = StyleSheet.create({
+    bottomTabDesign:{
+        backgroundColor:'white',
+        flex:1,
+        justifyContent:'center',
+        alignItems:'center',
+        margin:20
+    },
     buttonStyle: {
         width : 50.8,
         height : 40,
