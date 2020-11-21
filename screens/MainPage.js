@@ -22,7 +22,7 @@ const SearchContainer = styled.View`
 const CategoryTitle = styled.Text`
     margin-top : 25px;
     margin-bottom : 27px;
-    margin-left : 32px;
+    margin-left : 39px;
     font-size : 21px;
 `;
 
@@ -31,8 +31,8 @@ const CategoryTitle = styled.Text`
 const CategoryContainer = styled.View`
     justify-content : space-between;
     flex-wrap : wrap;
-    margin-left : 32px;
-    margin-right : 33px;
+    margin-left : 25px;
+    margin-right : 25px;
 `;
 
 const ScrollContainer = styled.View`
@@ -85,10 +85,7 @@ const MainPage = () => {
                         <CategoryItem imageName={require('./src/images/job.png')} itemTitle={'취업'}/>
                         <CategoryItem imageName={require('./src/images/talk.png')} itemTitle={'운세/상담'}/>
                     </View>
-                </CategoryContainer>
-                    <ScrollContainer>
-                        <Text>스크롤 영역</Text>
-                    </ScrollContainer>
+                </CategoryContainer>    
             </MainPageLayout>
             <BottomMenuContainer>
             </BottomMenuContainer>

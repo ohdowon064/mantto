@@ -10,7 +10,8 @@ const CategoryItemContainer = styled.View`
 `;
 
 const CategoryButton = styled.TouchableOpacity`
-    border : 1px solid #979797;
+    border : 1px solid rgba(234,167,134,0.3);
+    border-radius : 10px;
 `;
 
 const CategoryItemText = styled.Text`
@@ -21,7 +22,7 @@ const CategoryItemText = styled.Text`
 
 const CategoryItemSemiText = styled.Text`
     color : #B8BBC6;
-    font-size : 12px;
+    font-size : 10px;
     padding-bottom : 12px;
 `;
 
@@ -41,8 +42,8 @@ const CategoryItem = ({ imageName, itemTitle }) => {
 
 const styles = StyleSheet.create({
     imageStyle : {
-        width : 75,
-        height : 75,
+        width : 73,
+        height : 73,
     }
 })
 
