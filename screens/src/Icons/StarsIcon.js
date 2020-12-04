@@ -6,17 +6,14 @@ import {
   View,
 } from 'react-native';
 
-const StarsIcon = () => {
-  return (
-    <View style={{ flexDirection : 'row', paddingTop : 5 }}>
-      <AntDesignIcon name='star' style={{ color : '#eaa786'}}/>
-      <AntDesignIcon name='star' style={{ color : '#eaa786'}}/>
-      <AntDesignIcon name='star' style={{ color : '#eaa786'}}/>
-      <AntDesignIcon name='star' style={{ color : '#eaa786'}}/>
-      <AntDesignIcon name='star' style={{ color : '#e9e9f0'}}/>
-    </View>
-  )
-}
+const StarsIcon = () => (
+  <View style={{ flexDirection: 'row', paddingTop: 5 }}>
+    <AntDesignIcon name="star" style={{ color: '#eaa786' }} />
+    <AntDesignIcon name="star" style={{ color: '#eaa786' }} />
+    <AntDesignIcon name="star" style={{ color: '#eaa786' }} />
+    <AntDesignIcon name="star" style={{ color: '#eaa786' }} />
+    <AntDesignIcon name="star" style={{ color: '#e9e9f0' }} />
+  </View>
+);
 
 export default StarsIcon;
-

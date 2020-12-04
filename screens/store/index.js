@@ -1,9 +1,9 @@
-import rootReducer from "../reducers/index.js";
+import { createStore, applyMiddleware } from 'redux';
 
-import { createStore, applyMiddleware } from "redux";
+import thunk from 'redux-thunk';
 
-import thunk from 'redux-thunk'
+import rootReducer from '../reducers/index';
 
-const store = createStore(rootReducer,applyMiddleware(thunk));
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;

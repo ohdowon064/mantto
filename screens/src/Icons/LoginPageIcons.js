@@ -10,44 +10,35 @@ import IconFeather from 'react-native-vector-icons/Feather';
 
 import IconFontisto from 'react-native-vector-icons/Fontisto';
 
+const PersonIcon = () => (
+  <>
+    <IconIonicons
+      size={15}
+      name="person-outline"
+      style={styles.iconStyle}
+    />
+  </>
+);
 
-const PersonIcon = () => {
-  return (
-    <>
-      <IconIonicons
-        size={15}
-        name="person-outline"
-        style={styles.iconStyle}
-      />
-    </>
-    );
-};
+const MailIcon = () => (
+  <>
+    <IconFeather
+      size={15}
+      name="mail"
+      style={styles.iconStyle}
+    />
+  </>
+);
 
-
-const MailIcon = () => {
-  return (
-      <>
-        <IconFeather
-          size={15}
-          name="mail"
-          style={styles.iconStyle}
-        />
-      </>
-  );
-};
-
-const LockIcon = () => {
-  return (
-    <>
-        <IconFontisto
-            size={15}
-            name="unlocked"
-            style={styles.iconStyle}
-        />
-    </>
-  );
-};    
-
+const LockIcon = () => (
+  <>
+    <IconFontisto
+      size={15}
+      name="unlocked"
+      style={styles.iconStyle}
+    />
+  </>
+);
 
 const styles = StyleSheet.create({
   container: {
@@ -55,9 +46,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  iconStyle : {
-    color : '#80BFD7',
-  }
+  iconStyle: {
+    color: '#80BFD7',
+  },
 });
 
-export { PersonIcon, LockIcon, MailIcon} ;
+export { PersonIcon, LockIcon, MailIcon };

@@ -1,9 +1,12 @@
 import { combineReducers } from 'redux';
 
-import talentCategoriesReducer from "./talentCategoriesReducer";
+import talentCategoriesReducer from './talentCategoriesReducer';
+
+import LoginReducer from './LoginReducer';
 
 const rootReducer = combineReducers({
-    talentCategoriesReducer : talentCategoriesReducer,
-})
+  talentCategoriesReducer,
+  LoginReducer,
+});
 
 export default rootReducer;

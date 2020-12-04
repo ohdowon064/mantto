@@ -1,8 +1,6 @@
-import React from "react";
+import React from 'react';
 
 import styled from 'styled-components/native';
-
-import { Image, StyleSheet } from 'react-native';
 
 const CategoryItemContainer = styled.View`
     align-items : center;
@@ -17,7 +15,7 @@ const CategoryButton = styled.TouchableOpacity`
 const CategoryItemText = styled.Text`
     font-weight : 700;
     padding-top : 9px;
-    font-size : 13px;
+    font-size : 11px;
 `;
 
 const CategoryItemSemiText = styled.Text`
@@ -26,25 +24,16 @@ const CategoryItemSemiText = styled.Text`
     padding-bottom : 12px;
 `;
 
-const CategoryItem = ({ imageName, itemTitle }) => {
-    return (
-        <>
-            <CategoryItemContainer>
-                <CategoryButton>
-                    <Image source={imageName} style={styles.imageStyle}/>
-                </CategoryButton>
-                <CategoryItemText>{itemTitle}</CategoryItemText>
-                <CategoryItemSemiText>1126명의 만또</CategoryItemSemiText>
-            </CategoryItemContainer>
-        </>
-    )
-}
-
-const styles = StyleSheet.create({
-    imageStyle : {
-        width : 73,
-        height : 73,
-    }
-})
+const CategoryItem = ({ Svg, itemTitle }) => (
+  <>
+    <CategoryItemContainer>
+      <CategoryButton>
+        {Svg ? <Svg width={62} height={62} /> : null}
+      </CategoryButton>
+      <CategoryItemText>{itemTitle}</CategoryItemText>
+      <CategoryItemSemiText>1126명의 만또</CategoryItemSemiText>
+    </CategoryItemContainer>
+  </>
+);
 
 export default CategoryItem;

@@ -3,125 +3,140 @@ import React from 'react';
 import {
   StyleSheet,
   View,
+  Button,
 } from 'react-native';
 
 import { useForm } from 'react-hook-form';
 
-import { Button } from "react-native-elements";
+import { useDispatch, useSelector } from 'react-redux';
+
+import { SubmitButton } from './Button';
 
 import Input from './Input';
 
-import { PersonIcon, MailIcon, LockIcon } from "../src/Icons/LoginPageIcons";
+import { changeLoginField, requestLogin } from '../actions/index';
 
-const LoginInputContainer = ({placeholder, name}) => {
-    const { handleSubmit, control, reset, errors } = useForm();
+import { PersonIcon, MailIcon, LockIcon } from '../src/Icons/LoginPageIcons';
 
-    const nameInputRef = React.useRef();
-    const mailInputRef = React.useRef();
-    const passwordInputRef = React.useRef();
+const LoginInputContainer = () => {
+  const {
+    handleSubmit, control, reset, errors,
+  } = useForm();
 
-    const onSubmit = data => {
-      console.log(data);
-        reset({
-            "nickname" : '',
-            "email" : '',
-            "password" : ''
-        });
-    };
+  const dispatch = useDispatch();
+  // navigation.navigate('LoginPage')
+  const { loginFields, accessToken } = useSelector((state) => ({
+    loginFields: state.LoginReducer.loginFields,
+    accessToken: state.LoginReducer.accessToken,
+  }));
+  console.log(accessToken, loginFields);
 
-    console.log(errors);
-    return (
-        <>
-            <View style={styles.textInputCenter}>
-                <View style={styles.textInputContainer}>
-                    <PersonIcon/>
-                    <Input
-                        type='text'
-                        name="nickname" 
-                        reference={nameInputRef} 
-                        control={control}
-                        inputStyle={styles.textInput}
-                        placeholder="이름"
-                    />
-                </View>
+  const nameInputRef = React.useRef();
+  const mailInputRef = React.useRef();
+  const passwordInputRef = React.useRef();
+
+  function handleLogin() {
+    dispatch(requestLogin());
+  }
+
+  const onSubmit = (data) => {
+    dispatch(changeLoginField({ data }));
+    reset({
+      nickname: '',
+      account: '',
+      password: '',
+    });
+  };
+
+  console.log(errors);
+  return (
+    <>
+      <View style={{
+        flex: 1,
+      }}
+      >
+        <View style={{
+          height: 450,
+        }}
+        >
+          <View style={styles.textInputCenter}>
+            <View style={styles.textInputContainer}>
+              <PersonIcon />
+              <Input
+                name="account"
+                reference={mailInputRef}
+                control={control}
+                inputStyle={styles.textInput}
+                placeholder="아이디"
+              />
             </View>
-            <View style={styles.textInputCenter}>
-                <View style={styles.textInputContainer}>
-                    <MailIcon/>
-                    <Input
-                        type='email'
-                        name="email"
-                        reference={mailInputRef} 
-                        control={control}
-                        inputStyle={styles.textInput}
-                        placeholder="이메일"
-                    />
-                </View>
+          </View>
+          <View style={styles.textInputCenter}>
+            <View style={styles.textInputContainer}>
+              <LockIcon />
+              <Input
+                secureTextEntry
+                name="password"
+                reference={passwordInputRef}
+                control={control}
+                inputStyle={styles.textInput}
+                placeholder="비밀번호"
+              />
             </View>
-            <View style={styles.textInputCenter}>
-                <View style={styles.textInputContainer}>
-                    <LockIcon/>
-                    <Input
-                        type='password'
-                        name="password"
-                        reference={passwordInputRef} 
-                        control={control}
-                        inputStyle={styles.textInput}
-                        placeholder="비밀번호"
-                    />
-                </View>
-            </View>
-            <View style={styles.buttonContainer}>
-              <Button 
-                type="clear" 
-                title="확인"
-                titleStyle={styles.buttonTitleStyle} 
-                buttonStyle={ styles.loginButton }
-                onPress={()=>navigation.navigate('LoginPage')}
-              >
-              </Button>
-            </View>
-        </>
-    );
+          </View>
+          <View style={styles.buttonContainer}>
+            <SubmitButton
+              title="확인"
+              titleStyle={styles.buttonTitleStyle}
+              buttonStyle={styles.loginButton}
+              handleSubmit={handleSubmit}
+              onSubmit={onSubmit}
+              onLogin={handleLogin}
+            />
+          </View>
+        </View>
+      </View>
+    </>
+  );
 };
 
 const styles = StyleSheet.create({
-    textInputContainer: {
-        flexDirection: 'row',
-        width: '80%',
-        marginTop: 60,
-        borderBottomWidth: 1,
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-    },
-    textInputCenter: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-    },
-    textInput: {
-        width : '100%',
-        height: 40,
-        fontSize: 17,
-    },
-    buttonContainer : {
-        flex : 1,
-        justifyContent : 'center',
-        alignItems : 'center',
-      },
-    loginButton: {
-        width: 277,
-        height: 51,
-        borderWidth:1,
-        borderRadius: 25,
-        borderColor:"#80BFD7",
-        backgroundColor: "#80BFD7",
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    buttonTitleStyle : {
-        fontSize : 20,
-        color : '#ffffff',
-    }
+  textInputContainer: {
+    flexDirection: 'row',
+    width: '80%',
+    marginTop: 60,
+    borderBottomWidth: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  textInputCenter: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  textInput: {
+    width: '100%',
+    height: 40,
+    fontSize: 17,
+  },
+  buttonContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  loginButton: {
+    width: 277,
+    height: 51,
+    borderWidth: 1,
+    borderRadius: 25,
+    borderColor: '#80BFD7',
+    backgroundColor: '#80BFD7',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonTitleStyle: {
+    fontSize: 20,
+    color: '#ffffff',
+  },
 });
 
 export default LoginInputContainer;
