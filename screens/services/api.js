@@ -8,10 +8,18 @@ export async function postLogin({ account, password }) {
     body: JSON.stringify({ account, password }),
   });
 
-  console.log(response.json());
-
   const { _W: { token: accessToken } } = await response.json();
   return accessToken;
 }
-// TODO : DELETE LATER
-export function XXX() {}
+
+export async function fetchChatList() {
+  const url = 'https://10.0.2.2:8000/chat';
+
+  const response = await fetch(url);
+
+  const data = response.json();
+
+  console.log(data);
+
+  return data;
+}

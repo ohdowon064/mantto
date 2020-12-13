@@ -1,5 +1,6 @@
 import {
   postLogin,
+  fetchChatList,
 } from '../services/api';
 
 export function selectCategories(category) {
@@ -13,6 +14,21 @@ export function setAccessToken(accessToken) {
   return {
     type: 'setAccessToken',
     payload: { accessToken },
+  };
+}
+
+export function setChatList(chatList) {
+  return {
+    type: 'setChatList',
+    payload: { chatList },
+  };
+}
+
+export function loadChatList() {
+  return async (dispatch) => {
+    const chatList = await fetchChatList();
+    console.log(chatList);
+    dispatch(setChatList(chatList));
   };
 }
 
