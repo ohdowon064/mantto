@@ -14,6 +14,16 @@ import TalentSharpButtons from './components/TalentSharpButtons';
 
 import MessageBubbleContainer from './src/MessageBubbleContainer';
 
+const styles = StyleSheet.create({
+  innerText: {
+    color: '#edb08c',
+  },
+  container: {
+    paddingTop: 20,
+    paddingBottom: 20,
+  },
+});
+
 const PassionPage = ({ navigation }) => {
   const dotNumber = 4;
   const comment = '열정';
@@ -37,15 +47,5 @@ const PassionPage = ({ navigation }) => {
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  innerText: {
-    color: '#edb08c',
-  },
-  container: {
-    paddingTop: 20,
-    paddingBottom: 20,
-  },
-});
 
 export default PassionPage;

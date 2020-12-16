@@ -1,13 +1,13 @@
 const initialState = {
-  chatList: [],
+  chats: [],
 };
 
 export default function MyPageReducer(state = initialState, action) {
   if (action.type === 'setChatList') {
-    const { chatList } = action.payload;
+    const { chats } = action.payload;
     return {
       ...state,
-      chatList,
+      chats,
     };
   }
 

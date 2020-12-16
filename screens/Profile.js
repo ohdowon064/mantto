@@ -1,13 +1,13 @@
 import React from 'react';
 
 import {
-  StyleSheet, View, Text, Image, TouchableOpacity,
+  StyleSheet, View, Text, Image, TouchableOpacity, Platform,
 } from 'react-native';
 
 import { Button } from 'react-native-elements';
 
 import StarsIcon from './src/Icons/StarsIcon';
-// {navigation}
+
 const Profile = ({ navigation }) => {
   function handleRegisterClick() {
     navigation.navigate('TalentRegisterPage');
@@ -56,7 +56,9 @@ const Profile = ({ navigation }) => {
           <TouchableOpacity
             onPress={() => handleRegisterClick()}
           >
-            <Image source={require('./src/images/list.png')} />
+            <Image
+              source={require('./src/images/list.png')}
+            />
           </TouchableOpacity>
           <Text style={{ fontSize: 13, textAlign: 'center', color: '#080040' }}>재능 등록</Text>
         </View>

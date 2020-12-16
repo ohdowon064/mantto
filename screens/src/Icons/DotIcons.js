@@ -7,6 +7,23 @@ import {
 
 import IconOcticons from 'react-native-vector-icons/Octicons';
 
+const styles = StyleSheet.create({
+  dotContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  activeDot: {
+    marginRight: 10,
+    color: '#EAA786',
+  },
+  dot: {
+    marginRight: 10,
+    color: '#ffffff',
+  },
+});
+
 const DotIcons = ({ dotNumber }) => (
   <>
     <View style={styles.dotContainer}>
@@ -33,22 +50,5 @@ const DotIcons = ({ dotNumber }) => (
     </View>
   </>
 );
-
-const styles = StyleSheet.create({
-  dotContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  activeDot: {
-    marginRight: 10,
-    color: '#EAA786',
-  },
-  dot: {
-    marginRight: 10,
-    color: '#ffffff',
-  },
-});
 
 export default DotIcons;
