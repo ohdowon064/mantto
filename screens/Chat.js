@@ -10,8 +10,6 @@ import {
   loadChatList,
 } from './actions/index';
 
-// import chat from '../data.json';
-
 const Chat = ({ navigation }) => {
   const dispatch = useDispatch();
 

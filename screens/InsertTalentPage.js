@@ -11,7 +11,7 @@ import { LeftArrowButton } from './components/Button';
 
 import TalentQuestionText from './components/TalentTexts';
 
-import MessageBubble from './src/MessageBubble';
+import MessageBubbleContainer from './src/MessageBubbleContainer';
 
 import TalentSharpButtons from './components/TalentSharpButtons';
 
@@ -28,7 +28,7 @@ const InsertTalentPage = ({ navigation }) => {
         <LeftArrowButton navigation={navigation} navPage={prevPage} />
         <TalentQuestionText innerTextStyle={styles.innerText} comment={comment} />
         <View style={styles.container}>
-          <MessageBubble text="재능을 가르치고 싶은 항목을 고르세요" />
+          <MessageBubbleContainer color="#73ccef" text="재능을 가르치고 싶은 항목을 고르세요" />
         </View>
         <TalentSharpButtons />
       </InsertTalentLayout>

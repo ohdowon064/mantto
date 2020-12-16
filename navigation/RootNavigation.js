@@ -26,11 +26,11 @@ import Profile from '../screens/Profile';
 
 import Chat from '../screens/Chat';
 
-import HomeSvg from '../screens/src/svg/home.svg';
+import HomeIcon from '../screens/src/Icons/HomeIcon';
 
-import ProfileSvg from '../screens/src/svg/profile.svg';
+import ChatIcon from '../screens/src/Icons/ChatIcon';
 
-import ChatSvg from '../screens/src/svg/chat.svg';
+import ProfileIcon from '../screens/src/Icons/ProfileIcon';
 
 const Stack = createStackNavigator();
 
@@ -40,31 +40,25 @@ function TabNavigation() {
   return (
     <Tabs.Navigator
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
+        tabBarIcon: ({ color }) => {
           if (route.name === 'Home') {
             return (
-              <HomeSvg
+              <HomeIcon
                 color={color}
-                width={35}
-                height={35}
               />
             );
           }
           if (route.name === 'Profile') {
             return (
-              <ProfileSvg
+              <ProfileIcon
                 color={color}
-                width={35}
-                height={35}
               />
             );
           }
           if (route.name === 'Chat') {
             return (
-              <ChatSvg
+              <ChatIcon
                 color={color}
-                width={35}
-                height={35}
               />
             );
           }
@@ -73,8 +67,8 @@ function TabNavigation() {
       })}
       tabBarOptions={{
         showLabel: false,
-        activeTintColor: 'red',
-        inactiveTintColor: 'gray',
+        activeTintColor: '#000000',
+        inactiveTintColor: '#b4b4b4',
       }}
     >
       <Tabs.Screen name="Home" component={MainPage} />

@@ -13,7 +13,7 @@ export async function postLogin({ account, password }) {
 }
 
 export async function fetchChatList() {
-  const url = 'https://10.0.2.2:8000/chat';
+  const url = 'https://mantto-app-5d71f-default-rtdb.firebaseio.com/chat.json';
 
   const response = await fetch(url);
 
