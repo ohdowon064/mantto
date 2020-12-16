@@ -5,29 +5,40 @@ import {
   StyleSheet,
   ScrollView,
   StatusBar,
+  View,
 } from 'react-native';
 
-import DotIcons from "../src/DotIcons";
+import { RightArrowButton } from '../components/Button';
 
-const InsertTalentLayout = ({children}) => {
-    return (
-        <>
-        <StatusBar barStyle="dark-content" />
-        <SafeAreaView style={styles.body}>
-            <ScrollView>
-              {children}
-            </ScrollView>
-            <DotIcons/>
-        </SafeAreaView>
-        </>
-    );
-};
+import DotIcons from '../src/Icons/DotIcons';
+
+const InsertTalentLayout = ({
+  children, dotNumber, navigation, navPage,
+}) => (
+  <>
+    <StatusBar barStyle="dark-content" />
+    <SafeAreaView style={styles.body}>
+      <ScrollView>
+        <View style={styles.container} />
+        {children}
+        <View style={styles.bottomContainer} />
+      </ScrollView>
+      <DotIcons dotNumber={dotNumber} />
+      <RightArrowButton navigation={navigation} navPage={navPage} />
+    </SafeAreaView>
+  </>
+);
 
 const styles = StyleSheet.create({
   body: {
-    paddingTop : 90,
     flex: 1,
-    backgroundColor: '#ece8e5',
+    backgroundColor: '#F4EEE8',
+  },
+  container: {
+    height: 80,
+  },
+  bottomContainer: {
+    height: 40,
   },
 });
 

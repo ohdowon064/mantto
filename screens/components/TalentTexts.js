@@ -6,17 +6,20 @@ import {
   Text,
 } from 'react-native';
 
-const TalentQuestionText = ({innerTextStyle}) => {
-    return (
-        <>
-            <View>
-                <Text style={styles.baseText}>
-                    당신<Text style={innerTextStyle}> 열정</Text>은 무엇인가요?
-                </Text>
-            </View>
-        </>
-    );
-};
+const TalentQuestionText = ({ innerTextStyle, comment }) => (
+  <>
+    <View>
+      <Text style={styles.baseText}>
+        당신의
+        <Text style={innerTextStyle}>
+          {' '}
+          {comment}
+        </Text>
+        은 무엇인가요?
+      </Text>
+    </View>
+  </>
+);
 
 const styles = StyleSheet.create({
   baseText: {

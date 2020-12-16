@@ -2,32 +2,50 @@ import React from 'react';
 
 import {
   StyleSheet,
+  View,
 } from 'react-native';
 
-import { LeftArrowButton } from "./components/Button";
+import InsertTalentLayout from './layouts/InsertTalentLayout';
+
+import { LeftArrowButton } from './components/Button';
 
 import TalentQuestionText from './components/TalentTexts';
-import TalentInputContainer from './components/TalentInputContainer';
+import TalentSharpButtons from './components/TalentSharpButtons';
 
-import MessageBubble from './src/MessageBubble';
+import MessageBubbleContainer from './src/MessageBubbleContainer';
 
-const PassionPage = () => {
-    return (
-      <>
-        <LeftArrowButton/>
-        <TalentQuestionText innerTextStyle={styles.innerText}/>
-        <MessageBubble text="작성하기 어렵다면 ?" />
-        <TalentInputContainer 
-          placeholder={"만또에게 배우고 싶은 열정을 자유롭게 작성해주세요"}
-        />
-      </>
-    );
+const PassionPage = ({ navigation }) => {
+  const dotNumber = 4;
+  const comment = '열정';
+
+  const nextPage = 'MainPage';
+  const prevPage = 'InsertTalentPage';
+  return (
+    <>
+      <InsertTalentLayout
+        navigation={navigation}
+        navPage={nextPage}
+        dotNumber={dotNumber}
+      >
+        <LeftArrowButton navigation={navigation} navPage={prevPage} />
+        <TalentQuestionText innerTextStyle={styles.innerText} comment={comment} />
+        <View style={styles.container}>
+          <MessageBubbleContainer color="#ffb18b" text="재능을 배우고 싶은 항목을 고르세요" right={35} />
+        </View>
+        <TalentSharpButtons />
+      </InsertTalentLayout>
+    </>
+  );
 };
 
 const styles = StyleSheet.create({
   innerText: {
     color: '#edb08c',
-  }
+  },
+  container: {
+    paddingTop: 20,
+    paddingBottom: 20,
+  },
 });
 
 export default PassionPage;

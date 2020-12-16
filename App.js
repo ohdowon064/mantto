@@ -1,23 +1,24 @@
+import 'react-native-gesture-handler';
+
 import React from 'react';
 
 import { Provider } from 'react-redux';
 
-import InsertTalentPage from "./screens/InsertTalentPage";
+import store from './screens/store/index';
 
-import InsertTalentLayout from './screens/layouts/InsertTalentLayout';
+import Navigation from './navigation/RootNavigation';
 
-import store from "./screens/store/index";
+// import TalentRegisterContainer from './screens/TalentRegisterContainer';
 
-const App = () => {
-    return (
-      <>
-      <Provider store={store}>
-        <InsertTalentLayout>
-          <InsertTalentPage/>
-        </InsertTalentLayout>
-      </Provider>
-      </>
-    );
-};
+const App = () => (
+  <>
+    <Provider store={store}>
+      <Navigation />
+      {/* <LoginPage />
+        {/* <Profile/> */}
+      {/* <TalentRegisterContainer /> */}
+    </Provider>
+  </>
+);
 
 export default App;

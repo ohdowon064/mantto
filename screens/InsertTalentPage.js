@@ -2,77 +2,48 @@ import React from 'react';
 
 import {
   StyleSheet,
-  TouchableHighlight,
   View,
-  Text
 } from 'react-native';
 
-import { useDispatch, useSelector } from 'react-redux';
+import InsertTalentLayout from './layouts/InsertTalentLayout';
 
-import { LeftArrowButton } from "./components/Button";
+import { LeftArrowButton } from './components/Button';
 
 import TalentQuestionText from './components/TalentTexts';
 
-import MessageBubble from './src/MessageBubble';
+import MessageBubbleContainer from './src/MessageBubbleContainer';
 
-const PassionPage = () => {
-    const { categories } = useSelector(state => ({
-      categories : state.talentCategoriesReducer.categories,
-    }))
+import TalentSharpButtons from './components/TalentSharpButtons';
 
-    const dispatch = useDispatch();
+const InsertTalentPage = ({ navigation }) => {
+  // TODO : 항목 하나는 선택된 상태 유지
+  const dotNumber = 3;
+  const comment = '재능';
 
-    const touchProps = {
-      style : {
-        flexDirection : 'row',
-      },
-      onPress: (e) => {
-        console.log(e.identifier)
-      },
-    }
-    return (
-      <>
-        <LeftArrowButton/>
-        <TalentQuestionText innerTextStyle={styles.innerText}/>
-        <MessageBubble text="재능을 가르치고 싶은 항목을 고르세요" />
-        {categories.map(({id,name}) => (
-          <TouchableHighlight {...touchProps}>
-            <Text key={id}>{name}</Text>
-          </TouchableHighlight>
-        ))}
-      </>
-    );
+  const nextPage = 'PassionPage';
+  const prevPage = 'InsertMajorPage';
+  return (
+    <>
+      <InsertTalentLayout navigation={navigation} navPage={nextPage} dotNumber={dotNumber}>
+        <LeftArrowButton navigation={navigation} navPage={prevPage} />
+        <TalentQuestionText innerTextStyle={styles.innerText} comment={comment} />
+        <View style={styles.container}>
+          <MessageBubbleContainer color="#73ccef" text="재능을 가르치고 싶은 항목을 고르세요" />
+        </View>
+        <TalentSharpButtons />
+      </InsertTalentLayout>
+    </>
+  );
 };
 
 const styles = StyleSheet.create({
   innerText: {
-    color: '#edb08c',
+    color: '#80BFD7',
   },
-  sharpButtonsContainer : {
-    flexDirection : 'column',
-    alignItems : 'center',
+  container: {
+    paddingTop: 20,
+    paddingBottom: 20,
   },
-  sharpButtons : {
-    width : '80%',
-    flexDirection : 'row',
-    justifyContent : 'center',
-  },
-  sharpButton : {
-    borderRadius : 10,
-  },
-  buttonTitleStyle : {
-    color : '#000000',
-  },
-  buttonNormal : {
-    borderColor : 'blue',
-    borderWidth: 1,
-    borderRadius: 10,
-  },
-  buttonPress : {
-    borderColor: 'blue',
-    borderWidth: 1,
-    height: 30,
-  }
 });
 
-export default PassionPage;
+export default InsertTalentPage;
