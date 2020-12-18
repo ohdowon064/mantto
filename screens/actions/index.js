@@ -10,6 +10,13 @@ export function selectCategories(category) {
   };
 }
 
+export function setType(type) {
+  return {
+    type: 'setType',
+    payload: { type },
+  };
+}
+
 export function setAccessToken(accessToken) {
   return {
     type: 'setAccessToken',

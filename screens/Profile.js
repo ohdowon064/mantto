@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-  StyleSheet, View, Text, Image, TouchableOpacity, Platform,
+  StyleSheet, View, Text, Image, TouchableOpacity,
 } from 'react-native';
 
 import { Button } from 'react-native-elements';

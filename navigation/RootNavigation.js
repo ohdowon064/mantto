@@ -32,6 +32,8 @@ import ChatIcon from '../screens/src/Icons/ChatIcon';
 
 import ProfileIcon from '../screens/src/Icons/ProfileIcon';
 
+import DetailPage from '../screens/DetailPage';
+
 const Stack = createStackNavigator();
 
 const Tabs = createBottomTabNavigator();
@@ -116,6 +118,11 @@ const Navigation = () => (
         <Stack.Screen
           name="TalentRegisterPage"
           component={TalentRegisterContainer}
+        />
+        {/* COMPONENTS */}
+        <Stack.Screen
+          name="DetailPage"
+          component={DetailPage}
         />
         <Stack.Screen
           name="MainPage"

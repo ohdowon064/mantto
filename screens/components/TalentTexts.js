@@ -23,9 +23,10 @@ const TalentQuestionText = ({ innerTextStyle, comment }) => (
 
 const styles = StyleSheet.create({
   baseText: {
-    marginTop: 10,
-    marginLeft: 40,
-    fontSize: 20,
+    marginTop: 20,
+    marginLeft: 20,
+    fontSize: 23,
+    fontFamily: 'AppleSdGothicNeoUltralight',
   },
 });
 

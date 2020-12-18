@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styled from 'styled-components/native';
 
@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import { Button, Badge } from 'react-native-elements';
+import { Badge } from 'react-native-elements';
 
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 
@@ -34,35 +34,40 @@ import talkSvg from './src/svg/talk.svg';
 
 import AlarmSvg from './src/svg/alarm.svg';
 
+import ManttoButtonContainer from './components/ManttoButtonContainer';
+
 const SearchContainer = styled.View`
     flex : 1;
     flex-direction : row;
+    justify-content : space-between;
     padding-top : 50px;
     padding-left : 16px;
+    padding-right : 10px;
 `;
 
 const SearchInputContainer = styled.View`
     flex-direction : row;
     align-items : center;
-    background-color : #FFF;
-    width : 235px;
-    height : 40px;
+    background-color : rgba(118,118,118,0.1);
+    width : 280px;
     margin-left : 6.89px;
     padding-left : 12px;
+    border-radius : 10px;
 `;
 
 const SearchTextInput = styled.TextInput`
-    background-color : #FFFFFF;
-    width : 200px;
-    height : 40px;
+    width : 250px;
     font-size : 18px;
+    color : #3c3c43;
+    padding : 7px;
 `;
+
 const CategoryTitle = styled.Text`
     margin-top : 25px;
     margin-bottom : 15px;
-    margin-left : 32px;
-    font-size : 21px;
-    font-weight : 700;
+    margin-left : 20px;
+    font-size : 18px;
+    font-weight : 600;
 `;
 
 const CategoryContainer = styled.View`
@@ -71,64 +76,76 @@ const CategoryContainer = styled.View`
 `;
 
 const styles = StyleSheet.create({
-  bottomTabDesign: {
-    backgroundColor: 'white',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 20,
-  },
-  buttonStyle: {
-    width: 50.8,
-    height: 40,
-    backgroundColor: '#80bfd7',
-    borderRadius: 5,
-  },
   categoryLine: {
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'space-between',
   },
+
 });
 
-const MainPage = () => (
-  <MainPageLayout>
-    <SearchContainer>
-      <Button title="만또" titleStyle={{ color: '#fff' }} buttonStyle={styles.buttonStyle} />
-      <SearchInputContainer>
-        <AntDesignIcon name="search1" size={18} />
-        <SearchTextInput placeholder="검색" placeholderTextColor="#000" />
-      </SearchInputContainer>
-      <View style={{ justifyContent: 'center', marginLeft: 10 }}>
-        <TouchableOpacity>
-          <AlarmSvg width={30} height={30} />
-        </TouchableOpacity>
-        <Badge
-          status="error"
-          // value 서버에서 알람 목록수와 일치
-          // 한번 알람에 들어가고 난 뒤에는 배지 삭제 isSee? true false
-          // 새 알람 들어올 때 다시 true로 바꿔줌
-          value="1"
-          containerStyle={{ position: 'absolute', top: -1, left: -1 }}
-        />
-      </View>
-    </SearchContainer>
-    <CategoryTitle>카테고리</CategoryTitle>
-    <CategoryContainer>
-      <View style={styles.categoryLine}>
-        <CategoryItem Svg={designSvg} itemTitle="디자인" />
-        <CategoryItem Svg={programmingSvg} itemTitle="IT/프로그래밍" />
-        <CategoryItem Svg={pictureSvg} itemTitle="영상/사진/음향" />
-        <CategoryItem Svg={photoSvg} itemTitle="번역/통역" />
-      </View>
-      <View style={styles.categoryLine}>
-        <CategoryItem Svg={marketSvg} itemTitle="마케팅" />
-        <CategoryItem Svg={sportsSvg} itemTitle="스포츠/레저" />
-        <CategoryItem Svg={jobSvg} itemTitle="취업" />
-        <CategoryItem Svg={talkSvg} itemTitle="운세/상담" />
-      </View>
-    </CategoryContainer>
-  </MainPageLayout>
-);
+function MainPage({ navigation }) {
+  const [type, setType] = useState(true);
+
+  return (
+    <MainPageLayout type={type} navigation={navigation}>
+      <SearchContainer>
+        <SearchInputContainer>
+          <AntDesignIcon name="search1" size={18} />
+          <SearchTextInput placeholder="검색" placeholderTextColor="#000" />
+        </SearchInputContainer>
+        <View style={{ justifyContent: 'center', marginLeft: 10 }}>
+          <TouchableOpacity>
+            <AlarmSvg width={30} height={30} />
+          </TouchableOpacity>
+          <Badge
+            status="error"
+            // value 서버에서 알람 목록수와 일치
+            // 한번 알람에 들어가고 난 뒤에는 배지 삭제 isSee? true false
+            // 새 알람 들어올 때 다시 true로 바꿔줌
+            value="1"
+            containerStyle={{ position: 'absolute', top: -1, left: -1 }}
+          />
+        </View>
+      </SearchContainer>
+      <ManttoButtonContainer type={type} setType={setType} />
+      <CategoryTitle>카테고리</CategoryTitle>
+      <CategoryContainer>
+        {type ? (
+          <>
+            <View style={styles.categoryLine}>
+              <CategoryItem Svg={designSvg} itemTitle="디자인" />
+              <CategoryItem Svg={programmingSvg} itemTitle="IT/프로그래밍" />
+              <CategoryItem Svg={pictureSvg} itemTitle="영상/사진/음향" />
+              <CategoryItem Svg={marketSvg} itemTitle="마케팅" />
+            </View>
+            <View style={styles.categoryLine}>
+              <CategoryItem Svg={photoSvg} itemTitle="번역/통역" />
+              <CategoryItem Svg={sportsSvg} itemTitle="스포츠/레저" />
+              <CategoryItem Svg={jobSvg} itemTitle="취업" />
+              <CategoryItem Svg={talkSvg} itemTitle="운세/상담" />
+            </View>
+          </>
+        ) : (
+          <>
+            <View style={styles.categoryLine}>
+              <CategoryItem Svg={designSvg} itemTitle="디자인" />
+              <CategoryItem Svg={programmingSvg} itemTitle="IT/프로그래밍" />
+              <CategoryItem Svg={photoSvg} itemTitle="번역/통역" />
+              <CategoryItem Svg={pictureSvg} itemTitle="영상/사진/음향" />
+            </View>
+            <View style={styles.categoryLine}>
+              <CategoryItem Svg={marketSvg} itemTitle="마케팅" />
+              <CategoryItem Svg={sportsSvg} itemTitle="스포츠/레저" />
+              <CategoryItem Svg={jobSvg} itemTitle="취업" />
+              <CategoryItem Svg={talkSvg} itemTitle="운세/상담" />
+            </View>
+          </>
+        )}
+
+      </CategoryContainer>
+    </MainPageLayout>
+  );
+}
 
 export default MainPage;

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import {
-  View, Text, Button, ScrollView, StyleSheet, Platform,
+  View, Text, ScrollView, StyleSheet,
 } from 'react-native';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,18 +10,9 @@ import {
   loadChatList,
 } from './actions/index';
 
+import TabNav from './components/TabNav';
+
 const styles = StyleSheet.create({
-  topNav: {
-    flex: 0.1,
-    alignItems: 'center',
-    borderBottomWidth: 6,
-    backgroundColor: '#fff',
-    borderColor: '#f6f6f8',
-  },
-  topNavTitle: {
-    fontSize: 20,
-    margin: 15,
-  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -47,28 +38,6 @@ const styles = StyleSheet.create({
   date: {
     color: '#b4b4b4',
   },
-  circleButton: {
-    flex: 0.1,
-    borderRadius: 50,
-    width: 50,
-    height: 50,
-    margin: 10,
-    backgroundColor: 'red',
-    ...Platform.select({
-      ios: {
-        shadowColor: '#d4d4d4',
-        shadowOffset: {
-          width: 0,
-          height: 2,
-        },
-        shadowOpacity: 0.23,
-        shadowRadius: 2.62,
-      },
-      android: {
-        elevation: 5,
-      },
-    }),
-  },
 });
 
 const Chat = ({ navigation }) => {
@@ -84,9 +53,7 @@ const Chat = ({ navigation }) => {
 
   return (
     <>
-      <View style={styles.topNav}>
-        <Text style={styles.topNavTitle}>채팅 목록</Text>
-      </View>
+      <TabNav />
       <ScrollView style={styles.container}>
         {chats.map(({
           id, contents, nickname, date,
@@ -100,7 +67,6 @@ const Chat = ({ navigation }) => {
           </View>
         ))}
       </ScrollView>
-      <View style={styles.circleButton} />
     </>
   );
 };

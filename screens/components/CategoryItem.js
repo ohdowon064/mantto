@@ -8,7 +8,6 @@ const CategoryItemContainer = styled.View`
 `;
 
 const CategoryButton = styled.TouchableOpacity`
-    border : 1px solid rgba(234,167,134,0.3);
     border-radius : 10px;
 `;
 

@@ -47,8 +47,8 @@ const TalentInputContainer = ({ placeholder }) => {
 const styles = StyleSheet.create({
   textInputContainer: {
     flexDirection: 'row',
-    width: '80%',
-    marginTop: 98,
+    width: '85%',
+    marginTop: 50,
     borderBottomWidth: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',

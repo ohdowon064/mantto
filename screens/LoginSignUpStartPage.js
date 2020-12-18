@@ -7,24 +7,33 @@ import {
 import { Button } from 'react-native-elements';
 
 const styles = StyleSheet.create({
+  layoutContainer: {
+    flex: 1,
+  },
+  logoContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 70,
+  },
   manttoText: {
     color: '#80BFD7',
     fontSize: 40,
     margin: 10,
   },
   manttoText2: {
-    marginTop: 10,
     marginBottom: 30,
-    color: 'black',
+    color: '#707070',
   },
-  container: {
-    alignItems: 'center',
+  buttonContainer: {
+    flex: 0.5,
     justifyContent: 'center',
-    paddingTop: 100,
+    alignItems: 'center',
   },
   loginButton: {
-    width: 277,
+    width: 320,
     height: 51,
+    marginBottom: 10,
     borderWidth: 1,
     borderRadius: 25,
     borderColor: '#80BFD7',
@@ -33,40 +42,40 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   signupButton: {
-    width: 277,
+    width: 320,
     height: 51,
     borderWidth: 2,
     borderRadius: 25,
-    backgroundColor: '#FFFFFF',
-    borderColor: '#80BFD7',
+    backgroundColor: '#e4e4e4',
+    borderColor: '#e4e4e4',
     justifyContent: 'center',
     alignItems: 'center',
   },
   loginText: {
-    fontSize: 19,
+    fontSize: 15,
     color: '#FFF',
     fontWeight: 'bold',
   },
   signUpText: {
-    fontSize: 19,
-    color: '#80bfd7',
+    fontSize: 15,
+    color: '#FFF',
     fontWeight: 'bold',
   },
 });
 
 export default function LoginSignUpStartPage({ navigation }) {
   return (
-    <View>
-      <View style={styles.container}>
-        <View>
-          <Image
-            style={{ width: 150, height: 150 }}
-            // eslint-disable-next-line global-require
-            source={require('./src/images/logo.png')}
-          />
-          <Text style={styles.manttoText}>Mantto</Text>
-          <Text style={styles.manttoText2}>열정과 재능을 잇다. 만또</Text>
-        </View>
+    <View style={styles.layoutContainer}>
+      <View style={styles.logoContainer}>
+        <Image
+          style={{ width: 150, height: 150 }}
+          // eslint-disable-next-line global-require
+          source={require('./src/images/logo.png')}
+        />
+        <Text style={styles.manttoText}>Mantto</Text>
+        <Text style={styles.manttoText2}>열정과 재능을 잇다. 만또</Text>
+      </View>
+      <View style={styles.buttonContainer}>
         <Button
           type="clear"
           title="로그인"
@@ -74,7 +83,6 @@ export default function LoginSignUpStartPage({ navigation }) {
           buttonStyle={styles.loginButton}
           onPress={() => navigation.navigate('LoginPage')}
         />
-        <View style={{ height: 10 }} />
         <Button
           type="clear"
           title="회원가입"

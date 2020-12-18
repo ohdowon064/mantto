@@ -9,37 +9,51 @@ import { Button } from 'react-native-elements';
 import InsertTalentLayout from './layouts/InsertTalentLayout';
 
 const styles = StyleSheet.create({
+  inputContainer: {
+    marginLeft: '7%',
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: '800',
+    marginTop: 17,
+    marginBottom: 40,
+  },
   verifyContainer: {
     flexDirection: 'row',
   },
-  fullContainer: {
-    flex: 1,
-    backgroundColor: '#F1EAE2',
+  labelText: {
+    color: '#9ca5b4',
+    fontSize: 15,
+    marginBottom: 6,
   },
-  inputContainer: {
-    paddingRight: 10,
-    marginLeft: 35,
+  passwordInfo: {
+    color: '#5e656f',
+    fontSize: 15,
   },
   buttonDesign: {
     marginLeft: 0,
-    width: 68,
-    height: 38,
-    backgroundColor: '#EAA786',
+    paddingTop: '18%',
+    paddingBottom: '18%',
+    paddingRight: '7%',
+    paddingLeft: '7%',
+    backgroundColor: '#73ccef',
     borderRadius: 5,
   },
   textInput: {
-    width: 289,
-    height: 39,
-    borderWidth: 1,
-    borderColor: '#F1DDC5',
-    marginBottom: 12.5,
+    width: '91%',
+    borderWidth: 1.5,
+    borderColor: '#5e656f',
+    borderRadius: 10,
+    padding: 10,
+    marginBottom: 10,
     backgroundColor: '#FFFFFF',
   },
   specialTextInput: {
-    width: 196,
-    height: 38,
-    borderWidth: 1,
-    borderColor: '#F1DDC5',
+    width: '65%',
+    borderWidth: 1.5,
+    borderColor: '#5e656f',
+    borderRadius: 10,
+    padding: 10,
     backgroundColor: '#FFFFFF',
     marginBottom: 12.5,
     marginRight: 10,
@@ -83,41 +97,38 @@ export default function SignupFirstPage({ navigation }) {
   const [text, setText] = React.useState('');
   const dotNumber = 1;
   const nextPage = 'InsertMajorPage';
+  const prePage = 'LoginSignUpStartPage';
 
   return (
-  // <SafeAreaView style={styles.fullContainer}>
-    <InsertTalentLayout dotNumber={dotNumber} navigation={navigation} navPage={nextPage}>
-      <View style={styles.titleView}>
-        <Text style={styles.manttoText}>
-          수많은
-          <Text style={styles.specialText1}> 재능</Text>
-          과 수많은
-          <Text style={styles.specialText2}> 열정</Text>
-          {'\n'}
-          그리고 그들이 모이는곳
-          {'\n'}
-          MANTTO
-        </Text>
-      </View>
+    <InsertTalentLayout
+      dotNumber={dotNumber}
+      navigation={navigation}
+      prePage={prePage}
+      navPage={nextPage}
+    >
       <View style={styles.inputContainer}>
+        <Text style={styles.title}>회원가입</Text>
+        <Text style={styles.labelText}>닉네임</Text>
         <TextInput
           style={styles.textInput}
-          placeholder="   이름"
+          placeholder="   닉네임"
           onChangeText={(inputText) => setText(inputText)}
           defaultValue={text}
         />
+        <Text style={styles.labelText}>학교 이메일</Text>
         <TextInput
           style={styles.textInput}
-          placeholder="   학교 이메일"
+          placeholder="   이메일"
           onChangeText={(inputText) => setText(inputText)}
           defaultValue={text}
         />
       </View>
       <View style={styles.inputContainer}>
+        <Text style={styles.labelText}>이메일 인증번호</Text>
         <View style={styles.verifyContainer}>
           <TextInput
             style={styles.specialTextInput}
-            placeholder="   이메일 인증번호"
+            placeholder="   인증번호"
             onChangeText={(inputText) => setText(inputText)}
             defaultValue={text}
           />
@@ -127,15 +138,15 @@ export default function SignupFirstPage({ navigation }) {
             titleColor="white"
           />
         </View>
+        <Text style={styles.labelText}>비밀번호</Text>
         <TextInput
           style={styles.textInput}
           placeholder="   비밀번호"
           onChangeText={(inputText) => setText(inputText)}
           defaultValue={text}
         />
+        <Text style={styles.passwordInfo}>문자,숫자,기호를 조합하여 8자 이상을 사용하세요.</Text>
       </View>
-
     </InsertTalentLayout>
-  // </SafeAreaView>
   );
 }
