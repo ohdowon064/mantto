@@ -19,7 +19,5 @@ export async function fetchChatList() {
 
   const data = response.json();
 
-  console.log(data);
-
   return data;
 }

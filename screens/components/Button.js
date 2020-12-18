@@ -14,29 +14,28 @@ import IconAntDesign from 'react-native-vector-icons/AntDesign';
 const styles = StyleSheet.create({
   rightButtonStyle: {
     borderRadius: 17.5,
+    borderWidth: 1,
+    borderColor: '#e8e9ec',
     width: 35,
     height: 35,
     backgroundColor: '#ffffff',
   },
-
   buttonLeft: {
     flexDirection: 'row',
-    marginLeft: 10,
+    marginLeft: 8,
   },
-
-  buttonBottomRight: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    marginRight: 25,
-    paddingBottom: 50,
+  buttonRightContainer: {
+    flex: 0.4,
+    height: 50,
+    alignItems: 'center',
   },
 });
 
-const LeftArrowButton = ({ navigation, navPage }) => (
+const LeftArrowButton = ({ navigation, navPage, color = '#000000' }) => (
   <View style={styles.buttonLeft}>
     <Button
       type="clear"
-      icon={<IconAntDesign name="arrowleft" size={30} color="#000000" />}
+      icon={<IconAntDesign name="arrowleft" size={30} color={color} />}
       title=""
       onPress={() => navigation.navigate(`${navPage}`)}
     />
@@ -100,7 +99,7 @@ const WriteHelpPointDownButton = () => (
 );
 
 const RightArrowButton = ({ navigation, navPage }) => (
-  <View style={styles.buttonBottomRight}>
+  <View style={styles.buttonRightContainer}>
     <Button
       type="clear"
       icon={<IconAntDesign name="right" size={20} color="#000000" />}
@@ -108,6 +107,7 @@ const RightArrowButton = ({ navigation, navPage }) => (
       onPress={() => navigation.navigate(`${navPage}`)}
     />
   </View>
+
 );
 
 export {

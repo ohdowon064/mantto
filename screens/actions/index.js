@@ -10,6 +10,13 @@ export function selectCategories(category) {
   };
 }
 
+export function setType(type) {
+  return {
+    type: 'setType',
+    payload: { type },
+  };
+}
+
 export function setAccessToken(accessToken) {
   return {
     type: 'setAccessToken',
@@ -17,18 +24,18 @@ export function setAccessToken(accessToken) {
   };
 }
 
-export function setChatList(chatList) {
+export function setChatList(chats) {
   return {
     type: 'setChatList',
-    payload: { chatList },
+    payload: { chats },
   };
 }
 
 export function loadChatList() {
   return async (dispatch) => {
-    const chatList = await fetchChatList();
-    console.log(chatList);
-    dispatch(setChatList(chatList));
+    const chats = await fetchChatList();
+    console.log(chats);
+    dispatch(setChatList(chats));
   };
 }
 

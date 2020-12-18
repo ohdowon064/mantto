@@ -10,6 +10,17 @@ import IconFeather from 'react-native-vector-icons/Feather';
 
 import IconFontisto from 'react-native-vector-icons/Fontisto';
 
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  iconStyle: {
+    color: '#80BFD7',
+  },
+});
+
 const PersonIcon = () => (
   <>
     <IconIonicons
@@ -39,16 +50,5 @@ const LockIcon = () => (
     />
   </>
 );
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  iconStyle: {
-    color: '#80BFD7',
-  },
-});
 
 export { PersonIcon, LockIcon, MailIcon };

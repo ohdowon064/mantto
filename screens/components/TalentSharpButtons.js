@@ -14,6 +14,7 @@ import { selectCategories } from '../actions/index';
 const styles = StyleSheet.create({
   categoriesContainer: {
     alignItems: 'center',
+    marginBottom: 80,
   },
   categoriesStyle: {
     flexDirection: 'row',
@@ -23,16 +24,17 @@ const styles = StyleSheet.create({
     width: '90%',
   },
   text: {
-    fontSize: 13,
+    fontSize: 17,
     color: '#000000',
     margin: 3,
   },
   selectText: {
+    fontSize: 17,
     color: '#ffffff',
   },
 });
 
-const TalentSharpButtons = () => {
+const TalentSharpButtons = ({ color }) => {
   const { categories, category } = useSelector((state) => ({
     categories: state.talentCategoriesReducer.categories,
     category: state.talentCategoriesReducer.category,
@@ -47,12 +49,15 @@ const TalentSharpButtons = () => {
   const touchProps = {
     style: {
       borderRadius: 15,
-      padding: 4.5,
+      paddingTop: 4.5,
+      paddingBottom: 4.5,
+      paddingRight: 7,
+      paddingLeft: 7,
       flexDirection: 'row',
       alignItems: 'center',
     },
     selectStyle: {
-      backgroundColor: '#080040',
+      backgroundColor: color,
     },
   };
 

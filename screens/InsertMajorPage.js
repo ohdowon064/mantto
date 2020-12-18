@@ -6,11 +6,18 @@ import {
 
 import InsertTalentLayout from './layouts/InsertTalentLayout';
 
-import { LeftArrowButton } from './components/Button';
-
 import TalentQuestionText from './components/TalentTexts';
 
 import TalentInputContainer from './components/TalentInputContainer';
+
+const styles = StyleSheet.create({
+  container: {
+    marginBottom: 80,
+  },
+  innerText: {
+    color: '#ffb18b',
+  },
+});
 
 const InsertMajorPage = ({ navigation }) => {
   const comment = '전공';
@@ -25,9 +32,9 @@ const InsertMajorPage = ({ navigation }) => {
         dotNumber={dotNumber}
         navigation={navigation}
         navPage={nextPage}
+        prePage={prevPage}
       >
         <View style={styles.container}>
-          <LeftArrowButton navigation={navigation} navPage={prevPage} />
           <TalentQuestionText innerTextStyle={styles.innerText} comment={comment} />
           <TalentInputContainer placeholder="학과" />
         </View>
@@ -35,14 +42,5 @@ const InsertMajorPage = ({ navigation }) => {
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  innerText: {
-    color: '#80BFD7',
-  },
-});
 
 export default InsertMajorPage;
