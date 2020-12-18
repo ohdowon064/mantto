@@ -12,11 +12,9 @@ import styled from 'styled-components/native';
 
 import LinearGradient from 'react-native-linear-gradient';
 
-import HeartAntDesign from 'react-native-vector-icons/AntDesign';
-
 import CheckEntypo from 'react-native-vector-icons/Entypo';
 
-import { LeftArrowButton } from './components/Button';
+import { HeartIcon, LeftArrowButton } from './components/Button';
 
 import StarsIcon from './src/Icons/StarsIcon';
 
@@ -168,8 +166,6 @@ const styles = StyleSheet.create({
 const DetailPage = ({ navigation, route }) => {
   const { name } = route.params;
 
-  const prevPage = 'MainPage';
-
   const assignOrExam = 'assignOk';
 
   const matchedNumber = 10;
@@ -184,7 +180,7 @@ const DetailPage = ({ navigation, route }) => {
       <SafeAreaView style={styles.body}>
         <View style={styles.container}>
           <TopContainer>
-            <LeftArrowButton color="#fff" navigation={navigation} navPage={prevPage} />
+            <LeftArrowButton color="#fff" navigation={navigation} />
             <LinearGradient
               colors={['#a3dcf3', '#95d4ed', '#7bc7e6']}
               style={styles.linearGradientBigBubble}
@@ -214,19 +210,16 @@ const DetailPage = ({ navigation, route }) => {
                   style={level === 'low' ? styles.activeLevel : styles.inActiveLevel}
                 >
                   조금 알아
-
                 </Text>
                 <Text
                   style={level === 'middle' ? styles.activeLevel : styles.inActiveLevel}
                 >
                   나쁘지 않아
-
                 </Text>
                 <Text
                   style={level === 'high' ? styles.activeLevel : styles.inActiveLevel}
                 >
                   잘하는 듯
-
                 </Text>
               </View>
               <Text style={styles.miniTitle}>과제 / 시험</Text>
@@ -260,15 +253,7 @@ const DetailPage = ({ navigation, route }) => {
           </DetailContainer>
         </View>
         <View style={styles.bottomContainer}>
-          <TouchableOpacity
-            onPress={() => setDibs(!dibsOn)}
-          >
-            {
-              dibsOn ? <HeartAntDesign name="heart" size={30} />
-                : <HeartAntDesign name="hearto" size={30} />
-            }
-          </TouchableOpacity>
-
+          <HeartIcon dibsOn={dibsOn} setDibs={setDibs} />
           <TouchableOpacity
             style={styles.chatGoButton}
           >

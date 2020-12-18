@@ -1,10 +1,8 @@
 import React from 'react';
 
 import {
-  View, StyleSheet, Image, Text,
+  View, StyleSheet, Image, Text, TouchableOpacity,
 } from 'react-native';
-
-import { Button } from 'react-native-elements';
 
 const styles = StyleSheet.create({
   layoutContainer: {
@@ -76,20 +74,22 @@ export default function LoginSignUpStartPage({ navigation }) {
         <Text style={styles.manttoText2}>열정과 재능을 잇다. 만또</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <Button
-          type="clear"
-          title="로그인"
-          titleStyle={[styles.loginText]}
-          buttonStyle={styles.loginButton}
+        <TouchableOpacity
+          style={styles.loginButton}
           onPress={() => navigation.navigate('LoginPage')}
-        />
-        <Button
-          type="clear"
-          title="회원가입"
-          titleStyle={styles.signUpText}
-          buttonStyle={styles.signupButton}
+        >
+          <Text style={styles.loginText}>로그인</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.signupButton}
           onPress={() => navigation.navigate('SignUpFirstPage')}
-        />
+        >
+          <Text
+            style={styles.signUpText}
+          >
+            회원가입
+          </Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

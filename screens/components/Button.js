@@ -4,6 +4,7 @@ import {
   View,
   StyleSheet,
   TouchableHighlight,
+  TouchableOpacity,
   Text,
 } from 'react-native';
 
@@ -31,15 +32,26 @@ const styles = StyleSheet.create({
   },
 });
 
-const LeftArrowButton = ({ navigation, navPage, color = '#000000' }) => (
+const LeftArrowButton = ({ navigation, color = '#000000' }) => (
   <View style={styles.buttonLeft}>
     <Button
       type="clear"
       icon={<IconAntDesign name="arrowleft" size={30} color={color} />}
       title=""
-      onPress={() => navigation.navigate(`${navPage}`)}
+      onPress={() => navigation.goBack()}
     />
   </View>
+);
+
+const HeartIcon = ({ dibsOn, setDibs, color }) => (
+  <TouchableOpacity
+    onPress={() => setDibs(!dibsOn)}
+  >
+    {
+      dibsOn ? <IconAntDesign name="heart" color={color} size={30} />
+        : <IconAntDesign name="hearto" color={color} size={30} />
+    }
+  </TouchableOpacity>
 );
 
 const SubmitButton = ({
@@ -116,4 +128,5 @@ export {
   WriteHelpPointDownButton,
   RightArrowButton,
   TalentToggleButton,
+  HeartIcon,
 };

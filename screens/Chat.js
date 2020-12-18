@@ -53,7 +53,7 @@ const Chat = ({ navigation }) => {
 
   return (
     <>
-      <TabNav />
+      <TabNav navigation={navigation} text="채팅 목록" />
       <ScrollView style={styles.container}>
         {chats.map(({
           id, contents, nickname, date,

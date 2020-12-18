@@ -27,13 +27,11 @@ const PassionPage = ({ navigation }) => {
   const comment = '열정';
 
   const nextPage = 'MainPage';
-  const prevPage = 'InsertTalentPage';
   return (
     <>
       <InsertTalentLayout
         navigation={navigation}
         navPage={nextPage}
-        prePage={prevPage}
         dotNumber={dotNumber}
       >
         <TalentQuestionText innerTextStyle={styles.innerText} comment={comment} />

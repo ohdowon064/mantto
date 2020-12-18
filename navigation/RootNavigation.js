@@ -34,6 +34,12 @@ import ProfileIcon from '../screens/src/Icons/ProfileIcon';
 
 import DetailPage from '../screens/DetailPage';
 
+import WatchListPage from '../screens/WatchListPage';
+
+import AppSettingsPage from '../screens/AppSettingsPage';
+
+import AlertsPage from '../screens/AlertsPage';
+
 const Stack = createStackNavigator();
 
 const Tabs = createBottomTabNavigator();
@@ -108,6 +114,10 @@ const Navigation = () => (
           component={PassionPage}
         />
         <Stack.Screen
+          name="AlertsPage"
+          component={AlertsPage}
+        />
+        <Stack.Screen
           name="InsertTalentPage"
           component={InsertTalentPage}
         />
@@ -123,6 +133,14 @@ const Navigation = () => (
         <Stack.Screen
           name="DetailPage"
           component={DetailPage}
+        />
+        <Stack.Screen
+          name="WatchListPage"
+          component={WatchListPage}
+        />
+        <Stack.Screen
+          name="AppSettingsPage"
+          component={AppSettingsPage}
         />
         <Stack.Screen
           name="MainPage"
