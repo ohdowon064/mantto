@@ -1,10 +1,9 @@
 import React from 'react';
 
 import {
-  View, StyleSheet, Image, Text,
+  View, StyleSheet, Image, Text, TouchableOpacity,
 } from 'react-native';
-
-import { Button } from 'react-native-elements';
+import NewLogoSvg from './src/svg/newLogo.svg';
 
 const styles = StyleSheet.create({
   layoutContainer: {
@@ -67,29 +66,27 @@ export default function LoginSignUpStartPage({ navigation }) {
   return (
     <View style={styles.layoutContainer}>
       <View style={styles.logoContainer}>
-        <Image
-          style={{ width: 150, height: 150 }}
-          // eslint-disable-next-line global-require
-          source={require('./src/images/logo.png')}
-        />
+        <NewLogoSvg width={150} height={150} />
         <Text style={styles.manttoText}>Mantto</Text>
         <Text style={styles.manttoText2}>열정과 재능을 잇다. 만또</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <Button
-          type="clear"
-          title="로그인"
-          titleStyle={[styles.loginText]}
-          buttonStyle={styles.loginButton}
+        <TouchableOpacity
+          style={styles.loginButton}
           onPress={() => navigation.navigate('LoginPage')}
-        />
-        <Button
-          type="clear"
-          title="회원가입"
-          titleStyle={styles.signUpText}
-          buttonStyle={styles.signupButton}
+        >
+          <Text style={styles.loginText}>로그인</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.signupButton}
           onPress={() => navigation.navigate('SignUpFirstPage')}
-        />
+        >
+          <Text
+            style={styles.signUpText}
+          >
+            회원가입
+          </Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

@@ -29,11 +29,9 @@ const InsertTalentPage = ({ navigation }) => {
   const comment = '재능';
 
   const nextPage = 'PassionPage';
-  const prevPage = 'InsertMajorPage';
   return (
     <InsertTalentLayout
       navigation={navigation}
-      prePage={prevPage}
       navPage={nextPage}
       dotNumber={dotNumber}
     >

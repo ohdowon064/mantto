@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {
   SafeAreaView,
   StyleSheet,
   ScrollView,
   StatusBar,
+  Keyboard,
 } from 'react-native';
 
 import BottomSheet from 'reanimated-bottom-sheet';
 
-import MainPageBottomSheetContent from '../components/MainPageBottomSheetContent';
+import { MainPageBottomSheetHeader, MainPageBottomSheetContent } from '../components/MainPageBottomSheetContent';
 
 const styles = StyleSheet.create({
   body: {
@@ -19,7 +20,20 @@ const styles = StyleSheet.create({
 });
 
 const MainPageLayout = ({ navigation, children, type }) => {
+  const [point, setPoint] = useState('30%');
+
   const sheetRef = React.useRef();
+
+  const keyboardDidShow = () => {
+    sheetRef.current.snapTo(0);
+
+    setPoint('28.5%');
+  };
+
+  useEffect(() => {
+    Keyboard.addListener('keyboardDidShow', keyboardDidShow);
+  }, []);
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -29,8 +43,11 @@ const MainPageLayout = ({ navigation, children, type }) => {
         </ScrollView>
         <BottomSheet
           ref={sheetRef}
-          snapPoints={['27%', '37%', '75%']}
+          snapPoints={[point, '30%', '77%']}
           borderRadius={30}
+          renderHeader={type
+            ? () => <MainPageBottomSheetHeader color="#ffb18b" navigation={navigation} />
+            : () => <MainPageBottomSheetHeader color="#73ccef" navigation={navigation} />}
           renderContent={type
             ? () => <MainPageBottomSheetContent color="#ffb18b" navigation={navigation} />
             : () => <MainPageBottomSheetContent color="#73ccef" navigation={navigation} />}

@@ -30,13 +30,13 @@ const styles = StyleSheet.create({
 });
 
 const InsertTalentLayout = ({
-  children, dotNumber, navigation, prePage, navPage,
+  children, dotNumber, navigation, navPage,
 }) => (
   <>
     <StatusBar barStyle="dark-content" />
     <SafeAreaView style={styles.body}>
       <ScrollView>
-        <TabNav text="" prePage={prePage} navigation={navigation} />
+        <TabNav text="" navigation={navigation} />
         {children}
         <View style={styles.bottomContainer}>
           <DotIcons dotNumber={dotNumber} />

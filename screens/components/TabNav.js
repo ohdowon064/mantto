@@ -15,15 +15,16 @@ const styles = StyleSheet.create({
     borderColor: '#f6f6f8',
   },
   topNavTitle: {
-    fontSize: 20,
+    fontSize: 23,
+    fontWeight: 'bold',
     margin: 15,
     marginLeft: '23%',
   },
 });
 
-const TabNav = ({ text = '채팅 목록', prePage, navigation }) => (
+const TabNav = ({ text = '', navigation }) => (
   <View style={styles.topNav}>
-    <LeftArrowButton navPage={prePage} navigation={navigation} />
+    <LeftArrowButton navigation={navigation} />
     <Text style={styles.topNavTitle}>{text}</Text>
   </View>
 );

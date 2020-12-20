@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Chat = ({ navigation }) => {
+const Chats = ({ navigation }) => {
   const dispatch = useDispatch();
 
   const { chats } = useSelector((state) => ({
@@ -53,7 +53,7 @@ const Chat = ({ navigation }) => {
 
   return (
     <>
-      <TabNav />
+      <TabNav navigation={navigation} text="채팅 목록" />
       <ScrollView style={styles.container}>
         {chats.map(({
           id, contents, nickname, date,
@@ -71,4 +71,4 @@ const Chat = ({ navigation }) => {
   );
 };
 
-export default Chat;
+export default Chats;

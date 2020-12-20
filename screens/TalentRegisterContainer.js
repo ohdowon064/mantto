@@ -11,8 +11,9 @@ import {
   Image,
   TouchableOpacity,
   TextInput,
-  Switch,
 } from 'react-native';
+
+import Toggle from 'react-native-toggle-element';
 
 import ProgressBar from 'react-native-progress/Bar';
 
@@ -20,138 +21,7 @@ import StarsIcon from './src/Icons/StarsIcon';
 
 import DropDown from './components/DropdownContainer';
 
-const TalentRegisterContainer = () => {
-  const [text, setText] = useState('');
-
-  const [assignIsEnabled, setAssignIsEnabled] = useState(false);
-
-  const [testIsEnabled, setTestIsEnabled] = useState(false);
-
-  const assignToggleSwitch = () => setAssignIsEnabled((previousState) => !previousState);
-
-  const testToggleSwitch = () => setTestIsEnabled((previousState) => !previousState);
-
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={styles.body}>
-        <ScrollView>
-          <View style={styles.fullScreen}>
-            {/* stack.screen 적용해야하나? */}
-            <View style={styles.upperContainer}>
-              <View style={{
-                alignSelf: 'center',
-                paddingBottom: 10,
-              }}
-              >
-                <ProgressBar progress={0.3} width={200} />
-              </View>
-              <View style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-              }}
-              >
-                <View style={{
-                  width: 100,
-                  height: 100,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-                >
-                  <Image
-                    source={require('./src/images/people.png')}
-                  />
-                </View>
-                <View style={{
-                  marginLeft: 10,
-                }}
-                >
-                  <Text style={styles.nameText}>이예나(여자) </Text>
-                  <StarsIcon />
-                </View>
-              </View>
-            </View>
-            <View style={styles.firstTalentInsertContainer}>
-              <Text style={styles.talentInsertTitle}>재능 기입</Text>
-              <View style={styles.talentExplainContainer}>
-                <Text style={styles.talentExplainText}>
-                  {' '}
-                  나의
-                  <Text style={styles.specialText1}> 재능</Text>
-                  은
-                </Text>
-                <DropDown
-                  style={styles.textInput}
-                  label="My talent"
-                />
-                <Text style={styles.talentExplainText}>입니다.</Text>
-              </View>
-              <View style={styles.talentExplainContainer}>
-                <Text style={styles.talentExplainText}>
-                  {' '}
-                  나의
-                  <Text style={styles.specialText2}> 열정</Text>
-                  은
-                </Text>
-                <DropDown
-                  style={styles.textInput}
-                  label="My Passion"
-                />
-                <Text style={styles.talentExplainText}>입니다.</Text>
-              </View>
-            </View>
-            <View style={styles.secondTalentInsertContainer}>
-              <Text style={styles.talentInsertTitle}>재능 기입</Text>
-              <Text style={styles.talentInsertCount}>0/100자</Text>
-              <View style={styles.textAreaContainer}>
-                <TextInput
-                  style={styles.textArea}
-                  placeholder="Type something"
-                  onChangeText={(inputText) => setText(inputText)}
-                  defaultValue={text}
-                  numberOfLines={10}
-                  multiline
-                />
-              </View>
-            </View>
-            {/* {3번째} */}
-            <View style={styles.assignTestContainer}>
-              <Text style={styles.talentInsertTitle}>과제 / 시험</Text>
-              <View style={styles.askToManttoContainer}>
-                <Text style={{ fontSize: 15 }}>만또한테 과제 물어봐</Text>
-                <Switch
-                  trackColor={{ false: '#767577', true: '#81b0ff' }}
-                  thumbColor={assignIsEnabled ? '#f5dd4b' : '#f4f3f4'}
-                  ios_backgroundColor="#3e3e3e"
-                  onValueChange={assignToggleSwitch}
-                  value={assignIsEnabled}
-                />
-              </View>
-              <View style={styles.askToManttoContainer}>
-                <Text style={{ fontSize: 15 }}>만또한테 시험 물어봐</Text>
-                <Switch
-                  trackColor={{ false: '#767577', true: '#81b0ff' }}
-                  thumbColor={testIsEnabled ? '#f5dd4b' : '#f4f3f4'}
-                  ios_backgroundColor="#3e3e3e"
-                  onValueChange={testToggleSwitch}
-                  value={testIsEnabled}
-                />
-              </View>
-            </View>
-          </View>
-          <View style={styles.bottomCompleteButton}>
-            <TouchableOpacity
-              style={styles.completeButton}
-              onPress={() => { }}
-            >
-              <Text style={styles.btnText}>작성완료</Text>
-            </TouchableOpacity>
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+import TabNav from './components/TabNav';
 
 const styles = StyleSheet.create({
   body: {
@@ -162,7 +32,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     width: '100%',
     height: 162,
-    marginTop: 69,
     marginBottom: 8,
     paddingTop: 15,
   },
@@ -208,10 +77,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 24,
   },
+  genderText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
   assignTestContainer: {
     flex: 1,
     width: '100%',
-    height: 124,
+    height: 180,
     paddingTop: 10,
     marginTop: 10,
     paddingRight: 10,
@@ -228,7 +101,6 @@ const styles = StyleSheet.create({
   },
   bottomCompleteButton: {
     backgroundColor: '#fff',
-    marginTop: 15,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -272,5 +144,161 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
 });
+
+const TalentRegisterContainer = ({ navigation }) => {
+  const [text, setText] = useState('');
+
+  const [assignIsEnabled, setAssignIsEnabled] = useState(false);
+
+  const [testIsEnabled, setTestIsEnabled] = useState(false);
+
+  const assignToggleSwitch = () => setAssignIsEnabled((previousState) => !previousState);
+
+  const testToggleSwitch = () => setTestIsEnabled((previousState) => !previousState);
+
+  return (
+    <>
+      <StatusBar barStyle="dark-content" />
+      <SafeAreaView style={styles.body}>
+        <ScrollView>
+          <TabNav text="재능 등록" navigation={navigation} />
+          <View style={styles.upperContainer}>
+            <View style={{
+              alignSelf: 'center',
+              paddingBottom: 10,
+            }}
+            >
+              <ProgressBar progress={0.3} width={200} />
+            </View>
+            <View style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}
+            >
+              <View style={{
+                width: 100,
+                height: 100,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+              >
+                <Image
+                  source={require('./src/images/people.png')}
+                />
+              </View>
+              <View style={{
+                marginLeft: 10,
+              }}
+              >
+                <Text style={styles.nameText}>
+                  이예나
+                  <Text style={styles.genderText}> (여자)</Text>
+                  {' '}
+                </Text>
+                <StarsIcon />
+              </View>
+            </View>
+          </View>
+          <View style={styles.firstTalentInsertContainer}>
+            <Text style={styles.talentInsertTitle}>재능 기입</Text>
+            <View style={styles.talentExplainContainer}>
+              <Text style={styles.talentExplainText}>
+                {' '}
+                나의
+                <Text style={styles.specialText1}> 재능</Text>
+                은
+              </Text>
+              <DropDown
+                style={styles.textInput}
+                label="My talent"
+              />
+              <Text style={styles.talentExplainText}>입니다.</Text>
+            </View>
+            <View style={styles.talentExplainContainer}>
+              <Text style={styles.talentExplainText}>
+                {' '}
+                나의
+                <Text style={styles.specialText2}> 열정</Text>
+                은
+              </Text>
+              <DropDown
+                style={styles.textInput}
+                label="My Passion"
+              />
+              <Text style={styles.talentExplainText}>입니다.</Text>
+            </View>
+          </View>
+          <View style={styles.secondTalentInsertContainer}>
+            <Text style={styles.talentInsertTitle}>재능 기입</Text>
+            <Text style={styles.talentInsertCount}>0/100자</Text>
+            <View style={styles.textAreaContainer}>
+              <TextInput
+                style={styles.textArea}
+                placeholder="Type something"
+                onChangeText={(inputText) => setText(inputText)}
+                defaultValue={text}
+                numberOfLines={10}
+                multiline
+              />
+            </View>
+          </View>
+          {/* {3번째} */}
+          <View style={styles.assignTestContainer}>
+            <Text style={styles.talentInsertTitle}>과제 / 시험</Text>
+            <View style={styles.askToManttoContainer}>
+              <Text style={{ fontSize: 15 }}>만또한테 과제 물어봐</Text>
+              <Toggle
+                value={assignIsEnabled}
+                onPress={assignToggleSwitch}
+                trackBar={{
+                  width: 65,
+                  height: 30,
+                  activeBackgroundColor: '#3b86ff',
+                  inActiveBackgroundColor: '#b8bbc6',
+                }}
+                thumbButton={{
+                  width: 35,
+                  height: 30,
+                  activeBackgroundColor: '#f8f8f8',
+                  inActiveBackgroundColor: '#f8f8f8',
+                }}
+                leftTitle={assignIsEnabled ? '공개' : ''}
+              />
+
+            </View>
+            <View style={styles.askToManttoContainer}>
+              <Text style={{ fontSize: 15 }}>만또한테 시험 물어봐</Text>
+              <Toggle
+                value={testIsEnabled}
+                onPress={testToggleSwitch}
+                trackBar={{
+                  width: 65,
+                  height: 30,
+                  activeBackgroundColor: '#3b86ff',
+                  inActiveBackgroundColor: '#b8bbc6',
+                }}
+                thumbButton={{
+                  width: 35,
+                  height: 30,
+                  activeBackgroundColor: '#f8f8f8',
+                  inActiveBackgroundColor: '#f8f8f8',
+                }}
+                leftTitle={testIsEnabled ? '공개' : ''}
+              />
+            </View>
+          </View>
+        </ScrollView>
+        <View style={styles.bottomCompleteButton}>
+          <TouchableOpacity
+            style={styles.completeButton}
+            onPress={() => navigation.navigate('ProfilePage')}
+          >
+            <Text style={styles.btnText}>작성완료</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    </>
+  );
+};
 
 export default TalentRegisterContainer;

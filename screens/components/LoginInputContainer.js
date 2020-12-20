@@ -3,7 +3,7 @@ import React from 'react';
 import {
   StyleSheet,
   View,
-  Button,
+  Text,
 } from 'react-native';
 
 import { useForm } from 'react-hook-form';
@@ -16,7 +16,53 @@ import Input from './Input';
 
 import { changeLoginField, requestLogin } from '../actions/index';
 
-import { PersonIcon, MailIcon, LockIcon } from '../src/Icons/LoginPageIcons';
+const styles = StyleSheet.create({
+  textInputContainer: {
+    width: '90%',
+  },
+  textInputCenter: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: 8,
+  },
+  textInput: {
+    width: '100%',
+    borderWidth: 1.5,
+    borderColor: '#5e656f',
+    borderRadius: 10,
+    padding: 10,
+    marginBottom: 10,
+    backgroundColor: '#FFFFFF',
+  },
+  labelText: {
+    color: '#9ca5b4',
+    fontSize: 15,
+    marginBottom: 6,
+  },
+  buttonContainer: {
+    flex: 1,
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  loginButton: {
+    width: 320,
+    padding: 12,
+    borderWidth: 1,
+    borderRadius: 25,
+    borderColor: '#73ccef',
+    backgroundColor: '#73ccef',
+  },
+  buttonTitleStyle: {
+    fontSize: 20,
+    color: '#ffffff',
+  },
+  passwordInfo: {
+    color: '#5e656f',
+    fontSize: 15,
+  },
+});
 
 const LoginInputContainer = () => {
   const {
@@ -31,7 +77,6 @@ const LoginInputContainer = () => {
   }));
   console.log(accessToken, loginFields);
 
-  const nameInputRef = React.useRef();
   const mailInputRef = React.useRef();
   const passwordInputRef = React.useRef();
 
@@ -61,7 +106,7 @@ const LoginInputContainer = () => {
         >
           <View style={styles.textInputCenter}>
             <View style={styles.textInputContainer}>
-              <PersonIcon />
+              <Text style={styles.labelText}>아이디</Text>
               <Input
                 name="account"
                 reference={mailInputRef}
@@ -73,7 +118,7 @@ const LoginInputContainer = () => {
           </View>
           <View style={styles.textInputCenter}>
             <View style={styles.textInputContainer}>
-              <LockIcon />
+              <Text style={styles.labelText}>비밀번호</Text>
               <Input
                 secureTextEntry
                 name="password"
@@ -82,11 +127,12 @@ const LoginInputContainer = () => {
                 inputStyle={styles.textInput}
                 placeholder="비밀번호"
               />
+              <Text style={styles.passwordInfo}>문자,숫자,기호를 조합하여 8자 이상을 사용하세요.</Text>
             </View>
           </View>
           <View style={styles.buttonContainer}>
             <SubmitButton
-              title="확인"
+              title="로그인"
               titleStyle={styles.buttonTitleStyle}
               buttonStyle={styles.loginButton}
               handleSubmit={handleSubmit}
@@ -99,44 +145,5 @@ const LoginInputContainer = () => {
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  textInputContainer: {
-    flexDirection: 'row',
-    width: '80%',
-    marginTop: 60,
-    borderBottomWidth: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-  },
-  textInputCenter: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-  textInput: {
-    width: '100%',
-    height: 40,
-    fontSize: 17,
-  },
-  buttonContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  loginButton: {
-    width: 277,
-    height: 51,
-    borderWidth: 1,
-    borderRadius: 25,
-    borderColor: '#80BFD7',
-    backgroundColor: '#80BFD7',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  buttonTitleStyle: {
-    fontSize: 20,
-    color: '#ffffff',
-  },
-});
 
 export default LoginInputContainer;

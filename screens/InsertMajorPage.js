@@ -24,7 +24,6 @@ const InsertMajorPage = ({ navigation }) => {
   const dotNumber = 2;
 
   const nextPage = 'InsertTalentPage';
-  const prevPage = 'SignUpFirstPage';
 
   return (
     <>
@@ -32,7 +31,6 @@ const InsertMajorPage = ({ navigation }) => {
         dotNumber={dotNumber}
         navigation={navigation}
         navPage={nextPage}
-        prePage={prevPage}
       >
         <View style={styles.container}>
           <TalentQuestionText innerTextStyle={styles.innerText} comment={comment} />
