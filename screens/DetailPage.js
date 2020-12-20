@@ -256,6 +256,7 @@ const DetailPage = ({ navigation, route }) => {
           <HeartIcon dibsOn={dibsOn} setDibs={setDibs} />
           <TouchableOpacity
             style={styles.chatGoButton}
+            onPress={() => navigation.navigate('ChattingPage')}
           >
             <Text style={{ color: '#fff', fontSize: 20 }}>채팅하기</Text>
           </TouchableOpacity>

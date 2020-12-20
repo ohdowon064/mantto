@@ -3,6 +3,7 @@ import React from 'react';
 import {
   View, StyleSheet, Image, Text, TouchableOpacity,
 } from 'react-native';
+import NewLogoSvg from './src/svg/newLogo.svg';
 
 const styles = StyleSheet.create({
   layoutContainer: {
@@ -65,11 +66,7 @@ export default function LoginSignUpStartPage({ navigation }) {
   return (
     <View style={styles.layoutContainer}>
       <View style={styles.logoContainer}>
-        <Image
-          style={{ width: 150, height: 150 }}
-          // eslint-disable-next-line global-require
-          source={require('./src/images/logo.png')}
-        />
+        <NewLogoSvg width={150} height={150} />
         <Text style={styles.manttoText}>Mantto</Text>
         <Text style={styles.manttoText2}>열정과 재능을 잇다. 만또</Text>
       </View>

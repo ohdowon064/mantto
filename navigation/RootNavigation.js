@@ -24,7 +24,7 @@ import MainPage from '../screens/MainPage';
 
 import Profile from '../screens/Profile';
 
-import Chat from '../screens/Chat';
+import Chats from '../screens/Chats';
 
 import HomeIcon from '../screens/src/Icons/HomeIcon';
 
@@ -39,6 +39,8 @@ import WatchListPage from '../screens/WatchListPage';
 import AppSettingsPage from '../screens/AppSettingsPage';
 
 import AlertsPage from '../screens/AlertsPage';
+
+import ChattingPage from '../screens/ChattingPage';
 
 const Stack = createStackNavigator();
 
@@ -63,7 +65,7 @@ function TabNavigation() {
               />
             );
           }
-          if (route.name === 'Chat') {
+          if (route.name === 'Chats') {
             return (
               <ChatIcon
                 color={color}
@@ -80,7 +82,7 @@ function TabNavigation() {
       }}
     >
       <Tabs.Screen name="Home" component={MainPage} />
-      <Tabs.Screen name="Chat" component={Chat} />
+      <Tabs.Screen name="Chats" component={Chats} />
       <Tabs.Screen name="Profile" component={Profile} />
     </Tabs.Navigator>
   );
@@ -141,6 +143,10 @@ const Navigation = () => (
         <Stack.Screen
           name="AppSettingsPage"
           component={AppSettingsPage}
+        />
+        <Stack.Screen
+          name="ChattingPage"
+          component={ChattingPage}
         />
         <Stack.Screen
           name="MainPage"

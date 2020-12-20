@@ -20,17 +20,31 @@ import designSvg from './src/svg/design.svg';
 
 import programmingSvg from './src/svg/programming.svg';
 
+import programmingSvgB from './src/svg/programming_B.svg';
+
 import pictureSvg from './src/svg/picture.svg';
+
+import pictureSvgB from './src/svg/picture_B.svg';
 
 import photoSvg from './src/svg/photo.svg';
 
 import marketSvg from './src/svg/market.svg';
 
+import MarketIcon from './src/Icons/MarketIcon';
+
 import sportsSvg from './src/svg/sports.svg';
+
+import sportsSvgB from './src/svg/sports_B.svg';
 
 import jobSvg from './src/svg/job.svg';
 
+import jobSvgB from './src/svg/job_B.svg';
+
 import talkSvg from './src/svg/talk.svg';
+
+import talkSvgB from './src/svg/talk_B.svg';
+
+import HeartB from './src/Icons/HeartB';
 
 import AlarmSvg from './src/svg/alarm.svg';
 
@@ -41,7 +55,7 @@ const SearchContainer = styled.View`
     flex-direction : row;
     justify-content : space-between;
     padding-top : 50px;
-    padding-left : 16px;
+    padding-left : 8px;
     padding-right : 10px;
 `;
 
@@ -49,14 +63,14 @@ const SearchInputContainer = styled.View`
     flex-direction : row;
     align-items : center;
     background-color : rgba(118,118,118,0.1);
-    width : 280px;
+    width : 85%;
     margin-left : 6.89px;
     padding-left : 12px;
     border-radius : 10px;
 `;
 
 const SearchTextInput = styled.TextInput`
-    width : 250px;
+    width : 85%;
     font-size : 18px;
     color : #3c3c43;
     padding : 7px;
@@ -130,15 +144,15 @@ function MainPage({ navigation }) {
           <>
             <View style={styles.categoryLine}>
               <CategoryItem Svg={designSvg} itemTitle="디자인" />
-              <CategoryItem Svg={programmingSvg} itemTitle="IT/프로그래밍" />
-              <CategoryItem Svg={photoSvg} itemTitle="번역/통역" />
-              <CategoryItem Svg={pictureSvg} itemTitle="영상/사진/음향" />
+              <CategoryItem Svg={programmingSvgB} itemTitle="IT/프로그래밍" />
+              <CategoryItem Svg={pictureSvgB} itemTitle="영상/사진/음향" />
+              <CategoryItem Svg={MarketIcon} itemTitle="마케팅" />
             </View>
             <View style={styles.categoryLine}>
-              <CategoryItem Svg={marketSvg} itemTitle="마케팅" />
-              <CategoryItem Svg={sportsSvg} itemTitle="스포츠/레저" />
-              <CategoryItem Svg={jobSvg} itemTitle="취업" />
-              <CategoryItem Svg={talkSvg} itemTitle="운세/상담" />
+              <CategoryItem Svg={talkSvgB} itemTitle="번역/통역" />
+              <CategoryItem Svg={sportsSvgB} itemTitle="스포츠/레저" />
+              <CategoryItem Svg={jobSvgB} itemTitle="취업" />
+              <CategoryItem Svg={HeartB} itemTitle="운세/상담" />
             </View>
           </>
         )}

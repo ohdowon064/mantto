@@ -6,8 +6,13 @@ import {
 
 import StarsIcon from './src/Icons/StarsIcon';
 
-import { LeftArrowButton } from './components/Button';
 import TopNavContainer from './components/TopNavContainer';
+
+import SaveSvg from './src/svg/save.svg';
+
+import HeartSvg from './src/svg/heart.svg';
+
+import TicketSvg from './src/svg/ticket.svg';
 
 const styles = StyleSheet.create({
   fullScreen: {
@@ -61,23 +66,32 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   circleButton: {
-    width: 61,
-    height: 61,
-    borderRadius: 50,
+    position: 'relative',
+    width: 45,
+    height: 45,
+    borderRadius: 20,
     ...Platform.select({
       ios: {
         shadowColor: '#000',
         shadowOffset: {
           width: 0,
-          height: 2,
+          height: 5,
         },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
+        shadowOpacity: 0.34,
+        shadowRadius: 6.27,
       },
       android: {
-        elevation: 5,
+        elevation: 10,
       },
     }),
+  },
+  circleSvg: {
+    position: 'absolute',
+    top: -10,
+    left: -7,
+    width: 60,
+    height: 60,
+    borderRadius: 25,
   },
   listContainer: {
     flex: 1,
@@ -85,7 +99,7 @@ const styles = StyleSheet.create({
     width: '94%',
   },
   list: {
-    paddingTop: 5,
+    paddingTop: 10,
     fontSize: 13,
     textAlign: 'center',
     color: '#080040',
@@ -138,7 +152,6 @@ const Profile = ({ navigation }) => (
           }}
           >
             <Image
-              // style={styles.}
               source={require('./src/images/people.png')}
             />
           </View>
@@ -157,7 +170,7 @@ const Profile = ({ navigation }) => (
             style={styles.circleButton}
             onPress={() => navigation.navigate('WatchListPage')}
           >
-            <Image source={require('./src/images/interest.png')} />
+            <HeartSvg style={styles.circleSvg} />
           </TouchableOpacity>
           <Text style={styles.list}>관심 목록</Text>
         </View>
@@ -166,7 +179,7 @@ const Profile = ({ navigation }) => (
             style={styles.circleButton}
             onPress={() => {}}
           >
-            <Image source={require('./src/images/ticket.png')} />
+            <TicketSvg style={styles.circleSvg} />
           </TouchableOpacity>
           <Text style={styles.list}>교환권</Text>
         </View>
@@ -175,9 +188,7 @@ const Profile = ({ navigation }) => (
             style={styles.circleButton}
             onPress={() => navigation.navigate('TalentRegisterPage')}
           >
-            <Image
-              source={require('./src/images/list.png')}
-            />
+            <SaveSvg style={styles.circleSvg} />
           </TouchableOpacity>
           <Text style={styles.list}>재능 등록</Text>
         </View>
@@ -191,7 +202,7 @@ const Profile = ({ navigation }) => (
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.categories}
-          onPress={() => navigation.navigate('Chat')}
+          onPress={() => navigation.navigate('Chats')}
         >
           <Text style={styles.category}>채팅 목록</Text>
         </TouchableOpacity>

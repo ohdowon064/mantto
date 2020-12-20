@@ -29,13 +29,14 @@ function AppSettingsPage({ navigation }) {
         }}
       >
         <View style={{
-          fontSize: 18,
+          fontSize: 19,
           width: '80%',
           flexDirection: 'row',
           justifyContent: 'space-around',
           alignItems: 'center',
           padding: 10,
           marginTop: 15,
+          borderRadius: 10,
           backgroundColor: '#ffffff',
         }}
         >
@@ -44,18 +45,18 @@ function AppSettingsPage({ navigation }) {
             value={pushIsActive}
             onPress={pushIsActiveSwitch}
             trackBar={{
-              width: 100,
-              height: 28,
+              width: 65,
+              height: 25,
               activeBackgroundColor: '#00b7ff',
               inActiveBackgroundColor: '#b8bbc6',
             }}
             thumbButton={{
-              width: 50,
+              width: 30,
               height: 30,
               activeBackgroundColor: '#f8f8f8',
               inActiveBackgroundColor: '#f8f8f8',
             }}
-            leftTitle={pushIsActive ? '푸시' : '푸시안함'}
+            leftTitle={pushIsActive ? ' 푸시' : ''}
           />
         </View>
       </View>

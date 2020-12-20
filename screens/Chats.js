@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Chat = ({ navigation }) => {
+const Chats = ({ navigation }) => {
   const dispatch = useDispatch();
 
   const { chats } = useSelector((state) => ({
@@ -71,4 +71,4 @@ const Chat = ({ navigation }) => {
   );
 };
 
-export default Chat;
+export default Chats;
