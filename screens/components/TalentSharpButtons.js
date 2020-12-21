@@ -24,12 +24,12 @@ const styles = StyleSheet.create({
     width: '90%',
   },
   text: {
-    fontSize: 17,
+    fontSize: 12,
     color: '#000000',
     margin: 3,
   },
   selectText: {
-    fontSize: 17,
+    fontSize: 12,
     color: '#ffffff',
   },
 });
