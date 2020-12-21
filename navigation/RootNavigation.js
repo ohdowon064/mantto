@@ -42,6 +42,8 @@ import AlertsPage from '../screens/AlertsPage';
 
 import ChattingPage from '../screens/ChattingPage';
 
+import MapView from '../screens/MapView';
+
 const Stack = createStackNavigator();
 
 const Tabs = createBottomTabNavigator();
@@ -98,6 +100,10 @@ const Navigation = () => (
         <Stack.Screen
           name="LoginSignUpStartPage"
           component={LoginSignUpStartPage}
+        />
+        <Stack.Screen
+          name="MapView"
+          component={MapView}
         />
         <Stack.Screen
           name="LoginPage"

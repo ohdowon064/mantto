@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.13.2",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/bottom-tabs": "^5.11.2",
     "@react-navigation/native": "^5.8.6",
@@ -29,6 +30,7 @@
     "react-native-progress": "^4.1.2",
     "react-native-raw-bottom-sheet": "^2.2.0",
     "react-native-reanimated": "^1.13.1",
+    "react-native-responsive-fontsize": "^0.5.0",
     "react-native-safe-area-context": "^3.1.8",
     "react-native-screens": "^2.13.0",
     "react-native-size-matters": "^0.3.1",
@@ -36,6 +38,7 @@
     "react-native-svg-transformer": "^0.14.3",
     "react-native-toggle-element": "^1.0.1",
     "react-native-vector-icons": "^7.1.0",
+    "react-native-webview": "^11.0.2",
     "react-redux": "^7.2.2",
     "reanimated-bottom-sheet": "^1.0.0-alpha.22",
     "redux": "^4.0.5",
