@@ -42,7 +42,7 @@ import AlertsPage from '../screens/AlertsPage';
 
 import ChattingPage from '../screens/ChattingPage';
 
-import MapView from '../screens/MapView';
+import NaverMap from '../screens/NaverMap';
 
 const Stack = createStackNavigator();
 
@@ -102,8 +102,8 @@ const Navigation = () => (
           component={LoginSignUpStartPage}
         />
         <Stack.Screen
-          name="MapView"
-          component={MapView}
+          name="NaverMap"
+          component={NaverMap}
         />
         <Stack.Screen
           name="LoginPage"

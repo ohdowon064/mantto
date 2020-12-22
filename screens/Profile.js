@@ -177,7 +177,7 @@ const Profile = ({ navigation }) => (
         <View>
           <TouchableOpacity
             style={styles.circleButton}
-            onPress={() => {}}
+            onPress={() => navigation.navigate('NaverMap')}
           >
             <TicketSvg style={styles.circleSvg} />
           </TouchableOpacity>
