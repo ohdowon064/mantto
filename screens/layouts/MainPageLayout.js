@@ -20,19 +20,15 @@ const styles = StyleSheet.create({
 });
 
 const MainPageLayout = ({ navigation, children, type }) => {
-  const [point, setPoint] = useState('30%');
-
   const bottomSheetRef = React.useRef();
 
-  const keyboardDidShow = (sheetRef) => {
-    sheetRef.current.snapTo(0);
-
-    setPoint('28.5%');
+  const keyboardDidShow = () => {
+    bottomSheetRef.current.snapTo(0);
   };
 
   useEffect(() => {
-    Keyboard.addListener('keyboardDidShow', () => keyboardDidShow(bottomSheetRef));
-  }, [bottomSheetRef]);
+    Keyboard.addListener('keyboardDidShow', keyboardDidShow);
+  }, []);
 
   return (
     <>
@@ -43,7 +39,7 @@ const MainPageLayout = ({ navigation, children, type }) => {
         </ScrollView>
         <BottomSheet
           ref={bottomSheetRef}
-          snapPoints={[point, '30%', '77%']}
+          snapPoints={['29%', '29%', '77%']}
           borderRadius={30}
           renderHeader={type
             ? () => <MainPageBottomSheetHeader color="#ffb18b" navigation={navigation} />
