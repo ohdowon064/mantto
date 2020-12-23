@@ -163,8 +163,8 @@ const styles = StyleSheet.create({
   },
 });
 
-const DetailPage = ({ navigation, route }) => {
-  const { name } = route.params;
+const DetailPage = ({ navigation, route = {} }) => {
+  const { name } = route.params || { name: '이름 필요' };
 
   const assignOrExam = 'assignOk';
 

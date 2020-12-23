@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 import styled from 'styled-components/native';
 
@@ -6,6 +6,7 @@ import {
   View,
   StyleSheet,
   TouchableOpacity,
+  Keyboard,
 } from 'react-native';
 
 import { Badge } from 'react-native-elements';
@@ -99,17 +100,45 @@ const styles = StyleSheet.create({
 });
 
 function MainPage({ navigation }) {
+  const bottomSheetRef = useRef(null);
+
+  const [sheetIsOpen, setSheetIsOpen] = useState(false);
+
   const [type, setType] = useState(true);
 
+  function keyboardDidShow() {
+    if (sheetIsOpen) {
+      bottomSheetRef.current.snapTo(0);
+    }
+  }
+
+  useEffect(() => {
+    try {
+      Keyboard.addListener('keyboardDidShow', keyboardDidShow);
+    } catch (e) {
+      console.log(e);
+    }
+    return () => {
+      Keyboard.removeListener('keyboardDidShow', keyboardDidShow);
+    };
+  });
+
   return (
-    <MainPageLayout type={type} navigation={navigation}>
+    <MainPageLayout
+      type={type}
+      navigation={navigation}
+      bottomSheetRef={bottomSheetRef}
+      setSheetIsOpen={setSheetIsOpen}
+    >
       <SearchContainer>
         <SearchInputContainer>
           <AntDesignIcon name="search1" size={18} />
           <SearchTextInput placeholder="검색" placeholderTextColor="#000" />
         </SearchInputContainer>
         <View style={{ justifyContent: 'center', marginLeft: 10 }}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Chats')}
+          >
             <AlarmSvg width={30} height={30} />
           </TouchableOpacity>
           <Badge
