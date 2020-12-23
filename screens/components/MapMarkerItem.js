@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
 });
 
 function MapMarkerItem({
+  navigation,
   name = '이예나', category = '디자인', color = '#fff', textColor = '#72cbee',
 }) {
   const [dibsOn, setDibs] = useState(false);
@@ -56,6 +57,7 @@ function MapMarkerItem({
           <Image source={require('../src/images/people.png')} />
           <TouchableOpacity
             style={styles.detailButton}
+            onPress={() => navigation.navigate('DetailPage')}
           >
             <Text style={styles.detailText}>상세보기</Text>
           </TouchableOpacity>
@@ -129,7 +131,7 @@ function MapMarkerItem({
                 borderColor: '#72cbee',
                 backgroundColor: color,
               }}
-              onPress={() => {}}
+              onPress={() => navigation.navigate('ReviewPage')}
             >
               <Text style={{ color: textColor }}>후기</Text>
             </TouchableOpacity>

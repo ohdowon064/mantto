@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from 'react';
 import {
   View,
   SafeAreaView,
-  Text,
   Platform,
   PermissionsAndroid,
   TouchableOpacity,
@@ -15,47 +14,11 @@ import NaverMapView, {
 
 import Geolocation from 'react-native-geolocation-service';
 
-import styled from 'styled-components/native';
-
-import AntDesignIcon from 'react-native-vector-icons/AntDesign';
-
 import BottomSheet from 'reanimated-bottom-sheet';
 
 import MapMarkerItem from './components/MapMarkerItem';
 
-const SearchCategories = styled.View`
-    height : 85px;
-    flex-direction : row;
-    align-items : center;
-    padding-left : 5%;
-`;
-
-const SearchButton = styled.TouchableOpacity`
-    border-radius : 10px;
-    align-items : center;
-    justify-content : center;
-    width : 18%;
-    height : 50%;
-    font-size : 14px;
-    background-color : #73ccef;
-`;
-
-const SearchInputContainer = styled.View`
-    flex-direction : row;
-    align-items : center;
-    background-color : rgba(118,118,118,0.1);
-    width : 75%;
-    height : 50%;
-    margin-left : 6.89px;
-    padding-left : 12px;
-    border-radius : 10px;
-`;
-
-const SearchTextInput = styled.TextInput`
-    width : 75%;
-    font-size : 18px;
-    padding : 7px;
-`;
+import SearchCategoriesContainer from './components/SearchCategoriesContainer';
 
 async function requestPermissions() {
   if (Platform.OS === 'ios') {
@@ -158,25 +121,18 @@ function NaverMap({ navigation }) {
     <View style={{
       backgroundColor: '#fff',
       padding: 16,
-      height: 150,
+      width: '100%',
+      height: 500,
+      borderTopRightRadius: 10,
+      borderTopLeftRadius: 10,
     }}
     >
-      <MapMarkerItem />
+      <MapMarkerItem navigation={navigation} />
     </View>
   );
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <SearchCategories>
-        <SearchButton
-          onPress={() => { }}
-        >
-          <Text style={{ color: '#fff' }}>목록</Text>
-        </SearchButton>
-        <SearchInputContainer>
-          <AntDesignIcon name="search1" size={18} />
-          <SearchTextInput placeholder="검색" placeholderTextColor="#3c3c43" />
-        </SearchInputContainer>
-      </SearchCategories>
+      <SearchCategoriesContainer navigation={navigation} text="목록" />
       <View
         style={{
           position: 'relative',
@@ -214,8 +170,8 @@ function NaverMap({ navigation }) {
       <BottomSheet
         ref={sheetRef}
         snapPoints={['-50%', '-50%', '20%']}
-        borderRadius={10}
-        renderContent={renderContent}
+        borderRadius={30}
+        renderHeader={renderContent}
         onOpenEnd={() => setSheetIsOpen(true)}
         onCloseEnd={() => handleBottomSheet()}
       />
