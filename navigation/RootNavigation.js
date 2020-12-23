@@ -44,6 +44,8 @@ import ChattingPage from '../screens/ChattingPage';
 
 import NaverMap from '../screens/NaverMap';
 
+import ReviewPage from '../screens/ReviewPage';
+
 const Stack = createStackNavigator();
 
 const Tabs = createBottomTabNavigator();
@@ -100,6 +102,10 @@ const Navigation = () => (
         <Stack.Screen
           name="LoginSignUpStartPage"
           component={LoginSignUpStartPage}
+        />
+        <Stack.Screen
+          name="ReviewPage"
+          component={ReviewPage}
         />
         <Stack.Screen
           name="NaverMap"
