@@ -64,36 +64,35 @@ const styles = StyleSheet.create({
   },
 });
 
-const LoginInputContainer = () => {
+const LoginInputContainer = ({ navigation }) => {
   const {
     handleSubmit, control, reset, errors,
   } = useForm();
 
   const dispatch = useDispatch();
-  // navigation.navigate('LoginPage')
-  const { loginFields, accessToken } = useSelector((state) => ({
+
+  const {
+    loginFields, loginUserInfo, message,
+  } = useSelector((state) => ({
     loginFields: state.LoginReducer.loginFields,
-    accessToken: state.LoginReducer.accessToken,
+    loginUserInfo: state.LoginReducer.loginUserInfo,
+    message: state.LoginReducer.message,
   }));
-  console.log(accessToken, loginFields);
 
-  const mailInputRef = React.useRef();
+  const accountInputRef = React.useRef();
   const passwordInputRef = React.useRef();
-
-  function handleLogin() {
-    dispatch(requestLogin());
-  }
 
   const onSubmit = (data) => {
     dispatch(changeLoginField({ data }));
+
+    dispatch(requestLogin(navigation));
+
     reset({
-      nickname: '',
-      account: '',
-      password: '',
+      loginAccount: '',
+      loginPassword: '',
     });
   };
 
-  console.log(errors);
   return (
     <>
       <View style={{
@@ -108,12 +107,13 @@ const LoginInputContainer = () => {
             <View style={styles.textInputContainer}>
               <Text style={styles.labelText}>아이디</Text>
               <Input
-                name="account"
-                reference={mailInputRef}
+                name="loginAccount"
+                reference={accountInputRef}
                 control={control}
                 inputStyle={styles.textInput}
                 placeholder="아이디"
               />
+              {message === '찾을 수 없습니다.' ? <Text style={{ color: 'red' }}>아이디가 없습니다.</Text> : null}
             </View>
           </View>
           <View style={styles.textInputCenter}>
@@ -121,12 +121,14 @@ const LoginInputContainer = () => {
               <Text style={styles.labelText}>비밀번호</Text>
               <Input
                 secureTextEntry
-                name="password"
+                name="loginPassword"
                 reference={passwordInputRef}
                 control={control}
                 inputStyle={styles.textInput}
                 placeholder="비밀번호"
               />
+              {message.indexOf('activated') !== -1 ? <Text style={{ color: 'red' }}>웹메일 인증이 필요한 계정입니다.</Text> : null}
+              {message === 'Password is not correct.' ? <Text style={{ color: 'red' }}>비밀번호가 틀렸습니다.</Text> : null}
               <Text style={styles.passwordInfo}>문자,숫자,기호를 조합하여 8자 이상을 사용하세요.</Text>
             </View>
           </View>
@@ -137,7 +139,6 @@ const LoginInputContainer = () => {
               buttonStyle={styles.loginButton}
               handleSubmit={handleSubmit}
               onSubmit={onSubmit}
-              onLogin={handleLogin}
             />
           </View>
         </View>

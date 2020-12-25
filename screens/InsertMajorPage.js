@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 
 const InsertMajorPage = ({ navigation }) => {
   const comment = '전공';
-  const dotNumber = 2;
+  const dotNumber = 3;
 
   const nextPage = 'InsertTalentPage';
 

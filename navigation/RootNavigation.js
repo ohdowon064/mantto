@@ -45,7 +45,10 @@ import ChattingPage from '../screens/ChattingPage';
 import NaverMap from '../screens/NaverMap';
 
 import ReviewPage from '../screens/ReviewPage';
+
 import ManttoLists from '../screens/ManttoLists';
+
+import SignUpAuthPage from '../screens/SignUpAuthPage';
 
 const Stack = createStackNavigator();
 
@@ -107,6 +110,10 @@ const Navigation = () => (
         <Stack.Screen
           name="ManttoLists"
           component={ManttoLists}
+        />
+        <Stack.Screen
+          name="SignUpAuthPage"
+          component={SignUpAuthPage}
         />
         <Stack.Screen
           name="ReviewPage"

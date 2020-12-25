@@ -48,6 +48,11 @@ const DotIcons = ({ dotNumber }) => (
         size={15}
         style={dotNumber >= 4 ? styles.activeDot : styles.dot}
       />
+      <IconOcticons
+        name="primitive-dot"
+        size={15}
+        style={dotNumber >= 5 ? styles.activeDot : styles.dot}
+      />
     </View>
   </>
 );

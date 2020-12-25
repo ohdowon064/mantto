@@ -25,7 +25,6 @@ const LoginForm = () => {
   const lastName = 'lastName';
 
   const onSubmit = (data) => {
-    console.log(data);
     reset({
       firstName: '',
       lastName: '',

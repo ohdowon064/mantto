@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { View } from 'react-native';
+
+import { useSelector } from 'react-redux';
 
 import TalentCategoryItem from './TalentCategoryItem';
 
 function TalentCategory({ navigation, color }) {
+  const { userList } = useSelector((state) => ({
+    userList: state.talentCategoriesReducer.userList,
+  }));
+
+  console.log(userList);
+
   function handleClick({ name }) {
     navigation.navigate('DetailPage', { name });
   }

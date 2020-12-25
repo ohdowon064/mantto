@@ -11,7 +11,13 @@ import {
 
 import { Badge } from 'react-native-elements';
 
+import { useDispatch } from 'react-redux';
+
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
+
+import {
+  loadUserList,
+} from './actions/index';
 
 import MainPageLayout from './layouts/MainPageLayout';
 
@@ -100,6 +106,8 @@ const styles = StyleSheet.create({
 });
 
 function MainPage({ navigation }) {
+  const dispatch = useDispatch();
+
   const bottomSheetRef = useRef(null);
 
   const [sheetIsOpen, setSheetIsOpen] = useState(false);
@@ -113,6 +121,7 @@ function MainPage({ navigation }) {
   }
 
   useEffect(() => {
+    dispatch(loadUserList());
     try {
       Keyboard.addListener('keyboardDidShow', keyboardDidShow);
     } catch (e) {

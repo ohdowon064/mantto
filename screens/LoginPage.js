@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 
 import LoginInputContainer from './components/LoginInputContainer';
+
 import TabNav from './components/TabNav';
 
 const LoginPage = ({ navigation }) => (
@@ -62,7 +63,7 @@ const LoginPage = ({ navigation }) => (
         </TouchableOpacity>
       </View>
     </View>
-    <LoginInputContainer />
+    <LoginInputContainer navigation={navigation} />
   </SafeAreaView>
 );
 

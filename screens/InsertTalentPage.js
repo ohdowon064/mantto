@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 
 const InsertTalentPage = ({ navigation }) => {
   // TODO : 항목 하나는 선택된 상태 유지
-  const dotNumber = 3;
+  const dotNumber = 4;
   const comment = '재능';
 
   const nextPage = 'PassionPage';

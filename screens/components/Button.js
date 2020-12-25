@@ -55,15 +55,12 @@ const HeartIcon = ({ dibsOn, setDibs, color }) => (
 );
 
 const SubmitButton = ({
-  title, buttonStyle, handleSubmit, onSubmit, onLogin,
+  title, buttonStyle, handleSubmit, onSubmit,
 }) => (
   <Button
     buttonStyle={buttonStyle}
     title={title}
-    onPress={() => {
-      handleSubmit(onSubmit);
-      onLogin();
-    }}
+    onPress={handleSubmit(onSubmit)}
   />
 );
 
@@ -110,17 +107,37 @@ const WriteHelpPointDownButton = () => (
   />
 );
 
-const RightArrowButton = ({ navigation, navPage }) => (
-  <View style={styles.buttonRightContainer}>
-    <Button
-      type="clear"
-      icon={<IconAntDesign name="right" size={20} color="#000000" />}
-      buttonStyle={styles.rightButtonStyle}
-      onPress={() => navigation.navigate(`${navPage}`)}
-    />
-  </View>
+const RightArrowButton = ({
+  navigation, navPage, handleSubmit, onSubmit, dotNumber, totalMessage,
+}) => {
+  const {
+    message, nickname, email, account,
+  } = totalMessage;
+  return (
+    <View style={styles.buttonRightContainer}>
+      <Button
+        type="clear"
+        icon={<IconAntDesign name="right" size={20} color="#000000" />}
+        buttonStyle={styles.rightButtonStyle}
+        onPress={() => {
+          if (dotNumber === 1) {
+            handleSubmit(onSubmit)();
+            if (!nickname || !email || !account) {
+              navigation.navigate('SignUpFirstPage');
+            }
+          }
+          if (message === 'Sign Up Successfully.') {
+            navigation.navigate(`${navPage}`);
+          }
+          if (dotNumber === 2 || dotNumber === 3 || dotNumber === 4 || dotNumber === 5) {
+            navigation.navigate(`${navPage}`);
+          }
+        }}
+      />
+    </View>
 
-);
+  );
+};
 
 export {
   LeftArrowButton,
