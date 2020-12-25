@@ -1,4 +1,5 @@
 const initialState = {
+  userList: [],
   categories: [
     { id: 1, name: '#디자인' },
     { id: 2, name: '#IT/프로그래밍' },
@@ -18,6 +19,13 @@ export default function talentCategoriesReducer(state = initialState, action) {
     return {
       ...state,
       category,
+    };
+  }
+  if (action.type === 'setUserList') {
+    const { userList } = action.payload;
+    return {
+      ...state,
+      userList,
     };
   }
   return state;

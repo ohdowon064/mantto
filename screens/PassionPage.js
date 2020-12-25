@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
 });
 
 const PassionPage = ({ navigation }) => {
-  const dotNumber = 4;
+  const dotNumber = 5;
   const comment = '열정';
 
   const nextPage = 'MainPage';

@@ -30,21 +30,33 @@ const styles = StyleSheet.create({
 });
 
 const InsertTalentLayout = ({
-  children, dotNumber, navigation, navPage,
-}) => (
-  <>
-    <StatusBar barStyle="dark-content" />
-    <SafeAreaView style={styles.body}>
-      <ScrollView>
-        <TabNav text="" navigation={navigation} />
-        {children}
-        <View style={styles.bottomContainer}>
-          <DotIcons dotNumber={dotNumber} />
-          <RightArrowButton navigation={navigation} navPage={navPage} />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  </>
-);
+  children, dotNumber, navigation, navPage, handleSubmit, onSubmit, totalMessage = {
+    message: '', nickname: '', email: '', account: '',
+  },
+}) => {
+  console.log(totalMessage);
+  return (
+    <>
+      <StatusBar barStyle="dark-content" />
+      <SafeAreaView style={styles.body}>
+        <ScrollView>
+          <TabNav text="" navigation={navigation} />
+          {children}
+          <View style={styles.bottomContainer}>
+            <DotIcons dotNumber={dotNumber} />
+            <RightArrowButton
+              totalMessage={totalMessage}
+              navigation={navigation}
+              navPage={navPage}
+              handleSubmit={handleSubmit}
+              onSubmit={onSubmit}
+              dotNumber={dotNumber}
+            />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </>
+  );
+};
 
 export default InsertTalentLayout;

@@ -1,12 +1,19 @@
+/* eslint-disable no-nested-ternary */
 import React from 'react';
 
 import {
-  Text, View, StyleSheet, TextInput,
+  Text, View, StyleSheet,
 } from 'react-native';
 
-import { Button } from 'react-native-elements';
+import { useForm } from 'react-hook-form';
+
+import { useDispatch, useSelector } from 'react-redux';
+
+import Input from './components/Input';
 
 import InsertTalentLayout from './layouts/InsertTalentLayout';
+
+import { requestSignUp, setSignUp } from './actions/index';
 
 const styles = StyleSheet.create({
   inputContainer: {
@@ -91,13 +98,47 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontWeight: 'bold',
   },
+  alertMsg: {
+    color: 'red',
+  },
 });
 
 export default function SignupFirstPage({ navigation }) {
-  const [text, setText] = React.useState('');
+  const dispatch = useDispatch();
+
+  const { signUpFields, messageTotal } = useSelector((state) => ({
+    signUpFields: state.SignUpReducer.signUpFields,
+    messageTotal: state.SignUpReducer.messageTotal,
+  }));
+
+  const {
+    message, account, nickname, email,
+  } = messageTotal;
+
   const dotNumber = 1;
-  const nextPage = 'InsertMajorPage';
+  const nextPage = 'SignUpAuthPage';
   const prePage = 'LoginSignUpStartPage';
+  const {
+    handleSubmit, control, reset, errors,
+  } = useForm();
+
+  const onSubmit = (data) => {
+    dispatch(setSignUp(data));
+    if (signUpFields.account) {
+      dispatch(requestSignUp());
+    }
+    reset({
+      account: '',
+      email: '',
+      nickname: '',
+      password: '',
+    });
+  };
+
+  const accountInputRef = React.useRef();
+  const emailInputRef = React.useRef();
+  const nicknameInputRef = React.useRef();
+  const passwordInputRef = React.useRef();
 
   return (
     <InsertTalentLayout
@@ -105,45 +146,50 @@ export default function SignupFirstPage({ navigation }) {
       navigation={navigation}
       prePage={prePage}
       navPage={nextPage}
+      handleSubmit={handleSubmit}
+      onSubmit={onSubmit}
+      totalMessage={messageTotal}
     >
       <View style={styles.inputContainer}>
         <Text style={styles.title}>회원가입</Text>
+        <Text style={styles.labelText}>아이디</Text>
+        <Input
+          name="account"
+          reference={accountInputRef}
+          control={control}
+          inputStyle={styles.textInput}
+          placeholder="아이디"
+        />
+        {account ? <Text style={styles.alertMsg}>이미 존재하는 아이디입니다.</Text> : null}
+        <Text style={styles.labelText}>부산대 웹메일</Text>
+        <Input
+          name="email"
+          reference={emailInputRef}
+          control={control}
+          inputStyle={styles.textInput}
+          placeholder="이메일"
+        />
+        {email ? email[0].indexOf('유효') !== -1
+          ? <Text style={styles.alertMsg}>유효한 이메일이 아닙니다.</Text>
+          : <Text style={styles.alertMsg}>이미 존재하는 이메일입니다.</Text>
+          : null}
         <Text style={styles.labelText}>닉네임</Text>
-        <TextInput
-          style={styles.textInput}
-          placeholder="   닉네임"
-          onChangeText={(inputText) => setText(inputText)}
-          defaultValue={text}
+        <Input
+          name="nickname"
+          reference={nicknameInputRef}
+          control={control}
+          inputStyle={styles.textInput}
+          placeholder="닉네임"
         />
-        <Text style={styles.labelText}>학교 이메일</Text>
-        <TextInput
-          style={styles.textInput}
-          placeholder="   이메일"
-          onChangeText={(inputText) => setText(inputText)}
-          defaultValue={text}
-        />
-      </View>
-      <View style={styles.inputContainer}>
-        <Text style={styles.labelText}>이메일 인증번호</Text>
-        <View style={styles.verifyContainer}>
-          <TextInput
-            style={styles.specialTextInput}
-            placeholder="   인증번호"
-            onChangeText={(inputText) => setText(inputText)}
-            defaultValue={text}
-          />
-          <Button
-            buttonStyle={styles.buttonDesign}
-            title="확인"
-            titleColor="white"
-          />
-        </View>
+        {nickname ? <Text style={styles.alertMsg}>이미 존재하는 닉네임입니다.</Text> : null}
         <Text style={styles.labelText}>비밀번호</Text>
-        <TextInput
-          style={styles.textInput}
-          placeholder="   비밀번호"
-          onChangeText={(inputText) => setText(inputText)}
-          defaultValue={text}
+        <Input
+          secureTextEntry
+          name="password"
+          reference={passwordInputRef}
+          control={control}
+          inputStyle={styles.textInput}
+          placeholder="비밀번호"
         />
         <Text style={styles.passwordInfo}>문자,숫자,기호를 조합하여 8자 이상을 사용하세요.</Text>
       </View>
