@@ -5,44 +5,7 @@ import {
   View,
 } from 'react-native';
 
-import { useForm } from 'react-hook-form';
-
 import Input from './Input';
-
-const TalentInputContainer = ({ placeholder }) => {
-  const {
-    handleSubmit, control, reset, errors,
-  } = useForm();
-
-  const passionInputRef = React.useRef();
-
-  const passionItem = 'passionItem';
-
-  const onSubmit = (data) => {
-    console.log(data);
-    reset({
-      passionItem: '',
-    });
-  };
-
-  console.log(errors);
-  return (
-    <>
-      <View style={styles.textInputCenter}>
-        <View style={styles.textInputContainer}>
-          <Input
-            name={passionItem}
-            reference={passionInputRef}
-            control={control}
-            inputStyle={styles.textInput}
-            placeholder={placeholder}
-          />
-          {/* TODO : input 값 "submit" 가능한 버튼 ( > ) 만들기 */}
-        </View>
-      </View>
-    </>
-  );
-};
 
 const styles = StyleSheet.create({
   textInputContainer: {
@@ -63,5 +26,24 @@ const styles = StyleSheet.create({
     fontSize: 17,
   },
 });
+
+const TalentInputContainer = ({
+  placeholder, control, name, refer,
+}) => (
+  <>
+    <View style={styles.textInputCenter}>
+      <View style={styles.textInputContainer}>
+        <Input
+          name={name}
+          reference={refer}
+          control={control}
+          inputStyle={styles.textInput}
+          placeholder={placeholder}
+        />
+        {/* TODO : input 값 "submit" 가능한 버튼 ( > ) 만들기 */}
+      </View>
+    </View>
+  </>
+);
 
 export default TalentInputContainer;

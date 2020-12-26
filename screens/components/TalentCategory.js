@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
-import { View } from 'react-native';
+import { View, FlatList } from 'react-native';
 
 import { useSelector } from 'react-redux';
 
@@ -11,44 +11,32 @@ function TalentCategory({ navigation, color }) {
     userList: state.talentCategoriesReducer.userList,
   }));
 
-  console.log(userList);
-
-  function handleClick({ name }) {
-    navigation.navigate('DetailPage', { name });
+  function handleClick({ item }) {
+    navigation.navigate('DetailPage', { item });
   }
+
+  const renderItem = ({ item }) => (
+    <TalentCategoryItem
+      item={item}
+      color={color}
+      onPress={() => handleClick({ item })}
+    />
+  );
+
   return (
     <>
-      {/* flatList 도 생각해봐야 한다. */}
-      {/* 리스트 컨테이너 */}
       <View style={{
         paddingTop: 3,
-        paddingLeft: 14,
-        paddingRight: 14,
+        paddingLeft: 12,
+        paddingRight: 12,
         flex: 1,
       }}
       >
-        {/* 리스트 한개 */}
-        <TalentCategoryItem
-          name="오도원"
-          rank="1"
-          rankColor={color}
-          onClick={handleClick}
+        <FlatList
+          data={userList}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
         />
-        <TalentCategoryItem />
-        <TalentCategoryItem />
-        <TalentCategoryItem />
-        <TalentCategoryItem />
-        <TalentCategoryItem />
-        <TalentCategoryItem />
-        <TalentCategoryItem />
-        <TalentCategoryItem />
-        <TalentCategoryItem />
-        <TalentCategoryItem />
-        <TalentCategoryItem />
-        <TalentCategoryItem />
-        <TalentCategoryItem />
-        <TalentCategoryItem />
-
       </View>
     </>
   );

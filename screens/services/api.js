@@ -75,7 +75,33 @@ export async function postActivate({ account, authCode }) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        account, authCode,
+        account,
+        active_code: authCode,
+      }),
+    });
+
+    const data = await response.json();
+
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+export async function postUserPatch({ userPatchInfo, userId, token }) {
+  const url = `https://4dv6lzjdu7.execute-api.ap-northeast-2.amazonaws.com/dev/api/user/${userId}`;
+  const { major, talent, passion } = userPatchInfo;
+  try {
+    const response = await fetch(url, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `JWT ${token}`,
+      },
+      body: JSON.stringify({
+        major,
+        mantto_talent: talent,
+        mantti_talent: passion,
       }),
     });
 

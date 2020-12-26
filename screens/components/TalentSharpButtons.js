@@ -9,7 +9,9 @@ import {
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectCategories } from '../actions/index';
+import {
+  selectTalent, selectPassion, setUserTalent, setUserPassion,
+} from '../actions/index';
 
 const styles = StyleSheet.create({
   categoriesContainer: {
@@ -34,16 +36,24 @@ const styles = StyleSheet.create({
   },
 });
 
-const TalentSharpButtons = ({ color }) => {
-  const { categories, category } = useSelector((state) => ({
-    categories: state.talentCategoriesReducer.categories,
-    category: state.talentCategoriesReducer.category,
-  }));
-
+const TalentSharpButtons = ({ color, talentORPassion }) => {
   const dispatch = useDispatch();
 
+  const { categories, talent, passion } = useSelector((state) => ({
+    categories: state.talentCategoriesReducer.categories,
+    talent: state.talentCategoriesReducer.talent,
+    passion: state.talentCategoriesReducer.passion,
+  }));
+
   function handleClick({ name }) {
-    dispatch(selectCategories(name));
+    if (talentORPassion === '재능') {
+      dispatch(selectTalent(name));
+      dispatch(setUserTalent(name));
+    }
+    if (talentORPassion === '열정') {
+      dispatch(selectPassion(name));
+      dispatch(setUserPassion(name));
+    }
   }
 
   const touchProps = {
@@ -60,6 +70,38 @@ const TalentSharpButtons = ({ color }) => {
       backgroundColor: color,
     },
   };
+  if (talentORPassion === '재능') {
+    return (
+      <>
+        <View style={styles.categoriesContainer}>
+          <View style={styles.categoriesStyle}>
+            {categories.map(({ id, name }) => (
+              <TouchableHighlight
+                key={id}
+                style={[
+                  touchProps.style, name === talent
+                    ? touchProps.selectStyle
+                    : touchProps.style,
+                ]}
+                onPress={() => handleClick({ name })}
+              >
+                <Text
+                  style={[
+                    name === talent
+                      ? styles.selectText
+                      : styles.text,
+                  ]}
+                >
+                  #
+                  {name}
+                </Text>
+              </TouchableHighlight>
+            ))}
+          </View>
+        </View>
+      </>
+    );
+  }
 
   return (
     <>
@@ -69,7 +111,7 @@ const TalentSharpButtons = ({ color }) => {
             <TouchableHighlight
               key={id}
               style={[
-                touchProps.style, name === category
+                touchProps.style, name === passion
                   ? touchProps.selectStyle
                   : touchProps.style,
               ]}
@@ -77,11 +119,12 @@ const TalentSharpButtons = ({ color }) => {
             >
               <Text
                 style={[
-                  name === category
+                  name === passion
                     ? styles.selectText
                     : styles.text,
                 ]}
               >
+                #
                 {name}
               </Text>
             </TouchableHighlight>

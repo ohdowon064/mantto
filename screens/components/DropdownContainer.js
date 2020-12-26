@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Dropdown } from 'react-native-material-dropdown';
 
-export default function DropdownContainer({ style, label }) {
+export default function DropdownContainer({ style, label, talent }) {
+  const [value, setValue] = useState(talent);
+
+  console.log(value);
+
   function handleClick(value) {
     console.log(value);
+    setValue(value);
     // 프론트에서 저장해두고 있다가 백엔드 한테 전달
   }
 
@@ -36,7 +41,8 @@ export default function DropdownContainer({ style, label }) {
       containerStyle={style}
       label={label}
       data={data}
-      onChange={(value) => handleClick(value)}
+      value={value}
+      onChangeText={(value) => handleClick(value)}
     />
   );
 }

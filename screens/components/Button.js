@@ -12,6 +12,10 @@ import { Button } from 'react-native-elements';
 
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
 
+import {
+  requestUserPatch,
+} from '../actions/index';
+
 const styles = StyleSheet.create({
   rightButtonStyle: {
     borderRadius: 17.5,
@@ -108,7 +112,7 @@ const WriteHelpPointDownButton = () => (
 );
 
 const RightArrowButton = ({
-  navigation, navPage, handleSubmit, onSubmit, dotNumber, totalMessage,
+  navigation, navPage, handleSubmit, onSubmit, dotNumber, totalMessage, dispatch,
 }) => {
   const {
     message, nickname, email, account,
@@ -122,14 +126,16 @@ const RightArrowButton = ({
         onPress={() => {
           if (dotNumber === 1) {
             handleSubmit(onSubmit)();
-            if (!nickname || !email || !account) {
-              navigation.navigate('SignUpFirstPage');
-            }
           }
-          if (message === 'Sign Up Successfully.') {
+          if (dotNumber === 3) {
+            handleSubmit(onSubmit)();
             navigation.navigate(`${navPage}`);
           }
-          if (dotNumber === 2 || dotNumber === 3 || dotNumber === 4 || dotNumber === 5) {
+          if (dotNumber === 2 || dotNumber === 4) {
+            navigation.navigate(`${navPage}`);
+          }
+          if (dotNumber === 5) {
+            dispatch(requestUserPatch());
             navigation.navigate(`${navPage}`);
           }
         }}

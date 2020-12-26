@@ -130,7 +130,7 @@ function MainPage({ navigation }) {
     return () => {
       Keyboard.removeListener('keyboardDidShow', keyboardDidShow);
     };
-  });
+  }, []);
 
   return (
     <MainPageLayout
@@ -166,31 +166,31 @@ function MainPage({ navigation }) {
         {type ? (
           <>
             <View style={styles.categoryLine}>
-              <CategoryItem Svg={designSvg} itemTitle="디자인" />
-              <CategoryItem Svg={programmingSvg} itemTitle="IT/프로그래밍" />
-              <CategoryItem Svg={pictureSvg} itemTitle="영상/사진/음향" />
-              <CategoryItem Svg={marketSvg} itemTitle="마케팅" />
+              <CategoryItem navigation={navigation} Svg={designSvg} itemTitle="디자인" />
+              <CategoryItem navigation={navigation} Svg={programmingSvg} itemTitle="IT/프로그래밍" />
+              <CategoryItem navigation={navigation} Svg={pictureSvg} itemTitle="영상/사진/음향" />
+              <CategoryItem navigation={navigation} Svg={marketSvg} itemTitle="마케팅" />
             </View>
             <View style={styles.categoryLine}>
-              <CategoryItem Svg={photoSvg} itemTitle="번역/통역" />
-              <CategoryItem Svg={sportsSvg} itemTitle="스포츠/레저" />
-              <CategoryItem Svg={jobSvg} itemTitle="취업" />
-              <CategoryItem Svg={talkSvg} itemTitle="운세/상담" />
+              <CategoryItem navigation={navigation} Svg={photoSvg} itemTitle="번역/통역" />
+              <CategoryItem navigation={navigation} Svg={sportsSvg} itemTitle="스포츠/레저" />
+              <CategoryItem navigation={navigation} Svg={jobSvg} itemTitle="취업" />
+              <CategoryItem navigation={navigation} Svg={talkSvg} itemTitle="운세/상담" />
             </View>
           </>
         ) : (
           <>
             <View style={styles.categoryLine}>
-              <CategoryItem Svg={designSvg} itemTitle="디자인" />
-              <CategoryItem Svg={programmingSvgB} itemTitle="IT/프로그래밍" />
-              <CategoryItem Svg={pictureSvgB} itemTitle="영상/사진/음향" />
-              <CategoryItem Svg={MarketIcon} itemTitle="마케팅" />
+              <CategoryItem navigation={navigation} Svg={designSvg} itemTitle="디자인" />
+              <CategoryItem navigation={navigation} Svg={programmingSvgB} itemTitle="IT/프로그래밍" />
+              <CategoryItem navigation={navigation} Svg={pictureSvgB} itemTitle="영상/사진/음향" />
+              <CategoryItem navigation={navigation} Svg={MarketIcon} itemTitle="마케팅" />
             </View>
             <View style={styles.categoryLine}>
-              <CategoryItem Svg={talkSvgB} itemTitle="번역/통역" />
-              <CategoryItem Svg={sportsSvgB} itemTitle="스포츠/레저" />
-              <CategoryItem Svg={jobSvgB} itemTitle="취업" />
-              <CategoryItem Svg={HeartB} itemTitle="운세/상담" />
+              <CategoryItem navigation={navigation} Svg={talkSvgB} itemTitle="번역/통역" />
+              <CategoryItem navigation={navigation} Svg={sportsSvgB} itemTitle="스포츠/레저" />
+              <CategoryItem navigation={navigation} Svg={jobSvgB} itemTitle="취업" />
+              <CategoryItem navigation={navigation} Svg={HeartB} itemTitle="운세/상담" />
             </View>
           </>
         )}

@@ -4,6 +4,10 @@ import {
   StyleSheet, View, Text, Image, TouchableOpacity, SafeAreaView, Platform,
 } from 'react-native';
 
+import { useSelector } from 'react-redux';
+
+import { Badge } from 'react-native-elements';
+
 import StarsIcon from './src/Icons/StarsIcon';
 
 import TopNavContainer from './components/TopNavContainer';
@@ -133,88 +137,102 @@ const styles = StyleSheet.create({
   },
 });
 
-const Profile = ({ navigation }) => (
-  <SafeAreaView style={styles.fullScreen}>
-    <View style={styles.topContainer} />
-    <View style={styles.container}>
-      <View style={styles.upperContainer}>
-        <TopNavContainer title="마이페이지" navigation={navigation} />
-        <View style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-        }}
-        >
+const Profile = ({ navigation }) => {
+  const { loginUserInfo } = useSelector((state) => ({
+    loginUserInfo: state.LoginReducer.loginUserInfo,
+  }));
+
+  const { nickname, coupon, like_users } = loginUserInfo;
+
+  return (
+    <SafeAreaView style={styles.fullScreen}>
+      <View style={styles.topContainer} />
+      <View style={styles.container}>
+        <View style={styles.upperContainer}>
+          <TopNavContainer title="마이페이지" navigation={navigation} />
           <View style={{
-            width: 100,
-            height: 100,
-            justifyContent: 'center',
+            flexDirection: 'row',
             alignItems: 'center',
           }}
           >
-            <Image
-              source={require('./src/images/people.png')}
-            />
+            <View style={{
+              width: 100,
+              height: 100,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+            >
+              <Image
+                source={require('./src/images/people.png')}
+              />
+            </View>
+            <View style={{
+              marginLeft: 10,
+            }}
+            >
+              <Text style={styles.nameText}>{nickname}</Text>
+              <StarsIcon />
+            </View>
           </View>
-          <View style={{
-            marginLeft: 10,
-          }}
-          >
-            <Text style={styles.nameText}>이예나</Text>
-            <StarsIcon />
+        </View>
+        <View style={styles.middleContainer}>
+          <View>
+            <TouchableOpacity
+              style={styles.circleButton}
+              onPress={() => navigation.navigate('WatchListPage', { likeUsers: like_users })}
+            >
+              <HeartSvg style={styles.circleSvg} />
+            </TouchableOpacity>
+            <Text style={styles.list}>관심 목록</Text>
+          </View>
+          <View>
+            <TouchableOpacity
+              style={styles.circleButton}
+              // 교환권 등록?
+              // onPress={() => navigation.navigate('NaverMap')}
+            >
+              <TicketSvg style={styles.circleSvg} />
+              <Badge
+                status="error"
+                value={coupon}
+                containerStyle={{ position: 'absolute', top: -5, left: 30 }}
+              />
+            </TouchableOpacity>
+            <Text style={styles.list}>교환권</Text>
+          </View>
+          <View>
+            <TouchableOpacity
+              style={styles.circleButton}
+              onPress={() => navigation.navigate('TalentRegisterPage', { loginUserInfo })}
+            >
+              <SaveSvg style={styles.circleSvg} />
+            </TouchableOpacity>
+            <Text style={styles.list}>재능 등록</Text>
           </View>
         </View>
-      </View>
-      <View style={styles.middleContainer}>
-        <View>
+        <View style={styles.listContainer}>
           <TouchableOpacity
-            style={styles.circleButton}
-            onPress={() => navigation.navigate('WatchListPage')}
+            style={styles.categories}
+            onPress={() => navigation.navigate('AlertsPage')}
           >
-            <HeartSvg style={styles.circleSvg} />
+            <Text style={styles.category}>알림</Text>
           </TouchableOpacity>
-          <Text style={styles.list}>관심 목록</Text>
-        </View>
-        <View>
           <TouchableOpacity
-            style={styles.circleButton}
-            onPress={() => navigation.navigate('NaverMap')}
+            style={styles.categories}
+            onPress={() => navigation.navigate('Chats')}
           >
-            <TicketSvg style={styles.circleSvg} />
+            <Text style={styles.category}>채팅 목록</Text>
           </TouchableOpacity>
-          <Text style={styles.list}>교환권</Text>
-        </View>
-        <View>
           <TouchableOpacity
-            style={styles.circleButton}
-            onPress={() => navigation.navigate('TalentRegisterPage')}
+            style={styles.categories}
+            onPress={() => navigation.navigate('AppSettingsPage')}
           >
-            <SaveSvg style={styles.circleSvg} />
+            <Text style={styles.category}>앱 설정</Text>
           </TouchableOpacity>
-          <Text style={styles.list}>재능 등록</Text>
         </View>
       </View>
-      <View style={styles.listContainer}>
-        <TouchableOpacity
-          style={styles.categories}
-          onPress={() => navigation.navigate('AlertsPage')}
-        >
-          <Text style={styles.category}>알림</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.categories}
-          onPress={() => navigation.navigate('Chats')}
-        >
-          <Text style={styles.category}>채팅 목록</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.categories}
-          onPress={() => navigation.navigate('AppSettingsPage')}
-        >
-          <Text style={styles.category}>앱 설정</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  </SafeAreaView>
-);
+    </SafeAreaView>
+  );
+};
 
 export default Profile;

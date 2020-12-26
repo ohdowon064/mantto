@@ -5,12 +5,20 @@ import {
   postAuthMail,
   postActivate,
   fetchUserList,
+  postUserPatch,
 } from '../services/api';
 
-export function selectCategories(category) {
+export function selectTalent(talent) {
   return {
-    type: 'selectCategories',
-    payload: { category },
+    type: 'selectTalent',
+    payload: { talent },
+  };
+}
+
+export function selectPassion(passion) {
+  return {
+    type: 'selectPassion',
+    payload: { passion },
   };
 }
 
@@ -24,6 +32,27 @@ export function setType(type) {
   return {
     type: 'setType',
     payload: { type },
+  };
+}
+
+export function setUserMajor(major) {
+  return {
+    type: 'setUserMajor',
+    payload: { major },
+  };
+}
+
+export function setUserTalent(talent) {
+  return {
+    type: 'setUserTalent',
+    payload: { talent },
+  };
+}
+
+export function setUserPassion(passion) {
+  return {
+    type: 'setUserPassion',
+    payload: { passion },
   };
 }
 
@@ -108,6 +137,18 @@ export function loadUserList() {
   };
 }
 
+export function requestUserPatch() {
+  return async (dispatch, getState) => {
+    const { userPatchInfo, loginUserInfo: { id, token } } = getState().LoginReducer;
+
+    const user = await postUserPatch({ userPatchInfo, userId: id, token });
+
+    console.log(user);
+
+    dispatch(setUserInfo(user));
+  };
+}
+
 export function requestLogin(navigation) {
   return async (dispatch, getState) => {
     const { loginFields: { account, password } } = getState().LoginReducer;
@@ -128,14 +169,14 @@ export function requestLogin(navigation) {
     if (response.status === 200) {
       const user = await response.json();
       if (user.token) {
-        if (user.major) {
+        if (!user.major) {
           navigation.navigate('InsertMajorPage');
         } else {
-          navigation.navigate('MainPage');
+          navigation.navigate('LoginLoadingPage');
           dispatch(clearAllMessage());
         }
       }
-      await dispatch(setUserInfo(user));
+      dispatch(setUserInfo(user));
     }
   };
 }
@@ -160,7 +201,7 @@ export function requestAuth() {
       },
     } = getState().SignUpReducer;
     // 500 error test 아직 못함.
-    const { message } = await postAuthMail(account);
+    const { message } = await postAuthMail({ account });
     console.log(`requestAuth에서 ${message} 받음`);
     if (message.indexOf('Activate') !== -1) {
       console.log(`서버 응답! ${account}에 해당하는 이메일로 메일 보냈음.`);
@@ -168,7 +209,7 @@ export function requestAuth() {
   };
 }
 
-export function requestSignUp() {
+export function requestSignUp(navigation) {
   return async (dispatch, getState) => {
     const {
       signUpFields: {
@@ -187,7 +228,9 @@ export function requestSignUp() {
     }));
 
     if (message === 'Sign Up Successfully.') {
+      navigation.navigate('SignUpAuthPage');
       dispatch(requestAuth());
+      dispatch(clearAllMessage());
     }
   };
 }

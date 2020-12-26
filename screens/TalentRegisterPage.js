@@ -13,6 +13,8 @@ import {
   TextInput,
 } from 'react-native';
 
+import { RFPercentage } from 'react-native-responsive-fontsize';
+
 import Toggle from 'react-native-toggle-element';
 
 import ProgressBar from 'react-native-progress/Bar';
@@ -55,7 +57,7 @@ const styles = StyleSheet.create({
     height: 250,
   },
   talentInsertTitle: {
-    fontSize: 19,
+    fontSize: 18,
     paddingLeft: 12,
     fontWeight: '700',
   },
@@ -67,11 +69,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#e9e9f0',
     marginLeft: 10,
+    marginTop: 10,
     padding: 10,
   },
   textArea: {
     justifyContent: 'flex-start',
-    height: 150,
   },
   nameText: {
     fontWeight: 'bold',
@@ -109,7 +111,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 5,
     marginBottom: 12.5,
-    fontSize: 12,
     backgroundColor: '#FFFFFF',
   },
   talentExplainContainer: {
@@ -145,8 +146,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const TalentRegisterContainer = ({ navigation }) => {
-  const [text, setText] = useState('');
+const TalentRegisterPage = ({ navigation, route = {} }) => {
+  const { loginUserInfo } = route.params;
+
+  const [value, setText] = useState(loginUserInfo.intro);
 
   const [assignIsEnabled, setAssignIsEnabled] = useState(false);
 
@@ -160,8 +163,8 @@ const TalentRegisterContainer = ({ navigation }) => {
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.body}>
+        <TabNav text="재능 등록" navigation={navigation} />
         <ScrollView>
-          <TabNav text="재능 등록" navigation={navigation} />
           <View style={styles.upperContainer}>
             <View style={{
               alignSelf: 'center',
@@ -191,8 +194,13 @@ const TalentRegisterContainer = ({ navigation }) => {
               }}
               >
                 <Text style={styles.nameText}>
-                  이예나
-                  <Text style={styles.genderText}> (여자)</Text>
+                  {loginUserInfo.nickname}
+                  <Text style={styles.genderText}>
+                    {' '}
+                    (
+                    {loginUserInfo.gender}
+                    )
+                  </Text>
                   {' '}
                 </Text>
                 <StarsIcon />
@@ -211,6 +219,7 @@ const TalentRegisterContainer = ({ navigation }) => {
               <DropDown
                 style={styles.textInput}
                 label="My talent"
+                talent={loginUserInfo.mantto_talent}
               />
               <Text style={styles.talentExplainText}>입니다.</Text>
             </View>
@@ -224,6 +233,7 @@ const TalentRegisterContainer = ({ navigation }) => {
               <DropDown
                 style={styles.textInput}
                 label="My Passion"
+                talent={loginUserInfo.mantti_talent}
               />
               <Text style={styles.talentExplainText}>입니다.</Text>
             </View>
@@ -235,9 +245,10 @@ const TalentRegisterContainer = ({ navigation }) => {
               <TextInput
                 style={styles.textArea}
                 placeholder="Type something"
+                value={value}
                 onChangeText={(inputText) => setText(inputText)}
-                defaultValue={text}
-                numberOfLines={10}
+                maxLength={100}
+                numberOfLines={7}
                 multiline
               />
             </View>
@@ -301,4 +312,4 @@ const TalentRegisterContainer = ({ navigation }) => {
   );
 };
 
-export default TalentRegisterContainer;
+export default TalentRegisterPage;

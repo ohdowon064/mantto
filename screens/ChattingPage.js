@@ -14,11 +14,11 @@ const styles = StyleSheet.create({
   },
 });
 
-function ChattingPage() {
+function ChattingPage({ navigation }) {
   const [typingValue, setTypingValue] = useState('');
   return (
     <SafeAreaView style={styles.container}>
-      <TabNav />
+      <TabNav navigation={navigation} />
       <ChatMessage manttoOrMantti="mantto" mine text="만또님 언제가 제일 괜찮으세요?" />
       <ChatMessage manttoOrMantti="mantto" mine={false} text="저는 월,수,금 오전 제외하고 다 괜찮아요!" />
       <ChatMessage manttoOrMantti="mantti" mine text="만또님 언제가 제일 괜찮으세요?" />

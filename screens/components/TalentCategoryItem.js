@@ -6,9 +6,7 @@ import {
 
 import StarsIcon from '../src/Icons/StarsIcon';
 
-function TalentCategoryItem({
-  name = '이예나', category = '디자인', rank = '2', rankColor = '#979797', onClick,
-}) {
+function TalentCategoryItem({ item, onPress, color }) {
   return (
     <>
       <TouchableOpacity
@@ -33,7 +31,7 @@ function TalentCategoryItem({
             },
           }),
         }}
-        onPress={() => onClick({ name })}
+        onPress={onPress}
       >
         <View style={{
           width: '20%',
@@ -52,26 +50,31 @@ function TalentCategoryItem({
         }}
         >
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <View>
+            <View
+              style={{
+                width: '45%',
+              }}
+            >
               <Text style={{ fontSize: 13 }}>
-                {name}
+                {item.nickname}
                 님
                 {' '}
                 |
                 {' '}
                 <Text style={{ fontSize: 9, color: 'rgba(0,0,0,.4)' }}>
                   {' '}
-                  {category}
+                  {item.mantto_talent}
                 </Text>
               </Text>
-              <StarsIcon />
+              <StarsIcon size={15} />
             </View>
             <View style={{
               flexDirection: 'row',
+              alignItems: 'center',
             }}
             >
               <Text style={{
-                backgroundColor: rankColor,
+                backgroundColor: item.mantto_rank < 2 ? color : '#979797',
                 fontSize: 12,
                 paddingTop: 2,
                 paddingBottom: 2,
@@ -82,17 +85,31 @@ function TalentCategoryItem({
                 textAlign: 'center',
               }}
               >
-                {rank}
+                {item.mantto_rank}
                 위 만또
               </Text>
-              <Text style={{
-                fontSize: 11,
-                marginLeft: 13,
-                color: '#b8bbc8',
-              }}
-              >
-                과제 물어봐 ✓
-              </Text>
+              <View>
+                {item.report_help ? (
+                  <Text style={{
+                    fontSize: 9,
+                    marginLeft: 13,
+                    color: '#b8bbc8',
+                  }}
+                  >
+                    과제 물어봐 ✓
+                  </Text>
+                ) : null}
+                {item.exam_help ? (
+                  <Text style={{
+                    fontSize: 9,
+                    marginLeft: 13,
+                    color: '#b8bbc8',
+                  }}
+                  >
+                    시험 물어봐 ✓
+                  </Text>
+                ) : null}
+              </View>
             </View>
           </View>
           <View style={{
@@ -108,7 +125,10 @@ function TalentCategoryItem({
               paddingRight: 10,
             }}
             >
-              현재 123명 만띠가 찜했습니다 🖤
+              현재
+              {' '}
+              {item.like_users.length}
+              명 만띠가 찜했습니다 🖤
             </Text>
           </View>
         </View>

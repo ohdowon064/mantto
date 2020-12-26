@@ -28,11 +28,11 @@ const TopContainer = styled.View`
 
 const CircleAvatar = styled.View`
   position : absolute;
-  left : 28.5%;
-  top : -19%;
-  width : 155px;
-  height : 155px;
-  border-radius : 155px;
+  left : 31%;
+  top : -21%;
+  width : 140px;
+  height : 140px;
+  border-radius : 140px;
   border-width : 1px;
 `;
 
@@ -45,10 +45,10 @@ const DetailContainer = styled.View`
 `;
 
 const DetailTitle = styled.Text`
-  padding-top : 20%;
+  padding-top : 15%;
   font-size : 23px;
+  margin-bottom : 5px;
 `;
-
 const styles = StyleSheet.create({
   body: {
     flex: 1,
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   },
   comments: {
     paddingTop: 10,
-    fontSize: 15,
+    fontSize: 12,
     color: '#6a6a6a',
     marginBottom: 25,
   },
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingTop: 10,
     paddingBottom: 10,
-    fontSize: 17,
+    fontSize: 15,
     fontWeight: '700',
     backgroundColor: 'rgba(8,0,62,.04)',
   },
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
   },
   activeLevel: {
     borderRadius: 25,
-    fontSize: 18,
+    fontSize: 16,
     paddingTop: 7,
     paddingBottom: 7,
     paddingLeft: 10,
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   inActiveLevel: {
-    fontSize: 18,
+    fontSize: 16,
     paddingTop: 7,
     paddingBottom: 7,
     paddingLeft: 10,
@@ -140,11 +140,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingRight: 32,
     justifyContent: 'space-between',
-    fontSize: 17,
+    fontSize: 15,
     marginBottom: 5,
   },
   assignOrExamText: {
-    fontSize: 17,
+    fontSize: 15,
   },
   matchedNumberContainer: {
     flexDirection: 'row',
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   matchedNumber: {
-    fontSize: 17,
+    fontSize: 15,
     paddingLeft: 25,
     paddingTop: 15,
     paddingBottom: 10,
@@ -164,13 +164,7 @@ const styles = StyleSheet.create({
 });
 
 const DetailPage = ({ navigation, route = {} }) => {
-  const { name } = route.params || { name: '이름 필요' };
-
-  const assignOrExam = 'assignOk';
-
-  const matchedNumber = 10;
-
-  const level = 'high'; // low, middle, high 로 레벨 결정?
+  const { item } = route.params;
 
   const [dibsOn, setDibs] = useState(false);
 
@@ -195,59 +189,67 @@ const DetailPage = ({ navigation, route = {} }) => {
             <ScrollView>
               <View style={{ paddingLeft: 13 }}>
                 <DetailTitle>
-                  디자인 만또
+                  {item.mantto_talent}
                   {' '}
-                  {name}
+                  만또
+                  {' '}
+                  {item.nickname}
                 </DetailTitle>
                 <StarsIcon />
                 <Text style={styles.comments}>
                   저는 부산대학교 시각디자인~~~
                 </Text>
               </View>
-              <Text style={styles.miniTitle}>디자인</Text>
+              <Text style={styles.miniTitle}>{item.mantto_talent}</Text>
               <View style={styles.levelContainer}>
                 <Text
-                  style={level === 'low' ? styles.activeLevel : styles.inActiveLevel}
+                  style={item.self_grade === 'A' ? styles.activeLevel : styles.inActiveLevel}
                 >
                   조금 알아
                 </Text>
                 <Text
-                  style={level === 'middle' ? styles.activeLevel : styles.inActiveLevel}
+                  style={item.self_grade === 'B' ? styles.activeLevel : styles.inActiveLevel}
                 >
                   나쁘지 않아
                 </Text>
                 <Text
-                  style={level === 'high' ? styles.activeLevel : styles.inActiveLevel}
+                  style={item.self_grade === 'C' ? styles.activeLevel : styles.inActiveLevel}
                 >
                   잘하는 듯
                 </Text>
               </View>
               <Text style={styles.miniTitle}>과제 / 시험</Text>
               <View style={styles.assignOrExamContainer}>
-                {assignOrExam === 'assignOk' ? (
+                {item.report_help ? (
                   <View style={styles.assignOrExam}>
                     <Text style={styles.assignOrExamText}>만또한테 과제 물어봐</Text>
                     <CheckEntypo name="check" size={25} />
                   </View>
-                ) : assignOrExam === 'testOk' ? (
+                ) : null}
+                {item.exam_help ? (
                   <View style={styles.assignOrExam}>
                     <Text style={styles.assignOrExamText}>만또한테 시험 물어봐</Text>
                     <CheckEntypo name="check" size={25} />
                   </View>
-                ) : (
+                ) : null}
+                {!item.report_help && !item.exam_help ? (
                   <View style={styles.assignOrExam}>
                     <Text style={styles.assignOrExamText}>과제 시험 아직 봐줄 시간이 없네요ㅠ</Text>
                     <CheckEntypo name="check" size={25} />
                   </View>
-                )}
+                ) : null}
               </View>
               <Text style={styles.miniTitle}>매칭 수</Text>
               <View style={styles.matchedNumberContainer}>
                 <Text style={styles.matchedNumber}>
-                  {matchedNumber}
+                  {item.matching_count}
                   명
                 </Text>
-                <Text style={styles.matchedText}>"능숙한 만또 나만 따라와"</Text>
+                {item.matching_count > 10 ? (
+                  <Text style={styles.matchedText}>"능숙한 만또 나만 따라와"</Text>
+                ) : (
+                  <Text style={styles.matchedText}>"열정 가득한 만또 나만 따라와"</Text>
+                )}
               </View>
             </ScrollView>
           </DetailContainer>

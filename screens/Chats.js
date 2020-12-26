@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import {
-  View, Text, ScrollView, StyleSheet,
+  View, Text, ScrollView, StyleSheet, TouchableOpacity,
 } from 'react-native';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -58,13 +58,17 @@ const Chats = ({ navigation }) => {
         {chats.map(({
           id, contents, nickname, date,
         }) => (
-          <View key={id} style={styles.chatContainer}>
+          <TouchableOpacity
+            key={id}
+            style={styles.chatContainer}
+            onPress={() => navigation.navigate('CountDownClock')}
+          >
             <View style={styles.nicknameContainer}>
               <Text style={styles.nickname}>{nickname}</Text>
               <Text style={styles.date}>{date}</Text>
             </View>
             <Text style={styles.content}>{contents}</Text>
-          </View>
+          </TouchableOpacity>
         ))}
       </ScrollView>
     </>

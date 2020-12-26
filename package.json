@@ -32,6 +32,7 @@
     "react-native-nmap": "0.0.55",
     "react-native-paper": "^4.4.1",
     "react-native-progress": "^4.1.2",
+    "react-native-ratings": "^7.3.0",
     "react-native-raw-bottom-sheet": "^2.2.0",
     "react-native-reanimated": "^1.13.1",
     "react-native-responsive-fontsize": "^0.5.0",
