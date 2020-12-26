@@ -117,16 +117,15 @@ export default function SignupFirstPage({ navigation }) {
 
   const dotNumber = 1;
   const nextPage = 'SignUpAuthPage';
-  const prePage = 'LoginSignUpStartPage';
   const {
     handleSubmit, control, reset, errors,
   } = useForm();
 
   const onSubmit = (data) => {
     dispatch(setSignUp(data));
-    if (signUpFields.account) {
-      dispatch(requestSignUp());
-    }
+
+    dispatch(requestSignUp(navigation));
+
     reset({
       account: '',
       email: '',
@@ -144,7 +143,6 @@ export default function SignupFirstPage({ navigation }) {
     <InsertTalentLayout
       dotNumber={dotNumber}
       navigation={navigation}
-      prePage={prePage}
       navPage={nextPage}
       handleSubmit={handleSubmit}
       onSubmit={onSubmit}

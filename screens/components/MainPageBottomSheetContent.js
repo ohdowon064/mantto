@@ -10,8 +10,6 @@ import IconAntDesign from 'react-native-vector-icons/AntDesign';
 
 import { Button } from 'react-native-elements';
 
-import { ScrollView } from 'react-native-gesture-handler';
-
 import TalentCategory from './TalentCategory';
 
 function Bar({ color }) {
@@ -108,13 +106,14 @@ const MainPageBottomSheetHeader = ({ color }) => (
 
 function MainPageBottomSheetContent({ color, navigation }) {
   return (
-    <ScrollView style={{
-      height: 600,
+    <View style={{
+      width: '100%',
+      height: 1000,
       backgroundColor: '#fff',
     }}
     >
       <TalentCategory color={color} navigation={navigation} />
-    </ScrollView>
+    </View>
   );
 }
 

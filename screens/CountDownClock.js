@@ -23,8 +23,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const CountDownClock = () => {
+const CountDownClock = ({ navigation }) => {
   const [isPlaying, setIsPlaying] = useState(false);
+
+  const onComplete = () => {
+    navigation.navigate('StarRating');
+  };
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -35,7 +39,8 @@ const CountDownClock = () => {
       <CountdownCircleTimer
         isPlaying={isPlaying}
         size={250}
-        duration={3600}
+        duration={30}
+        onComplete={onComplete}
         colors={[
           ['#20bff9', 0.3],
           ['#2cc2dc', 0.4],

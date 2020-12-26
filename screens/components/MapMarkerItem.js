@@ -33,8 +33,13 @@ const styles = StyleSheet.create({
 function MapMarkerItem({
   navigation,
   name = '이예나', category = '디자인', color = '#fff', textColor = '#72cbee',
+  userId, userList,
 }) {
   const [dibsOn, setDibs] = useState(false);
+
+  const selectedUser = userList.find(({ id }) => userId === id);
+
+  console.log(selectedUser);
   return (
     <>
       <View
@@ -57,7 +62,7 @@ function MapMarkerItem({
           <Image source={require('../src/images/people.png')} />
           <TouchableOpacity
             style={styles.detailButton}
-            onPress={() => navigation.navigate('DetailPage')}
+            onPress={() => navigation.navigate('DetailPage', { item: selectedUser })}
           >
             <Text style={styles.detailText}>상세보기</Text>
           </TouchableOpacity>
@@ -80,14 +85,14 @@ function MapMarkerItem({
           >
             <View>
               <Text style={{ fontSize: 13 }}>
-                {name}
+                {selectedUser.username}
                 님
                 {' '}
                 |
                 {' '}
                 <Text style={{ fontSize: 9, color: 'rgba(0,0,0,.4)' }}>
                   {' '}
-                  {category}
+                  {selectedUser.mantto_talent}
                 </Text>
               </Text>
               <StarsIcon size={15} />
@@ -103,7 +108,6 @@ function MapMarkerItem({
                 }}
                 >
                   300 m
-
                 </Text>
               </View>
             </View>
@@ -131,7 +135,7 @@ function MapMarkerItem({
                 borderColor: '#72cbee',
                 backgroundColor: color,
               }}
-              onPress={() => navigation.navigate('ReviewPage')}
+              onPress={() => navigation.navigate('ReviewPage', { item: selectedUser })}
             >
               <Text style={{ color: textColor }}>후기</Text>
             </TouchableOpacity>

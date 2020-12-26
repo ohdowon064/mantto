@@ -18,7 +18,7 @@ import SignUpFirstPage from '../screens/SignUpFirstPage';
 
 import LoginPage from '../screens/LoginPage';
 
-import TalentRegisterContainer from '../screens/TalentRegisterContainer';
+import TalentRegisterPage from '../screens/TalentRegisterPage';
 
 import MainPage from '../screens/MainPage';
 
@@ -49,6 +49,12 @@ import ReviewPage from '../screens/ReviewPage';
 import ManttoLists from '../screens/ManttoLists';
 
 import SignUpAuthPage from '../screens/SignUpAuthPage';
+
+import LoginLoadingPage from '../screens/LoginLoadingPage';
+
+import StarRating from '../screens/StarRating';
+
+import CountDownClock from '../screens/CountDownClock';
 
 const Stack = createStackNavigator();
 
@@ -99,9 +105,10 @@ function TabNavigation() {
 const Navigation = () => (
   <>
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{
-        headerShown: false,
-      }}
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
       >
         <Stack.Screen
           name="LoginSignUpStartPage"
@@ -110,6 +117,18 @@ const Navigation = () => (
         <Stack.Screen
           name="ManttoLists"
           component={ManttoLists}
+        />
+        <Stack.Screen
+          name="StarRating"
+          component={StarRating}
+        />
+        <Stack.Screen
+          name="CountDownClock"
+          component={CountDownClock}
+        />
+        <Stack.Screen
+          name="LoginLoadingPage"
+          component={LoginLoadingPage}
         />
         <Stack.Screen
           name="SignUpAuthPage"
@@ -153,7 +172,7 @@ const Navigation = () => (
         />
         <Stack.Screen
           name="TalentRegisterPage"
-          component={TalentRegisterContainer}
+          component={TalentRegisterPage}
         />
         {/* COMPONENTS */}
         <Stack.Screen

@@ -8,6 +8,8 @@ import {
   Keyboard,
 } from 'react-native';
 
+import { useSelector } from 'react-redux';
+
 import NaverMapView, {
   Circle, Marker, Path, Polyline, Polygon,
 } from 'react-native-nmap';
@@ -37,6 +39,21 @@ async function requestPermissions() {
 }
 
 function NaverMap({ navigation }) {
+  const { userList } = useSelector((state) => ({
+    userList: state.talentCategoriesReducer.userList,
+  }));
+
+  const points = [];
+
+  userList.forEach(({ latitude, longtitude, id }) => {
+    const numberedLatitude = Number(latitude);
+    const numberedLongitude = Number(longtitude);
+    points.push({
+      coords: { latitude: numberedLatitude, longitude: numberedLongitude },
+      userId: id,
+    });
+  });
+
   const [zIndex, setZIndex] = useState(-1);
 
   const [location, setLocation] = useState({
@@ -51,7 +68,6 @@ function NaverMap({ navigation }) {
     if (sheetIsOpen) {
       sheetRef.current.snapTo(0);
     }
-
     setZIndex(-1);
   };
 
@@ -109,12 +125,16 @@ function NaverMap({ navigation }) {
     setZIndex(-1);
   }
 
-  function handleClickMarker() {
+  const [userId, setUserId] = useState(0);
+
+  function handleClickMarker(Id) {
     sheetRef.current.snapTo(250);
 
     setSheetIsOpen(true);
 
     setZIndex(10);
+
+    setUserId(Id);
   }
 
   const renderContent = () => (
@@ -127,9 +147,14 @@ function NaverMap({ navigation }) {
       borderTopLeftRadius: 10,
     }}
     >
-      <MapMarkerItem navigation={navigation} />
+      {
+        userId !== 0
+          ? <MapMarkerItem navigation={navigation} userList={userList} userId={userId} />
+          : null
+      }
     </View>
   );
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <SearchCategoriesContainer navigation={navigation} text="목록" />
@@ -147,13 +172,15 @@ function NaverMap({ navigation }) {
           onCameraChange={(e) => console.warn('onCameraChange', JSON.stringify(e))}
           onMapClick={(e) => console.warn('onMapClick', JSON.stringify(e))}
         >
-          <Marker
-            coordinate={PnuPoint}
-            onClick={() => handleClickMarker()}
-            image={require('./src/images/logo.png')}
-            width={30}
-            height={30}
-          />
+          {points.map(({ coords, userId }) => (
+            <Marker
+              coordinate={coords}
+              onClick={() => handleClickMarker(userId)}
+              image={require('./src/images/logo.png')}
+              width={30}
+              height={30}
+            />
+          ))}
         </NaverMapView>
         <TouchableOpacity
           activeOpacity={1}

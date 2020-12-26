@@ -71,11 +71,7 @@ const LoginInputContainer = ({ navigation }) => {
 
   const dispatch = useDispatch();
 
-  const {
-    loginFields, loginUserInfo, message,
-  } = useSelector((state) => ({
-    loginFields: state.LoginReducer.loginFields,
-    loginUserInfo: state.LoginReducer.loginUserInfo,
+  const { message } = useSelector((state) => ({
     message: state.LoginReducer.message,
   }));
 

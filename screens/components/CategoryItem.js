@@ -23,10 +23,12 @@ const CategoryItemSemiText = styled.Text`
     padding-bottom : 12px;
 `;
 
-const CategoryItem = ({ Svg, itemTitle }) => (
+const CategoryItem = ({ Svg, itemTitle, navigation }) => (
   <>
     <CategoryItemContainer>
-      <CategoryButton>
+      <CategoryButton
+        onPress={() => navigation.navigate('NaverMap')}
+      >
         {Svg ? <Svg width={62} height={62} /> : null}
       </CategoryButton>
       <CategoryItemText>{itemTitle}</CategoryItemText>

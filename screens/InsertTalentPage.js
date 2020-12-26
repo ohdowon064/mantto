@@ -5,6 +5,10 @@ import {
   View,
 } from 'react-native';
 
+import { useForm } from 'react-hook-form';
+
+import { useDispatch } from 'react-redux';
+
 import InsertTalentLayout from './layouts/InsertTalentLayout';
 
 import TalentQuestionText from './components/TalentTexts';
@@ -39,7 +43,7 @@ const InsertTalentPage = ({ navigation }) => {
       <View style={styles.container}>
         <MessageBubbleContainer color="#73ccef" text="재능을 가르치고 싶은 항목을 고르세요" />
       </View>
-      <TalentSharpButtons color="#73ccef" />
+      <TalentSharpButtons color="#73ccef" talentORPassion={comment} />
     </InsertTalentLayout>
   );
 };

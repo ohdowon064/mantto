@@ -1,8 +1,8 @@
 /* eslint-disable no-nested-ternary */
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import {
-  Text, View, StyleSheet, TextInput,
+  Text, View, StyleSheet, Alert,
 } from 'react-native';
 
 import { Button } from 'react-native-elements';
@@ -74,6 +74,29 @@ export default function SignupFirstPage({ navigation }) {
     signUpFields: state.SignUpReducer.signUpFields,
     authActiveMessage: state.SignUpReducer.authActiveMessage,
   }));
+
+  useEffect(() => {
+    navigation.addListener('beforeRemove', (e) => {
+      // Prevent default behavior of leaving the screen
+      e.preventDefault();
+
+      // Prompt the user before leaving the screen
+      Alert.alert(
+        '뒤로 가면 회원가입이 처음부터 시작됩니다!',
+        '방금 전 등록한 이메일은 이미 등록되어 사용하지 못합니다. 그래도 돌아가시겠습니까?',
+        [
+          { text: '남아있기', style: 'cancel', onPress: () => {} },
+          {
+            text: '돌아가기',
+            style: 'destructive',
+            // If the user confirmed, then we dispatch the action we blocked earlier
+            // This will continue the action that had triggered the removal of the screen
+            onPress: () => navigation.dispatch(e.data.action),
+          },
+        ],
+      );
+    });
+  }, [navigation]);
 
   const { email } = signUpFields;
   const {

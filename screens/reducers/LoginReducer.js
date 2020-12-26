@@ -6,6 +6,11 @@ const initialState = {
   accessToken: '',
   message: '',
   loginUserInfo: {},
+  userPatchInfo: {
+    major: '',
+    talent: '',
+    passion: '',
+  },
 };
 
 export default function LoginReducer(state = initialState, action) {
@@ -45,6 +50,36 @@ export default function LoginReducer(state = initialState, action) {
     return {
       ...state,
       message: '',
+    };
+  }
+  if (action.type === 'setUserMajor') {
+    const { major } = action.payload;
+    return {
+      ...state,
+      userPatchInfo: {
+        ...state.userPatchInfo,
+        major,
+      },
+    };
+  }
+  if (action.type === 'setUserTalent') {
+    const { talent } = action.payload;
+    return {
+      ...state,
+      userPatchInfo: {
+        ...state.userPatchInfo,
+        talent,
+      },
+    };
+  }
+  if (action.type === 'setUserPassion') {
+    const { passion } = action.payload;
+    return {
+      ...state,
+      userPatchInfo: {
+        ...state.userPatchInfo,
+        passion,
+      },
     };
   }
   return state;
