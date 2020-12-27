@@ -27,7 +27,7 @@ const CategoryItem = ({ Svg, itemTitle, navigation }) => (
   <>
     <CategoryItemContainer>
       <CategoryButton
-        onPress={() => navigation.navigate('NaverMap')}
+        onPress={() => navigation.navigate('NaverMap', { category: itemTitle })}
       >
         {Svg ? <Svg width={62} height={62} /> : null}
       </CategoryButton>

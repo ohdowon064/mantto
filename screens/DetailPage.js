@@ -197,7 +197,7 @@ const DetailPage = ({ navigation, route = {} }) => {
                 </DetailTitle>
                 <StarsIcon />
                 <Text style={styles.comments}>
-                  저는 부산대학교 시각디자인~~~
+                  {item.intro}
                 </Text>
               </View>
               <Text style={styles.miniTitle}>{item.mantto_talent}</Text>

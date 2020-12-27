@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+
 import {
   View,
   SafeAreaView,
@@ -8,7 +9,7 @@ import {
   Keyboard,
 } from 'react-native';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import NaverMapView, {
   Circle, Marker, Path, Polyline, Polygon,
@@ -38,13 +39,27 @@ async function requestPermissions() {
   }
 }
 
-function NaverMap({ navigation }) {
-  const { userList } = useSelector((state) => ({
+function NaverMap({ navigation, route = {} }) {
+  // 유저가 맵에 들어올 때, 해당 위,경도 값 Patch 해줘야한다.
+  // 테스트 용으로는 일단 위,경도 조작해서 만들자.
+  const { category } = route.params;
+
+  const dispatch = useDispatch();
+
+  const { loginUserInfo, userList, userTalentList } = useSelector((state) => ({
+    loginUserInfo: state.LoginReducer.loginUserInfo,
     userList: state.talentCategoriesReducer.userList,
+    userTalentList: state.talentCategoriesReducer.userTalentList,
   }));
 
-  const points = [];
+  const selectedTalentList = userTalentList.find((list) => list.talent === category);
 
+  const { manttiz, manttoz } = selectedTalentList;
+
+  console.log(manttiz, manttoz);
+
+  const points = [];
+  // 유저 정보에서 위,경도, id 만 따로 나타냄, 가공...
   userList.forEach(({ latitude, longtitude, id }) => {
     const numberedLatitude = Number(latitude);
     const numberedLongitude = Number(longtitude);
@@ -168,12 +183,10 @@ function NaverMap({ navigation }) {
           style={{ flex: 1 }}
           showsMyLocationButton
           center={{ ...PnuPoint, zoom: 16 }}
-          onTouch={(e) => console.warn('onTouch', JSON.stringify(e.nativeEvent))}
-          onCameraChange={(e) => console.warn('onCameraChange', JSON.stringify(e))}
-          onMapClick={(e) => console.warn('onMapClick', JSON.stringify(e))}
         >
           {points.map(({ coords, userId }) => (
             <Marker
+              key={userId}
               coordinate={coords}
               onClick={() => handleClickMarker(userId)}
               image={require('./src/images/logo.png')}

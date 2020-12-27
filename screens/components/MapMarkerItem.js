@@ -39,7 +39,6 @@ function MapMarkerItem({
 
   const selectedUser = userList.find(({ id }) => userId === id);
 
-  console.log(selectedUser);
   return (
     <>
       <View

@@ -6,7 +6,9 @@ import {
 
 import StarsIcon from '../src/Icons/StarsIcon';
 
-function TalentCategoryItem({ item, onPress, color }) {
+function TalentCategoryItem({
+  item, onPress, color,
+}) {
   return (
     <>
       <TouchableOpacity

@@ -113,6 +113,35 @@ export async function postUserPatch({ userPatchInfo, userId, token }) {
   }
 }
 
+export async function postUserRegisterPatch({ registerUserInfo, userId, token }) {
+  const url = `https://4dv6lzjdu7.execute-api.ap-northeast-2.amazonaws.com/dev/api/user/${userId}`;
+  const {
+    manttoTalent, manttiTalent, intro, reportHelp, examHelp,
+  } = registerUserInfo;
+  try {
+    const response = await fetch(url, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `JWT ${token}`,
+      },
+      body: JSON.stringify({
+        mantto_talent: manttoTalent,
+        mantti_talent: manttiTalent,
+        intro,
+        report_help: reportHelp,
+        exam_help: examHelp,
+      }),
+    });
+
+    const data = await response.json();
+
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 export async function fetchChatList({ token }) {
   const url = 'https://4dv6lzjdu7.execute-api.ap-northeast-2.amazonaws.com/dev/api/user';
 
@@ -135,6 +164,26 @@ export async function fetchChatList({ token }) {
 
 export async function fetchUserList({ token }) {
   const url = 'https://4dv6lzjdu7.execute-api.ap-northeast-2.amazonaws.com/dev/api/user';
+
+  try {
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `JWT ${token}`,
+      },
+    });
+
+    const data = await response.json();
+
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+export async function fetchUserTalentList({ token }) {
+  const url = 'https://4dv6lzjdu7.execute-api.ap-northeast-2.amazonaws.com/dev/api/talent';
 
   try {
     const response = await fetch(url, {
