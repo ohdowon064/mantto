@@ -5,7 +5,9 @@ import {
   postAuthMail,
   postActivate,
   fetchUserList,
+  fetchUserTalentList,
   postUserPatch,
+  postUserRegisterPatch,
 } from '../services/api';
 
 export function selectTalent(talent) {
@@ -118,6 +120,27 @@ export function setUserList(userList) {
   };
 }
 
+export function setUserTalentList(userTalentList) {
+  return {
+    type: 'setUserTalentList',
+    payload: { userTalentList },
+  };
+}
+
+export function setRegisterValue({ label, value }) {
+  return {
+    type: 'setRegisterValue',
+    payload: { label, value },
+  };
+}
+
+export function setRegisterUserInfo(registerUser) {
+  return {
+    type: 'setRegisterUserInfo',
+    payload: { registerUser },
+  };
+}
+
 export function loadChatList() {
   return async (dispatch, getState) => {
     const { loginUserInfo: { token } } = getState().LoginReducer;
@@ -137,13 +160,33 @@ export function loadUserList() {
   };
 }
 
+export function loadUserTalentList() {
+  return async (dispatch, getState) => {
+    const { loginUserInfo: { token } } = getState().LoginReducer;
+
+    const userList = await fetchUserTalentList({ token });
+
+    dispatch(setUserTalentList(userList));
+  };
+}
+
 export function requestUserPatch() {
   return async (dispatch, getState) => {
     const { userPatchInfo, loginUserInfo: { id, token } } = getState().LoginReducer;
 
     const user = await postUserPatch({ userPatchInfo, userId: id, token });
 
-    console.log(user);
+    dispatch(setUserInfo(user));
+  };
+}
+
+export function requestUserRegisterPatch() {
+  return async (dispatch, getState) => {
+    const { loginUserInfo: { id, token } } = getState().LoginReducer;
+
+    const { registerUserInfo } = getState().MyPageReducer;
+
+    const user = await postUserRegisterPatch({ registerUserInfo, userId: id, token });
 
     dispatch(setUserInfo(user));
   };

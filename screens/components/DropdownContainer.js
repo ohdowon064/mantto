@@ -2,15 +2,22 @@ import React, { useState } from 'react';
 
 import { Dropdown } from 'react-native-material-dropdown';
 
+import { useDispatch } from 'react-redux';
+
+import {
+  setRegisterValue,
+} from '../actions/index';
+
 export default function DropdownContainer({ style, label, talent }) {
-  const [value, setValue] = useState(talent);
+  const dispatch = useDispatch();
 
-  console.log(value);
+  const newTalent = talent || '';
 
-  function handleClick(value) {
-    console.log(value);
+  const [value, setValue] = useState(newTalent);
+
+  function handleChange(value) {
     setValue(value);
-    // 프론트에서 저장해두고 있다가 백엔드 한테 전달
+    dispatch(setRegisterValue({ label, value }));
   }
 
   const data = [
@@ -36,13 +43,14 @@ export default function DropdownContainer({ style, label, talent }) {
       value: '운세/상담',
     },
   ];
+
   return (
     <Dropdown
       containerStyle={style}
-      label={label}
       data={data}
+      label={label}
       value={value}
-      onChangeText={(value) => handleClick(value)}
+      onChangeText={(value) => handleChange(value)}
     />
   );
 }

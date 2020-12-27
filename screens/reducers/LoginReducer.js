@@ -46,6 +46,7 @@ export default function LoginReducer(state = initialState, action) {
       loginUserInfo: user,
     };
   }
+
   if (action.type === 'clearAllMessage') {
     return {
       ...state,

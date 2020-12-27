@@ -3,7 +3,6 @@ import React from 'react';
 import { View, FlatList } from 'react-native';
 
 import { useSelector } from 'react-redux';
-
 import TalentCategoryItem from './TalentCategoryItem';
 
 function TalentCategory({ navigation, color }) {
@@ -35,7 +34,7 @@ function TalentCategory({ navigation, color }) {
         <FlatList
           data={userList}
           renderItem={renderItem}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item, index) => index.toString()}
         />
       </View>
     </>

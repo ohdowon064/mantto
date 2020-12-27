@@ -13,6 +13,8 @@ import {
   TextInput,
 } from 'react-native';
 
+import { useDispatch } from 'react-redux';
+
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
 import Toggle from 'react-native-toggle-element';
@@ -21,9 +23,14 @@ import ProgressBar from 'react-native-progress/Bar';
 
 import StarsIcon from './src/Icons/StarsIcon';
 
-import DropDown from './components/DropdownContainer';
+import DropdownContainer from './components/DropdownContainer';
 
 import TabNav from './components/TabNav';
+
+import {
+  setRegisterUserInfo,
+  requestUserRegisterPatch,
+} from './actions/index';
 
 const styles = StyleSheet.create({
   body: {
@@ -147,6 +154,8 @@ const styles = StyleSheet.create({
 });
 
 const TalentRegisterPage = ({ navigation, route = {} }) => {
+  const dispatch = useDispatch();
+
   const { loginUserInfo } = route.params;
 
   const [value, setText] = useState(loginUserInfo.intro);
@@ -158,6 +167,18 @@ const TalentRegisterPage = ({ navigation, route = {} }) => {
   const assignToggleSwitch = () => setAssignIsEnabled((previousState) => !previousState);
 
   const testToggleSwitch = () => setTestIsEnabled((previousState) => !previousState);
+
+  function handleRegister() {
+    const registerUser = {
+      intro: value,
+      reportHelp: assignIsEnabled,
+      examHelp: testIsEnabled,
+    };
+    dispatch(setRegisterUserInfo(registerUser));
+
+    dispatch(requestUserRegisterPatch());
+    navigation.goBack();
+  }
 
   return (
     <>
@@ -216,7 +237,7 @@ const TalentRegisterPage = ({ navigation, route = {} }) => {
                 <Text style={styles.specialText1}> 재능</Text>
                 은
               </Text>
-              <DropDown
+              <DropdownContainer
                 style={styles.textInput}
                 label="My talent"
                 talent={loginUserInfo.mantto_talent}
@@ -230,7 +251,7 @@ const TalentRegisterPage = ({ navigation, route = {} }) => {
                 <Text style={styles.specialText2}> 열정</Text>
                 은
               </Text>
-              <DropDown
+              <DropdownContainer
                 style={styles.textInput}
                 label="My Passion"
                 talent={loginUserInfo.mantti_talent}
@@ -302,7 +323,7 @@ const TalentRegisterPage = ({ navigation, route = {} }) => {
         <View style={styles.bottomCompleteButton}>
           <TouchableOpacity
             style={styles.completeButton}
-            onPress={() => navigation.navigate('ProfilePage')}
+            onPress={() => handleRegister()}
           >
             <Text style={styles.btnText}>작성완료</Text>
           </TouchableOpacity>

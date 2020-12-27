@@ -11,11 +11,12 @@ import {
 
 import { Badge } from 'react-native-elements';
 
-import { useDispatch } from 'react-redux';
-
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 
+import { useDispatch } from 'react-redux';
+
 import {
+  loadUserTalentList,
   loadUserList,
 } from './actions/index';
 
@@ -24,6 +25,8 @@ import MainPageLayout from './layouts/MainPageLayout';
 import CategoryItem from './components/CategoryItem';
 
 import designSvg from './src/svg/design.svg';
+
+import designSvgB from './src/svg/design_B.svg';
 
 import programmingSvg from './src/svg/programming.svg';
 
@@ -102,12 +105,10 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'space-between',
   },
-
 });
 
 function MainPage({ navigation }) {
   const dispatch = useDispatch();
-
   const bottomSheetRef = useRef(null);
 
   const [sheetIsOpen, setSheetIsOpen] = useState(false);
@@ -122,6 +123,8 @@ function MainPage({ navigation }) {
 
   useEffect(() => {
     dispatch(loadUserList());
+    dispatch(loadUserTalentList());
+
     try {
       Keyboard.addListener('keyboardDidShow', keyboardDidShow);
     } catch (e) {
@@ -138,6 +141,7 @@ function MainPage({ navigation }) {
       navigation={navigation}
       bottomSheetRef={bottomSheetRef}
       setSheetIsOpen={setSheetIsOpen}
+
     >
       <SearchContainer>
         <SearchInputContainer>
@@ -181,7 +185,7 @@ function MainPage({ navigation }) {
         ) : (
           <>
             <View style={styles.categoryLine}>
-              <CategoryItem navigation={navigation} Svg={designSvg} itemTitle="디자인" />
+              <CategoryItem navigation={navigation} Svg={designSvgB} itemTitle="디자인" />
               <CategoryItem navigation={navigation} Svg={programmingSvgB} itemTitle="IT/프로그래밍" />
               <CategoryItem navigation={navigation} Svg={pictureSvgB} itemTitle="영상/사진/음향" />
               <CategoryItem navigation={navigation} Svg={MarketIcon} itemTitle="마케팅" />
